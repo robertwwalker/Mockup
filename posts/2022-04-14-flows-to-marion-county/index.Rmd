@@ -13,7 +13,6 @@ tags:
 
 ```{r setup, include=FALSE}
 library(mapdeck)
-source("/Users/rww/MapBox.R")
 ```
 
 
