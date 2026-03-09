@@ -1,0 +1,200 @@
+/* =======================================================
+   SITE-WIDE HERO BACKGROUND WITH FLOATING CONTENT
+   Extends hero banner to all pages as background
+   All content floats over it with elegant container
+   ======================================================= */
+
+/* Full-page hero background - appears on ALL pages */
+.page-hero-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 500px;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.page-hero-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom, 
+    transparent 0%, 
+    rgba(34, 19, 58, 0.4) 50%, 
+    rgba(34, 19, 58, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+.page-hero-background::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right, 
+    transparent, 
+    #AF98E6 20%, 
+    #DA99E6 50%, 
+    #DD92C5 80%, 
+    transparent
+  );
+  z-index: 2;
+}
+
+.page-hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Main content container - floats over hero */
+#quarto-content {
+  position: relative;
+  margin-top: 0;
+  padding-top: 280px; /* Space for hero before content starts */
+  z-index: 1;
+}
+
+/* Floating content wrapper for main content area */
+.content-float-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* The floating content container */
+.content-float-container {
+  background: linear-gradient(135deg, 
+    rgba(54, 39, 86, 0.95), 
+    rgba(42, 26, 69, 0.92)
+  );
+  border: 1px solid rgba(175, 152, 230, 0.3);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  backdrop-filter: blur(15px);
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(175, 152, 230, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Top accent border on content container */
+.content-float-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, 
+    transparent, 
+    #AF98E6 20%, 
+    #DA99E6 50%, 
+    #DD92C5 80%, 
+    transparent
+  );
+}
+
+/* Ensure text is readable over background */
+.content-float-container h1,
+.content-float-container h2,
+.content-float-container h3,
+.content-float-container h4,
+.content-float-container h5,
+.content-float-container h6,
+.content-float-container p,
+.content-float-container li {
+  position: relative;
+  z-index: 1;
+}
+
+/* Cards within floating content should maintain their styles */
+.content-float-container .cards {
+  margin-top: 2rem;
+  padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-hero-background {
+    height: 350px;
+  }
+  
+  #quarto-content {
+    padding-top: 180px;
+  }
+  
+  .content-float-wrapper {
+    padding: 0 1rem;
+  }
+  
+  .content-float-container {
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero-background {
+    height: 280px;
+  }
+  
+  #quarto-content {
+    padding-top: 140px;
+  }
+  
+  .content-float-container {
+    padding: 1.5rem;
+  }
+}
+
+/* Entrance animation for content */
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-float-container {
+  animation: contentFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s backwards;
+}
+
+/* Alternative: Lighter container for better readability */
+.content-float-container.light {
+  background: linear-gradient(135deg, 
+    rgba(54, 39, 86, 0.98), 
+    rgba(42, 26, 69, 0.96)
+  );
+}
+
+/* Alternative: Glass morphism */
+.content-float-container.glass {
+  background: linear-gradient(135deg, 
+    rgba(54, 39, 86, 0.75), 
+    rgba(42, 26, 69, 0.7)
+  );
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(175, 152, 230, 0.4);
+}
+
+/* Alternative: Minimal container with subtle background */
+.content-float-container.minimal {
+  background: rgba(34, 19, 58, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(175, 152, 230, 0.2);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(175, 152, 230, 0.1);
+}

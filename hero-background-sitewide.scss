@@ -1,0 +1,267 @@
+/* =======================================================
+   SITE-WIDE HERO BACKGROUND - SCSS VERSION
+   Add to end of steampunk-SEMANTIC.scss
+   Creates hero background on all pages with floating content
+   ======================================================= */
+
+/* Site-wide hero background using gradient/image */
+body {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 500px;
+    z-index: -2;
+    background: linear-gradient(
+      135deg,
+      $bg-darkest 0%,
+      $bg-dark 50%,
+      $bg-medium 100%
+    );
+    /* Optional: Add background image */
+    /* background-image: url('/images/hero-bg.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center top; */
+  }
+  
+  &::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 500px;
+    z-index: -1;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba($bg-dark, 0.3) 40%,
+      rgba($bg-dark, 0.8) 80%,
+      $bg-dark 100%
+    );
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(
+      to right,
+      transparent,
+      $lavender 20%,
+      $pink 50%,
+      $rose 80%,
+      transparent
+    ) 0 0 1 0;
+  }
+}
+
+/* Main content area adjustments */
+#quarto-content {
+  position: relative;
+  padding-top: 300px;
+  min-height: 100vh;
+}
+
+/* Main content container - floats over background */
+.page-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Article/content wrapper that floats */
+#quarto-content main {
+  background: linear-gradient(135deg, 
+    rgba($bg-light, 0.95), 
+    rgba($bg-medium, 0.92)
+  );
+  border: 1px solid rgba($lavender, 0.3);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  backdrop-filter: blur(15px);
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba($lavender, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, 
+      transparent, 
+      $lavender 20%, 
+      $pink 50%, 
+      $rose 80%, 
+      transparent
+    );
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+}
+
+/* Ensure cards and other content display properly */
+#quarto-content main .cards {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+/* Homepage hero section (if it exists) should be full width */
+.hero-section {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-top: -300px; /* Pull up to replace gradient background */
+  margin-bottom: 2rem;
+  height: 500px;
+  z-index: 0;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom, 
+      transparent 0%, 
+      rgba($bg-dark, 0.4) 50%, 
+      rgba($bg-dark, 0.95) 100%
+    );
+    z-index: 1;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      to right, 
+      transparent, 
+      $lavender 20%, 
+      $pink 50%, 
+      $rose 80%, 
+      transparent
+    );
+    z-index: 2;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* When hero-section exists, reduce padding-top */
+body:has(.hero-section) #quarto-content {
+  padding-top: 0;
+}
+
+body:has(.hero-section) #quarto-content main {
+  margin-top: -150px; /* Float over hero */
+  position: relative;
+  z-index: 3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body::before,
+  body::after {
+    height: 350px;
+  }
+  
+  #quarto-content {
+    padding-top: 200px;
+  }
+  
+  #quarto-content main {
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+  
+  .hero-section {
+    height: 350px;
+    margin-top: -200px;
+  }
+  
+  body:has(.hero-section) #quarto-content main {
+    margin-top: -100px;
+  }
+}
+
+@media (max-width: 480px) {
+  body::before,
+  body::after {
+    height: 280px;
+  }
+  
+  #quarto-content {
+    padding-top: 150px;
+  }
+  
+  #quarto-content main {
+    padding: 1.5rem;
+  }
+  
+  .hero-section {
+    height: 280px;
+    margin-top: -150px;
+  }
+  
+  body:has(.hero-section) #quarto-content main {
+    margin-top: -80px;
+  }
+}
+
+/* Entrance animation */
+@keyframes mainContentFloat {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#quarto-content main {
+  animation: mainContentFloat 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s backwards;
+}
+
+/* Variants for different content container styles */
+#quarto-content main.light-container {
+  background: linear-gradient(135deg, 
+    rgba($bg-light, 0.98), 
+    rgba($bg-medium, 0.96)
+  );
+}
+
+#quarto-content main.glass-container {
+  background: linear-gradient(135deg, 
+    rgba($bg-light, 0.75), 
+    rgba($bg-medium, 0.7)
+  );
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba($lavender, 0.4);
+}
+
+#quarto-content main.minimal-container {
+  background: rgba($bg-dark, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba($lavender, 0.2);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba($lavender, 0.1);
+}

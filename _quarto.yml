@@ -81,9 +81,11 @@ format:
   html:
     theme: 
       - cosmo
-      - steampunk-SEMANTIC.scss
+      - css/steampunk-SEMANTIC.scss
     css: 
       - css/custom-cards.css
+      - css/floating-card-standalone.css
+      - hero-background-sitewide.css
     toc: false
     smooth-scroll: true
     link-external-newwindow: true

@@ -131,6 +131,8 @@ div.csl-indent {
 
 
 <link rel="stylesheet" href="../../css/custom-cards.css">
+<link rel="stylesheet" href="../../css/floating-card-standalone.css">
+<link rel="stylesheet" href="../../hero-background-sitewide.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -275,9 +277,9 @@ div.csl-indent {
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Pigeon.colors</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "#DDA0EA" "#EF90E8" "#9FA7E3" "#E49CE6" "#E899E7" "#DA95E4" "#D39BE6"
- [8] "#E37FD4" "#9CABE3" "#EB77BE" "#A3BBEA" "#E677C0" "#9BADE3" "#EC7BCE"
-[15] "#F794EA" "#A7B3EF" "#EB79D2" "#A2B0EC" "#F19EE1" "#EE74CA"</code></pre>
+<pre><code> [1] "#ED8ADB" "#9AA6DF" "#ED72BC" "#DFC19D" "#EB7DC5" "#97BCE2" "#E680D8"
+ [8] "#D99AE1" "#DF9BEA" "#9CB2E6" "#EF90E8" "#EEA0F4" "#DBA0E8" "#D49BE7"
+[15] "#ED91E8" "#9CA5E2" "#ED82D0" "#E978D7" "#A2A9EA" "#F2A3F3"</code></pre>
 </div>
 </div>
 <p>Now I have a palette in the markdown environment called Pigeon.colors.</p>
@@ -290,11 +292,11 @@ div.csl-indent {
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Junk.data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Stuff      vals
-1    Hi 0.8130841
-2 Howdy 0.5413512
-3 Hello 0.9518659
-4  Hola 0.8381726
-5 Hallo 0.8115374</code></pre>
+1    Hi 0.7601849
+2 Howdy 0.7204777
+3 Hello 0.7472235
+4  Hola 0.7689271
+5 Hallo 0.9620824</code></pre>
 </div>
 </div>
 <p>I want to graph it using a barplot equivalent because I have the height of the bars in <code>vals</code>. Let me use the fill aesthetic to fill the bars in by the five discrete things stored as <code>Stuff</code>. The trick to using it is to manually specify the colors and point it to the <code>Pigeon.colors</code> above.</p>

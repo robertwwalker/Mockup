@@ -1,0 +1,202 @@
+/* =======================================================
+   FLOATING CARD - Standalone CSS
+   Can be added as a separate CSS file in _quarto.yml
+   ======================================================= */
+
+/* Floating Card Wrapper */
+.floating-card-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: -120px auto 3rem;
+  padding: 0 2rem;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .floating-card-wrapper {
+    margin: -80px auto 2rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-card-wrapper {
+    margin: -60px auto 1.5rem;
+  }
+}
+
+/* The Floating Card */
+.floating-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(54, 39, 86, 0.95), rgba(42, 26, 69, 0.9));
+  border: 1px solid rgba(175, 152, 230, 0.4);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 25px 80px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(175, 152, 230, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Top border accent */
+.floating-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, 
+    transparent, 
+    #AF98E6 15%, 
+    #DA99E6 50%, 
+    #DD92C5 85%, 
+    transparent
+  );
+}
+
+/* Corner flourish */
+.floating-card::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle at top right, 
+    rgba(175, 152, 230, 0.15), 
+    transparent 60%
+  );
+  border-bottom-left-radius: 100%;
+  transition: all 0.5s ease;
+}
+
+.floating-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(175, 152, 230, 0.6);
+  box-shadow: 
+    0 30px 100px rgba(0, 0, 0, 0.6),
+    0 0 80px rgba(175, 152, 230, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.floating-card:hover::after {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle at top right, 
+    rgba(175, 152, 230, 0.25), 
+    transparent 60%
+  );
+}
+
+/* Floating card headings */
+.floating-card h1,
+.floating-card h2 {
+  font-family: 'Baskerville', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  border: none !important;
+  padding: 0 !important;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #AF98E6, #DA99E6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating card paragraphs */
+.floating-card p {
+  font-family: 'Baskerville', Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #c4c7ce;
+  margin: 0 0 1.5rem 0;
+}
+
+.floating-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Floating card links */
+.floating-card a {
+  color: #9CA6E3;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(156, 166, 227, 0.3);
+  transition: all 0.3s ease;
+}
+
+.floating-card a:hover {
+  color: #E5DD97;
+  border-bottom-color: #E5DD97;
+}
+
+/* Floating card strong text */
+.floating-card strong {
+  color: #E5DD97;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .floating-card {
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+
+  .floating-card h1,
+  .floating-card h2 {
+    font-size: 2rem;
+  }
+
+  .floating-card p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-card {
+    padding: 1.5rem;
+  }
+
+  .floating-card h1,
+  .floating-card h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Entrance animation */
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.floating-card {
+  animation: floatIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards;
+}
+
+/* Variants */
+.floating-card.light-variant {
+  background: linear-gradient(135deg, 
+    rgba(54, 39, 86, 0.98), 
+    rgba(42, 26, 69, 0.95)
+  );
+}
+
+.floating-card.glass {
+  background: linear-gradient(135deg, 
+    rgba(54, 39, 86, 0.7), 
+    rgba(42, 26, 69, 0.6)
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(175, 152, 230, 0.3);
+}
