@@ -1,0 +1,23 @@
+---
+title: The Career Advancement of Military Veterans in Recent Cohorts of the U.S. Executive
+  Branch
+date: '2018-06-05'
+author:
+- Robert W. Walker
+- Tim Johnson
+categories: []
+citation:
+  type: article-journal
+  container-title: Public Personnel Management
+  publisher: Unpublished
+  pdf-url: https://journals.sagepub.com/toc/ppmd/47/4
+links:
+- text: PDF
+  icon: file-pdf
+  href: https://journals.sagepub.com/toc/ppmd/47/4
+---
+
+## Abstract
+
+To measure the effect of veterans’ preference on U.S. federal workforce quality, researchers have assessed whether military veterans advance in their federal careers at a different rate than nonveterans. This research, however, has produced mixed results. In research concerning recent employee cohorts, nonveterans outpace veterans’ advancement, implying that veterans’ preference lessens employee quality. In older cohorts, veterans and nonveterans advance comparably. The latter research, however, controls for employees’ entry positions, whereas research concerning recent cohorts does not do so, thus inhibiting direct comparison of results. To facilitate such comparisons, we controlled for veterans’ and nonveterans’ entry positions in a study of career advancement among all white-collar, U.S. executive branch workers entering employment from 1992 to 2013. In these recent cohorts, we find roughly equivalent rates of career advancement among veterans and nonveterans when controlling for entry positions. This finding holds when using grade or pay increases as measures of advancement.
+

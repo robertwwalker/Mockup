@@ -20,11 +20,27 @@ My research program centers on developing and applying rigorous statistical meth
 ::: {.callout-note icon=false}
 ## With Tim Johnson
 
-We are developing new methods for identifying causal effects in settings where randomization is not possible or ethical. Our approach combines design-based and model-based inference strategies.
+We have a long-standing project expanding on his work using the Central Personnel Data File from the United State Office of Personnel Management.  In this paper, we examine the interaction of `veteran's preference` and education to demonstrate that the policy has no observable effect in the population.  The computation for this problem has proven a significant challenge.  The paper received a revise and resubmit at *Statistics and Public Policy* years ago but we knew of a problem that we only recently fixed.
 
 **Status**: Under review  
 **Code**: [GitHub Repository](https://github.com)
 :::
+
+---
+
+### Distributions and LLMs
+
+::: {.callout-tip icon=false}
+## With Tim Johnson and Justus Eaglesmith
+
+This project examines the ability of OpenAI large language models to recover the distributions that generated simulated data.
+
+**Status**: Letter at the `American Statistician`
+**Materials**: [Replication archive](https://github.com/robertwwalker/LLM_Distributions/)
+:::
+
+---
+
 
 ---
 
@@ -39,19 +55,6 @@ This project develops statistical methods for analyzing strategic interaction in
 **Award**: Warren Miller Prize  
 **Materials**: [Replication archive](https://github.com)
 :::
-
----
-
-## Research Areas
-
-### [Causal Inference](research/causal-inference.qmd)
-Methods for identifying and estimating causal effects from observational data, with applications to policy evaluation.
-
-### [Panel Data Methods](research/panel-data.qmd)
-Time series cross-sectional models, fixed effects, dynamic panels, and heterogeneous treatment effects.
-
-### [Political Economy](research/political-economy.qmd)
-Institutional analysis, policy feedback, and the political economy of redistribution.
 
 ---
 

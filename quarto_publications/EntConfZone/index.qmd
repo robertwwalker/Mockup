@@ -1,0 +1,56 @@
+---
+title: "A biosocial gender analysis of entrepreneurial behaviors in conflict zones: evidence from Iraqi-Kurdistan"
+author: 
+- Elliot N. Maltz
+- Robert W. Walker
+- Razhan Oman Muhammad
+- Jay Joseph
+format: html
+# This section makes the citation "active" within the document
+references:
+  - id: maltz2023
+    type: article-journal
+    author:
+      - family: Maltz
+        given: Elliot
+      - family: Walker
+        given: Robert
+      - family: Omar Muhammad
+        given: Razhan
+      - family: Joseph
+        given: Jay
+    title: "A biosocial gender analysis of entrepreneurial behaviors in conflict zones: evidence from Iraqi-Kurdistan"
+    container-title: "Journal of Entrepreneurship in Emerging Economies"
+    volume: 16
+    issue: 1
+    page: 89-118
+    issued:
+      year: 2023
+      month: 7
+    doi: "10.1108/JEEE-10-2022-0315"
+    URL: "https://doi.org/10.1108/JEEE-10-2022-0315"
+---
+
+## Introduction
+
+This study aims to uses biosocial gender theory to describe successful entrepreneurial behavior in conflict zones. Specifically, the authors investigate how the reliance on agentic (assertive, individual focused) behavior and communal (facilitative and friendly) behavior lead to differential outcomes depending on the physical gender of the entrepreneur exhibiting the behavior.The authors developed a conceptual framework based on extant literature. To test the framework, the authors gathered survey data from Iraqi-Kurdish entrepreneurs who have been living in a state of war since the late 1980s and use a novel analytical method to deal with the limitations inherent in gathering survey data in conflict zones. Qualitative data is presented to generate a better understanding of the survey results.The findings indicate females who are successful in taking on the traditional male role of entrepreneur in conflict zones engage in lower levels of agentic behavior compared to their male counterparts. Successful entrepreneurs (male and female) rely extensively on communal behavior in their ventures. When it comes to community development, male entrepreneurs engaging in agentic behavior, seem to mentor aspiring entrepreneurs more than females. Females relying on communal behavior engage in more mentoring of aspiring entrepreneurs than males.An understanding of the unique gender dynamics underlying entrepreneurial behavior in conflict zones remains incomplete. The study introduces evidence that gender differences, as well as social factors, combine with the unique characteristics of conflict zones resulting in different behavioral paths to entrepreneurial success. The analytical method introduces some statistical tools to scholars attempting to understand the unique conflict zone context. As such, the study provides guidance for scholars working in this context, as well as NGO’s and other institutions seeking to train entrepreneurs and improve economic conditions in conflict zones. @maltz2024biosocial
+
+---
+
+### Appendix: Citation Data
+
+If you need the raw BibTeX for your reference manager, you can copy it from the block below:
+
+```bibtex
+@article{maltz2024biosocial,
+    author = {Maltz, Elliot and Walker, Robert and Omar Muhammad, Razhan and Joseph, Jay},
+    title = {A biosocial gender analysis of entrepreneurial behaviors in conflict zones: evidence from Iraqi-Kurdistan},
+    journal = {Journal of Entrepreneurship in Emerging Economies},
+    volume = {16},
+    number = {1},
+    pages = {89-118},
+    year = {2023},
+    month = {07},
+    doi = {10.1108/JEEE-10-2022-0315},
+    url = {[https://doi.org/10.1108/JEEE-10-2022-0315](https://doi.org/10.1108/JEEE-10-2022-0315)}
+}

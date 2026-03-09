@@ -1,0 +1,40 @@
+---
+title: "Contact"
+---
+
+## Get in Touch
+
+I'd love to hear from you! Whether you're interested in collaboration, have questions about my research, or want to discuss teaching opportunities.
+
+## Email
+
+[`rwalker@willamette.edu`](mailto:rwalker@willamette.edu)
+
+## Office
+
+**Location**: Kaneko Hall 208  
+Northeast end of 2nd floor  
+900 State Street  
+Salem, OR 97301
+
+**Phone**: [503.370.5475](tel:503.370.5475)
+
+## Office Hours
+
+**Regular Hours**: Tuesdays and Thursdays, 1:30 PM - 2:30 PM
+
+* [Book an appointment](https://rww.youcanbook.me).  
+
+## Online
+
+**GitHub**: [robertwwalker](https://github.com/robertwwalker)  
+**Twitter**: [`@PieRatio`](https://twitter.com/PieRatio)  
+**Google Scholar**: [Profile](https://scholar.google.com/citations?user=FU8pL7sAAAAJ&hl)
+
+## Affiliation
+
+::: {.affiliation-box}
+**Atkinson Graduate School of Management**  
+Willamette University  
+Salem, Oregon
+:::

@@ -9,7 +9,7 @@ website:
   favicon: images/favicon.png
   
   navbar:
-    logo: images/image.png
+    logo: images/agsm-logo.jpeg
     background: "#16181d"
     foreground: "#e8e9ed"
     left:
@@ -19,6 +19,9 @@ website:
       - text: "Research"
         href: research/index.qmd
         icon: graph-up
+      - text: "AI Tools"
+        href: AI-Tools.qmd
+        icon: robot
       - text: "Teaching"
         href: teaching/index.qmd
         icon: mortarboard
@@ -69,9 +72,9 @@ format:
   html:
     theme: 
       - cosmo
-      - css/steampunk-art-nouveau.scss
+      - css/steampunk-SEMANTIC.scss
     css: 
-      - css/custom.css
+      - css/custom-cards.css
     toc: false
     smooth-scroll: true
     link-external-newwindow: true
@@ -81,7 +84,8 @@ format:
     mainfont: "Baskerville, Georgia, serif"
     fontsize: 1em
     linestretch: 1.6
-    
+    bibliography: references.bib
+
 execute:
   freeze: auto
   echo: true

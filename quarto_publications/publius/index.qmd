@@ -1,0 +1,23 @@
+---
+title: The intergovernmental context of alternative service delivery choices
+date: '2012-09-01'
+author:
+- Skip Krueger
+- Robert W. Walker
+- Ethan Bernick
+categories: []
+citation:
+  type: article-journal
+  container-title: 'Publius: The Journal of Federalism'
+  publisher: Unpublished
+  pdf-url: http://collinsinstitute.fsu.edu/sites/default/files/FINAL%20PAPER-BERNICK.pdf
+links:
+- text: PDF
+  icon: file-pdf
+  href: http://collinsinstitute.fsu.edu/sites/default/files/FINAL%20PAPER-BERNICK.pdf
+---
+
+## Abstract
+
+Research suggests that outsourcing is one way that local governments have to meet rising expectations and unwillingness to pay when resources are constrained. The degree to which resources are constrained is a function not only of local economic and political conditions, but of state rules as well. We build on previous models of local government outsourcing by studying the interaction between state rules and local fiscal, economic, and political conditions. We find that cities in states that place limits on the resources available to local governments choose differently from among the constellation of service provision options than cities in states without such limits.
+

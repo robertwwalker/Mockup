@@ -1,0 +1,24 @@
+---
+title: Property Tax Fairness in Multnomah County, Oregon
+date: '2016-01-01'
+author:
+- Kawika Pierson
+- Fred Thompson
+- Robert W. Walker
+categories:
+- prop-tax
+citation:
+  type: article-journal
+  container-title: California Journal of Politics and Public Policy
+  publisher: Unpublished
+  pdf-url: https://cloudfront.escholarship.org/dist/prd/content/qt6469r55r/qt6469r55r.pdf
+links:
+- text: PDF
+  icon: file-pdf
+  href: https://cloudfront.escholarship.org/dist/prd/content/qt6469r55r/qt6469r55r.pdf
+---
+
+## Abstract
+
+This article evaluates two alternative standards for resetting property assessments on title transfer in property tax systems like Oregon's and California's that are explicitly designed to protect property owners against rapid, unanticipated increases in their tax bills, California's reset to market and one in which the property is given a new assessed value based on its market value multiplied by a ratio that reflects the average relationship between assessed value and market value within a jurisdiction. People find that the latter promotes assessment quality better than the former and probably mitigates lock-in.
+
