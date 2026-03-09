@@ -1,8 +1,11 @@
 ---
 title: "Courses: Panel Data at Essex"
+image: "ESSSSDA.png"
 ---
 
 ## Panel Data at Essex
+
+The course begins with an overview that presents some key review and background with a focus on linear models. From that foundation, we complete our one week course in time series analysis focusing on univariate time series models, intervention analysis, stationarity, dynamic linear models, structural models, Vector Autoregression, cointegration, and generalized ARCH models. The second week begins by discussing characteristics and types of pooled data and underlying assumptions of basic statistical models for panel data before turning to complex error structures, different kinds of heterogeneity (e.g. unit and slope), dynamic specification issues (lag structures), missing data, spatial heterogeneity and dependency, time invariant and rarely changing variables in panel data analysis with correlated unit specific effects among others. Furthermore, we will look at different data generating processes and adequate estimation procedures for e.g. binary choice and limited dependent variable models. 
 
 - [There is a course website.](https://essssda25-2w.netlify.app){target="blank"}
 

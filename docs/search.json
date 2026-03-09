@@ -2,37 +2,37 @@
   {
     "objectID": "teaching/courses-BUS1301.html",
     "href": "teaching/courses-BUS1301.html",
-    "title": "Courses: BUS 1301",
+    "title": "Courses: BUS 1301 - Managing with Data and AI",
     "section": "",
-    "text": "There is a course website."
+    "text": "This course will introduce students to how managers and organizations collect, process, and interpret observations about the world around them to facilitate informed decisions with the aid of models including those of artificial intelligence. The first portion of the course introduces students to models, the concept of data, and the use of data in workplace settings. Students will learn different practical methods of data gathering – from surveys and archives to experiments and crowd sourcing and explore basic methods of organizing data for robust and sustainable deployment. With data in hand, we explore how managers can use data, highlighting the incredible value resulting from cross tabulation, frequency distributions, and simple plots. This value is enhanced with basic statistical inference and populating models with data. One of the greatest barriers to linking data and decisions was the necessary computing; artificial intelligence tools have fundamentally changed that. The final portion of the course will focus on the use of artificial intelligence (AI), highlighting general features of how commonly deployed AI systems function and how they can solve challenges across various areas of business and explore the likely future.\nInformation is a resource; it should be used judiciously and efficiently. While a wealth of information is available at our fingertips, high quality information can remain a surprisingly scarce resource. We are inundated with data, facts, and figures that only become actionable through identifying meaningful patterns and trends, developing fundamental managerial insights, and extracting information essential to inform effective managerial decisions. The tools of this course are among the most important tools of effective managers.\nWhile effective, there is a sense in which limitations imposed by linking decisions to measures and data are reductionist, potentially misleading, and pose potentially deep ethical challenges. Mindful of the central role that ethics must play in shaping organizational pursuits, we will tackle these challenges head on though only you can ground these in your deepest moral sentiments.\n\nThere is a course website."
   },
   {
     "objectID": "teaching/courses-BUS1301.html#bus-1301-managing-with-data-analytics-and-artificial-intelligence",
     "href": "teaching/courses-BUS1301.html#bus-1301-managing-with-data-analytics-and-artificial-intelligence",
-    "title": "Courses: BUS 1301",
+    "title": "Courses: BUS 1301 - Managing with Data and AI",
     "section": "",
-    "text": "There is a course website."
+    "text": "This course will introduce students to how managers and organizations collect, process, and interpret observations about the world around them to facilitate informed decisions with the aid of models including those of artificial intelligence. The first portion of the course introduces students to models, the concept of data, and the use of data in workplace settings. Students will learn different practical methods of data gathering – from surveys and archives to experiments and crowd sourcing and explore basic methods of organizing data for robust and sustainable deployment. With data in hand, we explore how managers can use data, highlighting the incredible value resulting from cross tabulation, frequency distributions, and simple plots. This value is enhanced with basic statistical inference and populating models with data. One of the greatest barriers to linking data and decisions was the necessary computing; artificial intelligence tools have fundamentally changed that. The final portion of the course will focus on the use of artificial intelligence (AI), highlighting general features of how commonly deployed AI systems function and how they can solve challenges across various areas of business and explore the likely future.\nInformation is a resource; it should be used judiciously and efficiently. While a wealth of information is available at our fingertips, high quality information can remain a surprisingly scarce resource. We are inundated with data, facts, and figures that only become actionable through identifying meaningful patterns and trends, developing fundamental managerial insights, and extracting information essential to inform effective managerial decisions. The tools of this course are among the most important tools of effective managers.\nWhile effective, there is a sense in which limitations imposed by linking decisions to measures and data are reductionist, potentially misleading, and pose potentially deep ethical challenges. Mindful of the central role that ethics must play in shaping organizational pursuits, we will tackle these challenges head on though only you can ground these in your deepest moral sentiments.\n\nThere is a course website."
   },
   {
     "objectID": "teaching/courses-DADM.html",
     "href": "teaching/courses-DADM.html",
     "title": "Courses: Data Analysis, Modeling, and Decision-Making",
     "section": "",
-    "text": "DADM 622/5103 is the core/required statistics and data course in the Atkinson Graduate School of Management. While most of the materials are available via the learning management system, I am increasingly migrating to something I have more control over because learning management systems change.\n\nThe Fall 2025 Professionals in Salem website\nThe Fall 2025 Professionals in Portland website\n\n\n\nThere is a set of occasionally and frequently asked questions for this course.\n\n\n\n\n\n\nA Slide Collection"
+    "text": "DADM 622/5103 is the core/required statistics and data course in the Atkinson Graduate School of Management. The course presents an overview of data, statistic, and decision-making as a core part of the Atkinson MBA experience. While most of the materials are available via the learning management system, I am increasingly migrating to something I have more control over because learning management systems change.\n\nThe Fall 2025 Professionals in Salem website\nThe Fall 2025 Professionals in Portland website\n\n\n\nThere is a set of occasionally and frequently asked questions for this course.\n\n\n\n\n\n\nA Slide Collection"
   },
   {
     "objectID": "teaching/courses-Essex.html",
     "href": "teaching/courses-Essex.html",
     "title": "Courses: Panel Data at Essex",
     "section": "",
-    "text": "There is a course website."
+    "text": "The course begins with an overview that presents some key review and background with a focus on linear models. From that foundation, we complete our one week course in time series analysis focusing on univariate time series models, intervention analysis, stationarity, dynamic linear models, structural models, Vector Autoregression, cointegration, and generalized ARCH models. The second week begins by discussing characteristics and types of pooled data and underlying assumptions of basic statistical models for panel data before turning to complex error structures, different kinds of heterogeneity (e.g. unit and slope), dynamic specification issues (lag structures), missing data, spatial heterogeneity and dependency, time invariant and rarely changing variables in panel data analysis with correlated unit specific effects among others. Furthermore, we will look at different data generating processes and adequate estimation procedures for e.g. binary choice and limited dependent variable models.\n\nThere is a course website."
   },
   {
     "objectID": "teaching/courses-Essex.html#panel-data-at-essex",
     "href": "teaching/courses-Essex.html#panel-data-at-essex",
     "title": "Courses: Panel Data at Essex",
     "section": "",
-    "text": "There is a course website."
+    "text": "The course begins with an overview that presents some key review and background with a focus on linear models. From that foundation, we complete our one week course in time series analysis focusing on univariate time series models, intervention analysis, stationarity, dynamic linear models, structural models, Vector Autoregression, cointegration, and generalized ARCH models. The second week begins by discussing characteristics and types of pooled data and underlying assumptions of basic statistical models for panel data before turning to complex error structures, different kinds of heterogeneity (e.g. unit and slope), dynamic specification issues (lag structures), missing data, spatial heterogeneity and dependency, time invariant and rarely changing variables in panel data analysis with correlated unit specific effects among others. Furthermore, we will look at different data generating processes and adequate estimation procedures for e.g. binary choice and limited dependent variable models.\n\nThere is a course website."
   },
   {
     "objectID": "AI-Tools.html",
@@ -186,7 +186,7 @@
     "href": "posts/Rstudio-Github/index.html",
     "title": "Connecting RStudio and Github",
     "section": "",
-    "text": "Last updated: 2026-03-08 23:25:46.956325\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-09 09:10:41.322668\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/Rstudio-Github/index.html#connecting-rstudio-and-github",
@@ -200,7 +200,7 @@
     "href": "posts/InteractiveVisualization/index.html",
     "title": "Interactive Visualizations",
     "section": "",
-    "text": "Last updated: 2026-03-08 23:25:34.925399\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-09 09:10:29.374996\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/InteractiveVisualization/index.html#the-plotly-package",
@@ -235,7 +235,7 @@
     "href": "posts/Trump-Dissent/index.html",
     "title": "A Dissent in the Trump 14th Amendment Case?",
     "section": "",
-    "text": "Last updated: 2026-03-08 23:25:10.03059\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-09 09:10:04.397989\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/Trump-Dissent/index.html#the-trump-case",
@@ -284,7 +284,7 @@
     "href": "posts/Transparency-Shiny/index.html",
     "title": "A Shiny on Corruption Data",
     "section": "",
-    "text": "Last updated: 2026-03-08 23:24:22.394038\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-09 09:09:15.675454\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/Transparency-Shiny/index.html#transparency-data",
@@ -347,7 +347,7 @@
     "href": "posts/Docker-Shiny/index.html",
     "title": "Docker and Shiny",
     "section": "",
-    "text": "Last updated: 2026-03-08 23:24:14.971303\nTimezone: America/Los_Angeles\nWhen it comes to shiny applications, hosting is a perennial concern. The free alternative shinyapps.io works great but limits the number of user applications that can be deployed. One can operate a server and serve the shiny applications for one’s self. To be honest, this solution is probably superior but is also costly insofar as system administration consumes time. There is an in between that is worth exploring.\nWe could link to the apps and deploy them in the cloud. The most common methods for accomplishing this particular task involve Docker containers and using Docker to run the shiny applications. I want to explore this alternative in what follows."
+    "text": "Last updated: 2026-03-09 09:09:08.04366\nTimezone: America/Los_Angeles\nWhen it comes to shiny applications, hosting is a perennial concern. The free alternative shinyapps.io works great but limits the number of user applications that can be deployed. One can operate a server and serve the shiny applications for one’s self. To be honest, this solution is probably superior but is also costly insofar as system administration consumes time. There is an in between that is worth exploring.\nWe could link to the apps and deploy them in the cloud. The most common methods for accomplishing this particular task involve Docker containers and using Docker to run the shiny applications. I want to explore this alternative in what follows."
   },
   {
     "objectID": "posts/Docker-Shiny/index.html#shiny-server.conf",
@@ -537,14 +537,14 @@
     "href": "posts/Pigeons-Pallettes/index.html#imgpalr",
     "title": "Pigeons and Palettes",
     "section": "imgpalr",
-    "text": "imgpalr\n has a package called imgpalr that will extract colors from an image. If I need to, it is install.packages(\"imgpalr\").\nIn the following code chunk, I will load the package and then I want to point it to the pigeon image that I downloaded. In my case, it is in the same directory as the R Markdown file and is called Pigeon.png.\nInside the command image_pal(), I point it to an image, I specify how many colors [5], what type of color scheme, I want qualitative, and then some characteristics of the colors. The plot will show me the image alongside the palette though it is upside down.\n\nlibrary(imgpalr)\nPigeon.colors &lt;- image_pal(\"img/Pigeon.png\", # This will need to be adjusted to the actual file location on your computer.  Mine is in my downloads.\n          n = 20, # How many colors?\n          type = \"qual\", # Type of palette?\n          saturation = c(0.75, 1), \n          brightness = c(0.75, 1), \n          plot = TRUE, # Show the image and the palette?\n          bw = c(0.7, 0.95)\n          )\n\n\n\n\n\n\n\nPigeon.colors\n\n [1] \"#C6A6F6\" \"#F0A1EB\" \"#ED7ED6\" \"#DBA0E8\" \"#9CB2E6\" \"#FFB2FF\" \"#E79BEA\"\n [8] \"#DB9AE7\" \"#EC7BCE\" \"#C7A0E4\" \"#9AB4E3\" \"#F07DDC\" \"#A9B4F1\" \"#EA98E7\"\n[15] \"#9BADE3\" \"#ED8BBE\" \"#E0D092\" \"#EC7BC0\" \"#A0A6E6\" \"#D49BE7\"\n\n\nNow I have a palette in the markdown environment called Pigeon.colors."
+    "text": "imgpalr\n has a package called imgpalr that will extract colors from an image. If I need to, it is install.packages(\"imgpalr\").\nIn the following code chunk, I will load the package and then I want to point it to the pigeon image that I downloaded. In my case, it is in the same directory as the R Markdown file and is called Pigeon.png.\nInside the command image_pal(), I point it to an image, I specify how many colors [5], what type of color scheme, I want qualitative, and then some characteristics of the colors. The plot will show me the image alongside the palette though it is upside down.\n\nlibrary(imgpalr)\nPigeon.colors &lt;- image_pal(\"img/Pigeon.png\", # This will need to be adjusted to the actual file location on your computer.  Mine is in my downloads.\n          n = 20, # How many colors?\n          type = \"qual\", # Type of palette?\n          saturation = c(0.75, 1), \n          brightness = c(0.75, 1), \n          plot = TRUE, # Show the image and the palette?\n          bw = c(0.7, 0.95)\n          )\n\n\n\n\n\n\n\nPigeon.colors\n\n [1] \"#A0A6E6\" \"#EEA2F4\" \"#DCC397\" \"#ED8BBE\" \"#9FACE5\" \"#FB8BEF\" \"#A0B3E5\"\n [8] \"#E88BDB\" \"#99B4EB\" \"#DB9CE3\" \"#D39BE6\" \"#EE9DEB\" \"#98B2E1\" \"#AF98E6\"\n[15] \"#A1A0E4\" \"#D7A6F0\" \"#EC6BCC\" \"#9BADE3\" \"#F08FE8\" \"#9AA4E1\"\n\n\nNow I have a palette in the markdown environment called Pigeon.colors."
   },
   {
     "objectID": "posts/Pigeons-Pallettes/index.html#data-to-plot",
     "href": "posts/Pigeons-Pallettes/index.html#data-to-plot",
     "title": "Pigeons and Palettes",
     "section": "Data to plot",
-    "text": "Data to plot\nNow I need some data; I want five categories to match my palette. The rest is junk.\n\nJunk.data &lt;- data.frame(Stuff=c(\"Hi\",\"Howdy\",\"Hello\",\"Hola\",\"Hallo\"), vals = runif(5, 0.4, 1))\nJunk.data\n\n  Stuff      vals\n1    Hi 0.8208166\n2 Howdy 0.7732994\n3 Hello 0.6954623\n4  Hola 0.9137479\n5 Hallo 0.6689041\n\n\nI want to graph it using a barplot equivalent because I have the height of the bars in vals. Let me use the fill aesthetic to fill the bars in by the five discrete things stored as Stuff. The trick to using it is to manually specify the colors and point it to the Pigeon.colors above.\n\nlibrary(ggplot2)\nggplot(Junk.data) + aes(x=Stuff, y=vals, fill=Stuff) + geom_col() + scale_fill_manual(values = Pigeon.colors) + hrbrthemes::theme_ipsum_rc()"
+    "text": "Data to plot\nNow I need some data; I want five categories to match my palette. The rest is junk.\n\nJunk.data &lt;- data.frame(Stuff=c(\"Hi\",\"Howdy\",\"Hello\",\"Hola\",\"Hallo\"), vals = runif(5, 0.4, 1))\nJunk.data\n\n  Stuff      vals\n1    Hi 0.7318730\n2 Howdy 0.6023415\n3 Hello 0.5954515\n4  Hola 0.9713321\n5 Hallo 0.7660621\n\n\nI want to graph it using a barplot equivalent because I have the height of the bars in vals. Let me use the fill aesthetic to fill the bars in by the five discrete things stored as Stuff. The trick to using it is to manually specify the colors and point it to the Pigeon.colors above.\n\nlibrary(ggplot2)\nggplot(Junk.data) + aes(x=Stuff, y=vals, fill=Stuff) + geom_col() + scale_fill_manual(values = Pigeon.colors) + hrbrthemes::theme_ipsum_rc()"
   },
   {
     "objectID": "posts/UpdatingR/index.html#what-packages-have-i-installed",
@@ -614,7 +614,7 @@
     "href": "posts/parameterized-markdown/index.html",
     "title": "Parameterizing Markdown",
     "section": "",
-    "text": "Last updated: 2026-03-08 23:24:20.031901\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-09 09:09:13.360565\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/parameterized-markdown/index.html#iframe-and-pages",
@@ -838,28 +838,28 @@
     "href": "about.html",
     "title": "About Robert W. Walker, Ph. D.",
     "section": "",
-    "text": "Robert W. Walker’s Curriculum vitae\n\n\nAboutEducationErdos-BaconLocation\n\n\n\n\n\n\n\nRobert W. Walker is an Associate Professor of Quantitative Methods in the Atkinson Graduate School of Management at Willamette University\nHe earned a Ph. D. in political science from the University of Rochester in 2005 and has previously held teaching positions at Dartmouth College, Rice University, Texas A&M University, and Washington University in Saint Louis. His current research develops and applies semi-Markov processes to time-series, cross-section data in international relations and international/comparative political economy. He teaches courses in quantitative methods/applied statistics and microeconomic strategy and previously taught four iterations in the U. S. National Science Foundation funded Empirical Implications of Theoretical Models sequence at Washington University in Saint Louis. His work with Curt Signorino and Muhammet Bas was awarded the Miller Prize for the best article in Political Analysis in 2009.\nHis web presence is robertwwalker.work and his github is https://github.com/robertwwalker.\n\n\n\nWarren Miller Prize\nWith Curt Signorino and Muhammet Bas, I was awarded the Warren Miller Prize for Statistical Backwards Induction —- recognizing the finest contribution to Political Analysis – with a deployment of resampling and standard logistic regression tools.\n\n\n\nPhD Political Science (2005)\nUniversity of Rochester\nMA Political Science (2002)\nUniversity of Rochester\nBA Post-Soviet and East European Studies (1995)\nUniversity of Texas at Austin\nСтрановедение России (1994)\nМосковский государственный лингвистический университет\n\n\nRobert’s Erdos-Bacon Number is 8.\n\n\n\nErdos Number 4\n\n\n\nErdos Table\n\n\n\n\n\n\nBacon Number 4\n\n\n\nBacon Table\n\n\n\n\n\n\n\n\n\n\nAppointments\nZoom\nGoogle Scholar\nOffice Hours: 1300 to 1500 Pacific time on Wednesdays"
+    "text": "Robert W. Walker’s Curriculum vitae\n\n\nAboutEducationErdos-BaconLocation\n\n\n\n\n\n\n\nRobert W. Walker is an Associate Professor of Quantitative Methods in the Atkinson Graduate School of Management at Willamette University\nHe earned a Ph. D. in political science from the University of Rochester in 2005 and has previously held teaching positions at Dartmouth College, Rice University, Texas A&M University, and Washington University in Saint Louis. His current research develops and applies semi-Markov processes to time-series, cross-section data in international relations and international/comparative political economy. He teaches courses in quantitative methods/applied statistics and microeconomic strategy and previously taught four iterations in the U. S. National Science Foundation funded Empirical Implications of Theoretical Models sequence at Washington University in Saint Louis. His work with Curt Signorino and Muhammet Bas was awarded the Miller Prize for the best article in Political Analysis in 2009.\nHis web presence is robertwwalker.work and his github is https://github.com/robertwwalker.\n\n\n\nWarren Miller Prize\nWith Curt Signorino and Muhammet Bas, I was awarded the Warren Miller Prize for Statistical Backwards Induction —- recognizing the finest contribution to Political Analysis – with a deployment of resampling and standard logistic regression tools.\n\n\n\nPhD Political Science (2005)\nUniversity of Rochester\nMA Political Science (2002)\nUniversity of Rochester\nBA Post-Soviet and East European Studies (1995)\nUniversity of Texas at Austin\nСтрановедение России (1994)\nМосковский государственный лингвистический университет\n\n\nRobert’s Erdos-Bacon Number is 8.\n\n\n\nErdos Number 4\n\n\n\nErdos Table\n\n\n\n\n\n\nBacon Number 4\n\n\n\nBacon Table\n\n\n\n\n\n\n\n\n\n\nAppointments\nZoom\nGoogle Scholar\nOffice Hours: 1330 to 1430 Pacific time on Tuesday/Thursday"
   },
   {
     "objectID": "teaching/courses-CWD.html",
     "href": "teaching/courses-CWD.html",
     "title": "Courses: Communicating With Data",
     "section": "",
-    "text": "Communicating with Data is a cross-listed course in the graduate school of Management and the Data Science program. In the course, we explore communication tools, e.g. tables and interactive tables, figures and interactive figures, shiny apps, websites, parameterized markdown, and, quite generically, the provision of tools for end users of data science tooling for insights.\n\nThere is a course website.\n\n\n\n\nThe slides for Spring 2023"
+    "text": "Communicating with Data is a cross-listed course in the graduate school of Management and the Data Science program. In the course, we explore communication tools, e.g. tables and interactive tables, figures and interactive figures, shiny apps, websites, parameterized markdown, and, quite generically, the provision of tools for end users of data science tooling for insights. The course was designed to supplement data science education with the core ability to present insights into digestible forms for decision makers.\n\nThere is a course website.\n\n\n\n\nThe slides for Spring 2023"
   },
   {
     "objectID": "teaching/courses-CWD.html#communicating-with-data",
     "href": "teaching/courses-CWD.html#communicating-with-data",
     "title": "Courses: Communicating With Data",
     "section": "",
-    "text": "Communicating with Data is a cross-listed course in the graduate school of Management and the Data Science program. In the course, we explore communication tools, e.g. tables and interactive tables, figures and interactive figures, shiny apps, websites, parameterized markdown, and, quite generically, the provision of tools for end users of data science tooling for insights.\n\nThere is a course website.\n\n\n\n\nThe slides for Spring 2023"
+    "text": "Communicating with Data is a cross-listed course in the graduate school of Management and the Data Science program. In the course, we explore communication tools, e.g. tables and interactive tables, figures and interactive figures, shiny apps, websites, parameterized markdown, and, quite generically, the provision of tools for end users of data science tooling for insights. The course was designed to supplement data science education with the core ability to present insights into digestible forms for decision makers.\n\nThere is a course website.\n\n\n\n\nThe slides for Spring 2023"
   },
   {
     "objectID": "teaching/index.html",
     "href": "teaching/index.html",
     "title": "Teaching",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nCourses: Communicating With Data\n\n\n\n\n\n\n\n\n\n\n\n\n\nCourses: Panel Data at Essex\n\n\n\n\n\n\n\n\n\n\n\n\n\nCourses: Data Analysis, Modeling, and Decision-Making\n\n\n\n\n\n\n\n\n\n\n\n\n\nCourses: Choice and Forecasting\n\n\n\n\n\n\n\n\n\n\n\n\n\nCourses: BUS 1301\n\n\n\n\n\n\n\n\nNo matching items",
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCourses: Communicating With Data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCourses: Panel Data at Essex\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCourses: Data Analysis, Modeling, and Decision-Making\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCourses: Choice and Forecasting\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCourses: BUS 1301 - Managing with Data and AI\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Teaching"
     ]
@@ -869,13 +869,13 @@
     "href": "teaching/courses-CAF.html",
     "title": "Courses: Choice and Forecasting",
     "section": "",
-    "text": "There is a website for the course."
+    "text": "Models of Choice and Forecasting is intended to augment a first course in linear regression with extensions of linear models to generalized linear models for a broader array of data types and a dive into time series regression and forecasting.\nThe first half of the course is built around The Handbook of Regression Modeling in People Analytics: With Examples in R, Python, and Julia by Keith McNulty [Global Director of Talent Sciences at McKinsey and Company] that covers models for discrete data types [binary, ordered, nominal choices, counts of events, and survival/duration analysis].\nThe second half of the course relies on the excellent Forecasting, Principles and Practice, 3rd Edition, by Rob J. Hyndman and George Athanasopoulos of Monash University in Australia that is entirely supported by R libraries for time series problems.\nThe lectures will focus on intuition and the mathematical logic but the goal is to put the tools into practice. To this end, the expectations are weekly homework exercises to insure that we can actually do what we are presented but there are two key summary deliverables: a project employing a detailed application of choice models near the middle and a project in time series forecasting due at the end of the term. Both are to be presented at the end of the term.\n\nThere is a website for the course."
   },
   {
     "objectID": "teaching/courses-CAF.html#models-of-choice-and-forecasting",
     "href": "teaching/courses-CAF.html#models-of-choice-and-forecasting",
     "title": "Courses: Choice and Forecasting",
     "section": "",
-    "text": "There is a website for the course."
+    "text": "Models of Choice and Forecasting is intended to augment a first course in linear regression with extensions of linear models to generalized linear models for a broader array of data types and a dive into time series regression and forecasting.\nThe first half of the course is built around The Handbook of Regression Modeling in People Analytics: With Examples in R, Python, and Julia by Keith McNulty [Global Director of Talent Sciences at McKinsey and Company] that covers models for discrete data types [binary, ordered, nominal choices, counts of events, and survival/duration analysis].\nThe second half of the course relies on the excellent Forecasting, Principles and Practice, 3rd Edition, by Rob J. Hyndman and George Athanasopoulos of Monash University in Australia that is entirely supported by R libraries for time series problems.\nThe lectures will focus on intuition and the mathematical logic but the goal is to put the tools into practice. To this end, the expectations are weekly homework exercises to insure that we can actually do what we are presented but there are two key summary deliverables: a project employing a detailed application of choice models near the middle and a project in time series forecasting due at the end of the term. Both are to be presented at the end of the term.\n\nThere is a website for the course."
   }
 ]

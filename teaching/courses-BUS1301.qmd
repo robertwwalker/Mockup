@@ -1,9 +1,16 @@
 ---
-title: "Courses: BUS 1301"
+title: "Courses: BUS 1301 - Managing with Data and AI"
 subtitle: "Managing with Data, Analytics, and Artificial Intelligence"
+image: "B1301.png"
 ---
 
 ## BUS 1301: Managing with Data, Analytics, and Artificial Intelligence
+
+This course will introduce students to how managers and organizations collect, process, and interpret observations about the world around them to facilitate informed decisions with the aid of models including those of artificial intelligence. The first portion of the course introduces students to models, the concept of data, and the use of data in workplace settings. Students will learn different practical methods of data gathering – from surveys and archives to experiments and crowd sourcing and explore basic methods of organizing data for robust and sustainable deployment. With data in hand, we explore how managers can use data, highlighting the incredible value resulting from cross tabulation, frequency distributions, and simple plots. This value is enhanced with basic statistical inference and populating models with data. One of the greatest barriers to linking data and decisions was the necessary computing; artificial intelligence tools have fundamentally changed that. The final portion of the course will focus on the use of artificial intelligence (AI), highlighting general features of how commonly deployed AI systems function and how they can solve challenges across various areas of business and explore the likely future.
+
+Information is a resource; it should be used judiciously and efficiently. While a wealth of information is available at our fingertips, high quality information can remain a surprisingly scarce resource. We are inundated with data, facts, and figures that only become actionable through identifying meaningful patterns and trends, developing fundamental managerial insights, and extracting information essential to inform effective managerial decisions. The tools of this course are among the most important tools of effective managers.
+
+While effective, there is a sense in which limitations imposed by linking decisions to measures and data are reductionist, potentially misleading, and pose potentially deep ethical challenges. Mindful of the central role that ethics must play in shaping organizational pursuits, we will tackle these challenges head on though only you can ground these in your deepest moral sentiments.
 
 - [There is a course website.](https://robertwwalker.github.io/BUS1301-SP26/){target="blank"}
 
