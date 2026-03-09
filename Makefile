@@ -24,6 +24,7 @@ build:
 
 # Clean build artifacts
 clean:
+	rm -rf docs/
 	rm -rf _site/
 	rm -rf .quarto/
 	rm -rf _freeze/
