@@ -1,0 +1,24 @@
+---
+title: "Causal Inference"
+---
+
+Two current projects have causal inference goals.
+
+## Causal Inference in Observed Populations
+
+::: {.callout-note icon=false}
+### With Tim Johnson
+
+We have a long-standing project expanding on his work using the Central Personnel Data File from the United State Office of Personnel Management.  In this paper, we examine the interaction of `veteran's preference` and education to demonstrate that the policy has no observable effect in the population.  The computation for this problem has proven a significant challenge.  The paper received a revise and resubmit at *Statistics and Public Policy* years ago but we knew of a problem that we only recently fixed.
+
+**Status**: Under revision for resubmission  
+**Code**: [GitHub Repository](https://github.com)
+:::
+
+## Smoking Project
+
+With Debra Ringold and Kawika Pierson, we examine the role of deterministic and probabilistic language in individual risk perceptions of smoking related health conditions.  We thank the Center for Governance and Public Policy and it's director Tim Johnson for funding assistance with the project.
+
+## General Interest
+
+Judea Pearl's **Causality** and **The Book of Why** provide a powerful foundation for the investigation of causal relationships.  For artificial intelligence, which I am keenly interested in, the ladder of causality in Pearl is of profound interest.

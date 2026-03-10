@@ -1,0 +1,22 @@
+---
+title: "Political Methodology Research"
+---
+
+## Methodology
+
+@lebo2000longmemory demonstrated the widespread applicability of fractional integration methods for political time series.
+
+@bas2008sbi won the Miller Prize for deploying limited information estimators to create `statistical backwards induction` and showed optimal properties when used with resampling estimators.
+
+@walker2016ordered is a theorem/proof treatment of efforts to generalize ordered regression models developed in the proportional-odds/parallel regressions framework.  The paper shows the futility of such efforts.
+
+## Data & Code
+
+All research materials, including data and replication code, are available on my [GitHub](https://github.com/robertwwalker).
+
+I am committed to computational reproducibility and open science. Most projects include:
+
+- Documented R/Python code
+- Data (when not restricted)
+- Quarto/RMarkdown analysis notebooks
+- Instructions for replication

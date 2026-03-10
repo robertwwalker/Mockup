@@ -1,0 +1,22 @@
+---
+title: "Multiple Rater Research"
+---
+
+## Overview
+
+Skip Krueger, I, and co-authors published a series of papers conceptualizing default risk as a multiple rater problem including the papers by  @krueger2010management, @krueger2010boosterism, 
+@walker2009splitratings, and @krueger2008bondratings.
+
+@sinclairchapman2009participation examines political participation in this light.  @maltz2024biosocial used this to explore a key measure.  Current work with Ashley Nixon and co-authors uses these and related techniques for capturing work stress.
+
+
+## Data & Code
+
+All research materials, including data and replication code, are available on my [GitHub](https://github.com/robertwwalker).
+
+I am committed to computational reproducibility and open science. Most projects include:
+
+- Documented R/Python code
+- Data (when not restricted)
+- Quarto/RMarkdown analysis notebooks
+- Instructions for replication

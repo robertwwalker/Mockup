@@ -1,0 +1,22 @@
+---
+title: "Political Economy Research"
+---
+
+## Overview
+
+Almost all of my work sits at the intersection of political science and economics -- political economy.  @walker2005phd contained a series of papers spanning political methodology, international finance, and political institutions.  Skip Krueger, I, and co-authors published a series of papers conceptualizing default risk as a multiple rater problem including the papers by  @krueger2010management, @krueger2010boosterism, 
+@walker2009splitratings, and @krueger2008bondratings.  @krueger2011asd examines how local governments provide services in a political economy framework.
+
+@thompson2014twocities and @pierson2016propertytax examine property taxes and unique [and dysfunctional] features of Oregon's tax system.
+
+
+## Data & Code
+
+All research materials, including data and replication code, are available on my [GitHub](https://github.com/robertwwalker).
+
+I am committed to computational reproducibility and open science. Most projects include:
+
+- Documented R/Python code
+- Data (when not restricted)
+- Quarto/RMarkdown analysis notebooks
+- Instructions for replication

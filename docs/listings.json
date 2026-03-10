@@ -39,6 +39,16 @@
     ]
   },
   {
+    "listing": "/research.html",
+    "items": [
+      "/research/multiple-rater.html",
+      "/research/political-economy.html",
+      "/research/panel-data.html",
+      "/research/causal-inference.html",
+      "/research/political-methodology.html"
+    ]
+  },
+  {
     "listing": "/teaching/index.html",
     "items": [
       "/teaching/BUS1301/index.html",

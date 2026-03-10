@@ -19,7 +19,7 @@ website:
         href: about.qmd
         icon: person-circle
       - text: "Research"
-        href: research/index.qmd
+        href: research.qmd
         icon: graph-up
       - text: "AI Tools"
         href: AI-Tools.qmd
@@ -56,10 +56,11 @@ website:
       style: "floating"
       collapse-level: 1
       contents:
-        - research/index.qmd
+        - research.qmd
         - research/causal-inference.qmd
         - research/multiple-rater.qmd
         - research/panel-data.qmd
+        - research/political-methodology.qmd
         - research/political-economy.qmd
     
     - id: teaching
@@ -67,6 +68,7 @@ website:
       style: "floating"
       collapse-level: 1
       contents:
+        - teaching/index.qmd
         - text: "DADM"
           href: teaching/DADM/index.qmd
         - text: "Essex"

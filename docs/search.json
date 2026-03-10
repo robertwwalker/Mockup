@@ -6,6 +6,7 @@
     "section": "",
     "text": "Communicating with Data is a cross-listed course in the graduate school of Management and the Data Science program. In the course, we explore communication tools, e.g. tables and interactive tables, figures and interactive figures, shiny apps, websites, parameterized markdown, and, quite generically, the provision of tools for end users of data science tooling for insights. The course was designed to supplement data science education with the core ability to present insights into digestible forms for decision makers.\n\nThere is a course website.\n\n\n\n\nThe slides for Spring 2023",
     "crumbs": [
+      "Teaching",
       "Communicating with Data"
     ]
   },
@@ -16,6 +17,7 @@
     "section": "",
     "text": "Communicating with Data is a cross-listed course in the graduate school of Management and the Data Science program. In the course, we explore communication tools, e.g. tables and interactive tables, figures and interactive figures, shiny apps, websites, parameterized markdown, and, quite generically, the provision of tools for end users of data science tooling for insights. The course was designed to supplement data science education with the core ability to present insights into digestible forms for decision makers.\n\nThere is a course website.\n\n\n\n\nThe slides for Spring 2023",
     "crumbs": [
+      "Teaching",
       "Communicating with Data"
     ]
   },
@@ -26,6 +28,7 @@
     "section": "",
     "text": "The course begins with an overview that presents some key review and background with a focus on linear models. From that foundation, we complete our one week course in time series analysis focusing on univariate time series models, intervention analysis, stationarity, dynamic linear models, structural models, Vector Autoregression, cointegration, and generalized ARCH models. The second week begins by discussing characteristics and types of pooled data and underlying assumptions of basic statistical models for panel data before turning to complex error structures, different kinds of heterogeneity (e.g. unit and slope), dynamic specification issues (lag structures), missing data, spatial heterogeneity and dependency, time invariant and rarely changing variables in panel data analysis with correlated unit specific effects among others. Furthermore, we will look at different data generating processes and adequate estimation procedures for e.g. binary choice and limited dependent variable models.\n\nThere is a course website.",
     "crumbs": [
+      "Teaching",
       "Essex"
     ]
   },
@@ -36,6 +39,7 @@
     "section": "",
     "text": "The course begins with an overview that presents some key review and background with a focus on linear models. From that foundation, we complete our one week course in time series analysis focusing on univariate time series models, intervention analysis, stationarity, dynamic linear models, structural models, Vector Autoregression, cointegration, and generalized ARCH models. The second week begins by discussing characteristics and types of pooled data and underlying assumptions of basic statistical models for panel data before turning to complex error structures, different kinds of heterogeneity (e.g. unit and slope), dynamic specification issues (lag structures), missing data, spatial heterogeneity and dependency, time invariant and rarely changing variables in panel data analysis with correlated unit specific effects among others. Furthermore, we will look at different data generating processes and adequate estimation procedures for e.g. binary choice and limited dependent variable models.\n\nThere is a course website.",
     "crumbs": [
+      "Teaching",
       "Essex"
     ]
   },
@@ -46,6 +50,7 @@
     "section": "",
     "text": "Models of Choice and Forecasting is intended to augment a first course in linear regression with extensions of linear models to generalized linear models for a broader array of data types and a dive into time series regression and forecasting.\nThe first half of the course is built around The Handbook of Regression Modeling in People Analytics: With Examples in R, Python, and Julia by Keith McNulty [Global Director of Talent Sciences at McKinsey and Company] that covers models for discrete data types [binary, ordered, nominal choices, counts of events, and survival/duration analysis].\nThe second half of the course relies on the excellent Forecasting, Principles and Practice, 3rd Edition, by Rob J. Hyndman and George Athanasopoulos of Monash University in Australia that is entirely supported by R libraries for time series problems.\nThe lectures will focus on intuition and the mathematical logic but the goal is to put the tools into practice. To this end, the expectations are weekly homework exercises to insure that we can actually do what we are presented but there are two key summary deliverables: a project employing a detailed application of choice models near the middle and a project in time series forecasting due at the end of the term. Both are to be presented at the end of the term.\n\nThere is a website for the course.",
     "crumbs": [
+      "Teaching",
       "Choice and Forecasting"
     ]
   },
@@ -56,6 +61,7 @@
     "section": "",
     "text": "Models of Choice and Forecasting is intended to augment a first course in linear regression with extensions of linear models to generalized linear models for a broader array of data types and a dive into time series regression and forecasting.\nThe first half of the course is built around The Handbook of Regression Modeling in People Analytics: With Examples in R, Python, and Julia by Keith McNulty [Global Director of Talent Sciences at McKinsey and Company] that covers models for discrete data types [binary, ordered, nominal choices, counts of events, and survival/duration analysis].\nThe second half of the course relies on the excellent Forecasting, Principles and Practice, 3rd Edition, by Rob J. Hyndman and George Athanasopoulos of Monash University in Australia that is entirely supported by R libraries for time series problems.\nThe lectures will focus on intuition and the mathematical logic but the goal is to put the tools into practice. To this end, the expectations are weekly homework exercises to insure that we can actually do what we are presented but there are two key summary deliverables: a project employing a detailed application of choice models near the middle and a project in time series forecasting due at the end of the term. Both are to be presented at the end of the term.\n\nThere is a website for the course.",
     "crumbs": [
+      "Teaching",
       "Choice and Forecasting"
     ]
   },
@@ -211,7 +217,7 @@
     "href": "posts/Rstudio-Github/index.html",
     "title": "Connecting RStudio and Github",
     "section": "",
-    "text": "Last updated: 2026-03-09 19:10:19.326819\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-09 20:26:11.508538\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/Rstudio-Github/index.html#connecting-rstudio-and-github",
@@ -225,7 +231,7 @@
     "href": "posts/InteractiveVisualization/index.html",
     "title": "Interactive Visualizations",
     "section": "",
-    "text": "Last updated: 2026-03-09 19:10:06.994076\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-09 20:25:58.893062\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/InteractiveVisualization/index.html#the-plotly-package",
@@ -260,7 +266,7 @@
     "href": "posts/Trump-Dissent/index.html",
     "title": "A Dissent in the Trump 14th Amendment Case?",
     "section": "",
-    "text": "Last updated: 2026-03-09 19:09:47.489458\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-09 20:25:38.712513\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/Trump-Dissent/index.html#the-trump-case",
@@ -309,7 +315,7 @@
     "href": "posts/Transparency-Shiny/index.html",
     "title": "A Shiny on Corruption Data",
     "section": "",
-    "text": "Last updated: 2026-03-09 19:09:02.926153\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-09 20:24:54.020726\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/Transparency-Shiny/index.html#transparency-data",
@@ -442,21 +448,21 @@
     "href": "posts/Pigeons-Pallettes/index.html",
     "title": "Pigeons and Palettes",
     "section": "",
-    "text": "It really is an amazing pigeon. Apologies that I haven’t a photo credit for it; I found it one day on twitter as it went viral. It is a New York City pigeon.\n\n\n\nPigeon\n\n\nI want to color something with colors from that pigeon. First, I have to get the color palette.\n\n\n has a package called imgpalr that will extract colors from an image. If I need to, it is install.packages(\"imgpalr\").\nIn the following code chunk, I will load the package and then I want to point it to the pigeon image that I downloaded. In my case, it is in the same directory as the R Markdown file and is called Pigeon.png.\nInside the command image_pal(), I point it to an image, I specify how many colors [5], what type of color scheme, I want qualitative, and then some characteristics of the colors. The plot will show me the image alongside the palette though it is upside down.\n\n\nCode\nlibrary(imgpalr)\nPigeon.colors &lt;- image_pal(\"img/Pigeon.png\", # This will need to be adjusted to the actual file location on your computer.  Mine is in my downloads.\n          n = 20, # How many colors?\n          type = \"qual\", # Type of palette?\n          saturation = c(0.75, 1), \n          brightness = c(0.75, 1), \n          plot = TRUE, # Show the image and the palette?\n          bw = c(0.7, 0.95)\n          )\n\n\n\n\n\n\n\n\n\nCode\nPigeon.colors\n\n\n [1] \"#EC6BCC\" \"#D39BE6\" \"#FFB3D5\" \"#98B5E0\" \"#EC87DD\" \"#E79DEC\" \"#D69DE5\"\n [8] \"#D5A0F0\" \"#DB9BE3\" \"#DDA0EA\" \"#EB98E2\" \"#EA96E6\" \"#A0B3E5\" \"#EB7DC5\"\n[15] \"#9CB2E6\" \"#F490DF\" \"#93AEDC\" \"#E56BCE\" \"#C7A0E4\" \"#E49BE5\"\n\n\nNow I have a palette in the markdown environment called Pigeon.colors.\n\n\n\nNow I need some data; I want five categories to match my palette. The rest is junk.\n\n\nCode\nJunk.data &lt;- data.frame(Stuff=c(\"Hi\",\"Howdy\",\"Hello\",\"Hola\",\"Hallo\"), vals = runif(5, 0.4, 1))\nJunk.data\n\n\n  Stuff      vals\n1    Hi 0.8346571\n2 Howdy 0.9783474\n3 Hello 0.6630122\n4  Hola 0.8680443\n5 Hallo 0.7874881\n\n\nI want to graph it using a barplot equivalent because I have the height of the bars in vals. Let me use the fill aesthetic to fill the bars in by the five discrete things stored as Stuff. The trick to using it is to manually specify the colors and point it to the Pigeon.colors above.\n\n\nCode\nlibrary(ggplot2)\nggplot(Junk.data) + aes(x=Stuff, y=vals, fill=Stuff) + geom_col() + scale_fill_manual(values = Pigeon.colors) + hrbrthemes::theme_ipsum_rc()"
+    "text": "It really is an amazing pigeon. Apologies that I haven’t a photo credit for it; I found it one day on twitter as it went viral. It is a New York City pigeon.\n\n\n\nPigeon\n\n\nI want to color something with colors from that pigeon. First, I have to get the color palette.\n\n\n has a package called imgpalr that will extract colors from an image. If I need to, it is install.packages(\"imgpalr\").\nIn the following code chunk, I will load the package and then I want to point it to the pigeon image that I downloaded. In my case, it is in the same directory as the R Markdown file and is called Pigeon.png.\nInside the command image_pal(), I point it to an image, I specify how many colors [5], what type of color scheme, I want qualitative, and then some characteristics of the colors. The plot will show me the image alongside the palette though it is upside down.\n\n\nCode\nlibrary(imgpalr)\nPigeon.colors &lt;- image_pal(\"img/Pigeon.png\", # This will need to be adjusted to the actual file location on your computer.  Mine is in my downloads.\n          n = 20, # How many colors?\n          type = \"qual\", # Type of palette?\n          saturation = c(0.75, 1), \n          brightness = c(0.75, 1), \n          plot = TRUE, # Show the image and the palette?\n          bw = c(0.7, 0.95)\n          )\n\n\n\n\n\n\n\n\n\nCode\nPigeon.colors\n\n\n [1] \"#EC75D9\" \"#9CA6E4\" \"#D79CE3\" \"#DB9AE6\" \"#E199E8\" \"#EE86E3\" \"#D0A0EC\"\n [8] \"#DF58C4\" \"#96B5E6\" \"#F794EA\" \"#E88DE2\" \"#AF98E6\" \"#F179D5\" \"#9BADE3\"\n[15] \"#E487BB\" \"#9CB2E6\" \"#F3A6F0\" \"#A39CE1\" \"#F181DC\" \"#E99FEE\"\n\n\nNow I have a palette in the markdown environment called Pigeon.colors.\n\n\n\nNow I need some data; I want five categories to match my palette. The rest is junk.\n\n\nCode\nJunk.data &lt;- data.frame(Stuff=c(\"Hi\",\"Howdy\",\"Hello\",\"Hola\",\"Hallo\"), vals = runif(5, 0.4, 1))\nJunk.data\n\n\n  Stuff      vals\n1    Hi 0.5114001\n2 Howdy 0.5980377\n3 Hello 0.9527482\n4  Hola 0.9062125\n5 Hallo 0.8879749\n\n\nI want to graph it using a barplot equivalent because I have the height of the bars in vals. Let me use the fill aesthetic to fill the bars in by the five discrete things stored as Stuff. The trick to using it is to manually specify the colors and point it to the Pigeon.colors above.\n\n\nCode\nlibrary(ggplot2)\nggplot(Junk.data) + aes(x=Stuff, y=vals, fill=Stuff) + geom_col() + scale_fill_manual(values = Pigeon.colors) + hrbrthemes::theme_ipsum_rc()"
   },
   {
     "objectID": "posts/Pigeons-Pallettes/index.html#imgpalr",
     "href": "posts/Pigeons-Pallettes/index.html#imgpalr",
     "title": "Pigeons and Palettes",
     "section": "",
-    "text": "has a package called imgpalr that will extract colors from an image. If I need to, it is install.packages(\"imgpalr\").\nIn the following code chunk, I will load the package and then I want to point it to the pigeon image that I downloaded. In my case, it is in the same directory as the R Markdown file and is called Pigeon.png.\nInside the command image_pal(), I point it to an image, I specify how many colors [5], what type of color scheme, I want qualitative, and then some characteristics of the colors. The plot will show me the image alongside the palette though it is upside down.\n\n\nCode\nlibrary(imgpalr)\nPigeon.colors &lt;- image_pal(\"img/Pigeon.png\", # This will need to be adjusted to the actual file location on your computer.  Mine is in my downloads.\n          n = 20, # How many colors?\n          type = \"qual\", # Type of palette?\n          saturation = c(0.75, 1), \n          brightness = c(0.75, 1), \n          plot = TRUE, # Show the image and the palette?\n          bw = c(0.7, 0.95)\n          )\n\n\n\n\n\n\n\n\n\nCode\nPigeon.colors\n\n\n [1] \"#EC6BCC\" \"#D39BE6\" \"#FFB3D5\" \"#98B5E0\" \"#EC87DD\" \"#E79DEC\" \"#D69DE5\"\n [8] \"#D5A0F0\" \"#DB9BE3\" \"#DDA0EA\" \"#EB98E2\" \"#EA96E6\" \"#A0B3E5\" \"#EB7DC5\"\n[15] \"#9CB2E6\" \"#F490DF\" \"#93AEDC\" \"#E56BCE\" \"#C7A0E4\" \"#E49BE5\"\n\n\nNow I have a palette in the markdown environment called Pigeon.colors."
+    "text": "has a package called imgpalr that will extract colors from an image. If I need to, it is install.packages(\"imgpalr\").\nIn the following code chunk, I will load the package and then I want to point it to the pigeon image that I downloaded. In my case, it is in the same directory as the R Markdown file and is called Pigeon.png.\nInside the command image_pal(), I point it to an image, I specify how many colors [5], what type of color scheme, I want qualitative, and then some characteristics of the colors. The plot will show me the image alongside the palette though it is upside down.\n\n\nCode\nlibrary(imgpalr)\nPigeon.colors &lt;- image_pal(\"img/Pigeon.png\", # This will need to be adjusted to the actual file location on your computer.  Mine is in my downloads.\n          n = 20, # How many colors?\n          type = \"qual\", # Type of palette?\n          saturation = c(0.75, 1), \n          brightness = c(0.75, 1), \n          plot = TRUE, # Show the image and the palette?\n          bw = c(0.7, 0.95)\n          )\n\n\n\n\n\n\n\n\n\nCode\nPigeon.colors\n\n\n [1] \"#EC75D9\" \"#9CA6E4\" \"#D79CE3\" \"#DB9AE6\" \"#E199E8\" \"#EE86E3\" \"#D0A0EC\"\n [8] \"#DF58C4\" \"#96B5E6\" \"#F794EA\" \"#E88DE2\" \"#AF98E6\" \"#F179D5\" \"#9BADE3\"\n[15] \"#E487BB\" \"#9CB2E6\" \"#F3A6F0\" \"#A39CE1\" \"#F181DC\" \"#E99FEE\"\n\n\nNow I have a palette in the markdown environment called Pigeon.colors."
   },
   {
     "objectID": "posts/Pigeons-Pallettes/index.html#data-to-plot",
     "href": "posts/Pigeons-Pallettes/index.html#data-to-plot",
     "title": "Pigeons and Palettes",
     "section": "",
-    "text": "Now I need some data; I want five categories to match my palette. The rest is junk.\n\n\nCode\nJunk.data &lt;- data.frame(Stuff=c(\"Hi\",\"Howdy\",\"Hello\",\"Hola\",\"Hallo\"), vals = runif(5, 0.4, 1))\nJunk.data\n\n\n  Stuff      vals\n1    Hi 0.8346571\n2 Howdy 0.9783474\n3 Hello 0.6630122\n4  Hola 0.8680443\n5 Hallo 0.7874881\n\n\nI want to graph it using a barplot equivalent because I have the height of the bars in vals. Let me use the fill aesthetic to fill the bars in by the five discrete things stored as Stuff. The trick to using it is to manually specify the colors and point it to the Pigeon.colors above.\n\n\nCode\nlibrary(ggplot2)\nggplot(Junk.data) + aes(x=Stuff, y=vals, fill=Stuff) + geom_col() + scale_fill_manual(values = Pigeon.colors) + hrbrthemes::theme_ipsum_rc()"
+    "text": "Now I need some data; I want five categories to match my palette. The rest is junk.\n\n\nCode\nJunk.data &lt;- data.frame(Stuff=c(\"Hi\",\"Howdy\",\"Hello\",\"Hola\",\"Hallo\"), vals = runif(5, 0.4, 1))\nJunk.data\n\n\n  Stuff      vals\n1    Hi 0.5114001\n2 Howdy 0.5980377\n3 Hello 0.9527482\n4  Hola 0.9062125\n5 Hallo 0.8879749\n\n\nI want to graph it using a barplot equivalent because I have the height of the bars in vals. Let me use the fill aesthetic to fill the bars in by the five discrete things stored as Stuff. The trick to using it is to manually specify the colors and point it to the Pigeon.colors above.\n\n\nCode\nlibrary(ggplot2)\nggplot(Junk.data) + aes(x=Stuff, y=vals, fill=Stuff) + geom_col() + scale_fill_manual(values = Pigeon.colors) + hrbrthemes::theme_ipsum_rc()"
   },
   {
     "objectID": "contact.html",
@@ -508,51 +514,187 @@
     "text": "Affiliation\n\nAtkinson Graduate School of Management\nWillamette University\nSalem, Oregon"
   },
   {
-    "objectID": "research/index.html",
-    "href": "research/index.html",
-    "title": "Research",
+    "objectID": "research/political-methodology.html",
+    "href": "research/political-methodology.html",
+    "title": "Political Methodology Research",
     "section": "",
-    "text": "My research program centers on developing and applying rigorous statistical methods to questions in political economy and public policy. I focus particularly on:\n\nCausal Inference in observational settings\nPanel and Time Series cross-sectional methods\nPolitical Economy of institutions and policy\nStatistical Computing in R and Python",
+    "text": "Lebo, Walker, and Clarke (2000) demonstrated the widespread applicability of fractional integration methods for political time series.\nBas, Signorino, and Walker (2008) won the Miller Prize for deploying limited information estimators to create statistical backwards induction and showed optimal properties when used with resampling estimators.\nWalker (2016) is a theorem/proof treatment of efforts to generalize ordered regression models developed in the proportional-odds/parallel regressions framework. The paper shows the futility of such efforts.",
     "crumbs": [
-      "Research"
+      "Research",
+      "Political Methodology Research"
     ]
   },
   {
-    "objectID": "research/index.html#overview",
-    "href": "research/index.html#overview",
-    "title": "Research",
+    "objectID": "research/political-methodology.html#methodology",
+    "href": "research/political-methodology.html#methodology",
+    "title": "Political Methodology Research",
     "section": "",
-    "text": "My research program centers on developing and applying rigorous statistical methods to questions in political economy and public policy. I focus particularly on:\n\nCausal Inference in observational settings\nPanel and Time Series cross-sectional methods\nPolitical Economy of institutions and policy\nStatistical Computing in R and Python",
+    "text": "Lebo, Walker, and Clarke (2000) demonstrated the widespread applicability of fractional integration methods for political time series.\nBas, Signorino, and Walker (2008) won the Miller Prize for deploying limited information estimators to create statistical backwards induction and showed optimal properties when used with resampling estimators.\nWalker (2016) is a theorem/proof treatment of efforts to generalize ordered regression models developed in the proportional-odds/parallel regressions framework. The paper shows the futility of such efforts.",
     "crumbs": [
-      "Research"
+      "Research",
+      "Political Methodology Research"
     ]
   },
   {
-    "objectID": "research/index.html#current-projects",
-    "href": "research/index.html#current-projects",
-    "title": "Research",
-    "section": "Current Projects",
-    "text": "Current Projects\n\nCausal Inference in Observed Populations\n\n\n\n\n\n\nNoteWith Tim Johnson\n\n\n\nWe have a long-standing project expanding on his work using the Central Personnel Data File from the United State Office of Personnel Management. In this paper, we examine the interaction of veteran's preference and education to demonstrate that the policy has no observable effect in the population. The computation for this problem has proven a significant challenge. The paper received a revise and resubmit at Statistics and Public Policy years ago but we knew of a problem that we only recently fixed.\nStatus: Under revision for resubmission\nCode: GitHub Repository\n\n\n\n\n\nDistributions and LLMs\n\n\n\n\n\n\nTipWith Tim Johnson and Justus Eaglesmith\n\n\n\nThis project examines the ability of OpenAI large language models to recover the distributions that generated simulated data.\nStatus: Letter at the American Statistician Materials: Replication archive\n\n\n\n\n\n\nStatistical Backwards Induction\n\n\n\n\n\n\nTipWith Curt Signorino and Muhammet Bas\n\n\n\nThis project develops statistical methods for analyzing strategic interaction in political science. We extend backwards induction to settings with incomplete information and bounded rationality.\nStatus: Published in Political Analysis\nAward: Warren Miller Prize\nMaterials: Replication archive",
-    "crumbs": [
-      "Research"
-    ]
-  },
-  {
-    "objectID": "research/index.html#data-code",
-    "href": "research/index.html#data-code",
-    "title": "Research",
+    "objectID": "research/political-methodology.html#data-code",
+    "href": "research/political-methodology.html#data-code",
+    "title": "Political Methodology Research",
     "section": "Data & Code",
     "text": "Data & Code\nAll research materials, including data and replication code, are available on my GitHub.\nI am committed to computational reproducibility and open science. Most projects include:\n\nDocumented R/Python code\nData (when not restricted)\nQuarto/RMarkdown analysis notebooks\nInstructions for replication",
     "crumbs": [
-      "Research"
+      "Research",
+      "Political Methodology Research"
     ]
   },
   {
-    "objectID": "research/index.html#software",
-    "href": "research/index.html#software",
+    "objectID": "research/panel-data.html",
+    "href": "research/panel-data.html",
+    "title": "Panel Data",
+    "section": "",
+    "text": "Almost all of my projects involve panel data.",
+    "crumbs": [
+      "Research",
+      "Panel Data"
+    ]
+  },
+  {
+    "objectID": "research/panel-data.html#causal-inference-in-observed-populations",
+    "href": "research/panel-data.html#causal-inference-in-observed-populations",
+    "title": "Panel Data",
+    "section": "Causal Inference in Observed Populations",
+    "text": "Causal Inference in Observed Populations\nTim Johnson and I have a long-standing project expanding on his work using the Central Personnel Data File from the United State Office of Personnel Management. In another paper, Johnson and Walker (2018) looked at career trajectories. In this paper, we examine the interaction of veteran's preference and education to demonstrate that the policy has no observable effect in the population. The computation for this problem has proven a significant challenge. The paper received a revise and resubmit at Statistics and Public Policy years ago but we knew of a problem that we only recently fixed.\nStatus: Under revision for resubmission\nSlides: Harold Clarke Memorial Lecture at Essex, 2025\nCode: GitHub Repository",
+    "crumbs": [
+      "Research",
+      "Panel Data"
+    ]
+  },
+  {
+    "objectID": "research/panel-data.html#between-within-regressions",
+    "href": "research/panel-data.html#between-within-regressions",
+    "title": "Panel Data",
+    "section": "Between-Within Regressions",
+    "text": "Between-Within Regressions\nStarting with Wooldridge and Bayesian methods, we can rearrange Mundlak regressions to orthogonal decompositions.",
+    "crumbs": [
+      "Research",
+      "Panel Data"
+    ]
+  },
+  {
+    "objectID": "research/multiple-rater.html",
+    "href": "research/multiple-rater.html",
+    "title": "Multiple Rater Research",
+    "section": "",
+    "text": "Skip Krueger, I, and co-authors published a series of papers conceptualizing default risk as a multiple rater problem including the papers by Krueger and Walker (2010), Krueger, Hawkins, and Walker (2010), Walker and Krueger (2009), and Krueger and Walker (2008).\nSinclair-Chapman, Walker, and Gillion (2009) examines political participation in this light. Maltz et al. (2024) used this to explore a key measure. Current work with Ashley Nixon and co-authors uses these and related techniques for capturing work stress.",
+    "crumbs": [
+      "Research",
+      "Multiple Rater Research"
+    ]
+  },
+  {
+    "objectID": "research/multiple-rater.html#overview",
+    "href": "research/multiple-rater.html#overview",
+    "title": "Multiple Rater Research",
+    "section": "",
+    "text": "Skip Krueger, I, and co-authors published a series of papers conceptualizing default risk as a multiple rater problem including the papers by Krueger and Walker (2010), Krueger, Hawkins, and Walker (2010), Walker and Krueger (2009), and Krueger and Walker (2008).\nSinclair-Chapman, Walker, and Gillion (2009) examines political participation in this light. Maltz et al. (2024) used this to explore a key measure. Current work with Ashley Nixon and co-authors uses these and related techniques for capturing work stress.",
+    "crumbs": [
+      "Research",
+      "Multiple Rater Research"
+    ]
+  },
+  {
+    "objectID": "research/multiple-rater.html#data-code",
+    "href": "research/multiple-rater.html#data-code",
+    "title": "Multiple Rater Research",
+    "section": "Data & Code",
+    "text": "Data & Code\nAll research materials, including data and replication code, are available on my GitHub.\nI am committed to computational reproducibility and open science. Most projects include:\n\nDocumented R/Python code\nData (when not restricted)\nQuarto/RMarkdown analysis notebooks\nInstructions for replication",
+    "crumbs": [
+      "Research",
+      "Multiple Rater Research"
+    ]
+  },
+  {
+    "objectID": "research/political-economy.html",
+    "href": "research/political-economy.html",
+    "title": "Political Economy Research",
+    "section": "",
+    "text": "Almost all of my work sits at the intersection of political science and economics – political economy. Walker (2005) contained a series of papers spanning political methodology, international finance, and political institutions. Skip Krueger, I, and co-authors published a series of papers conceptualizing default risk as a multiple rater problem including the papers by Krueger and Walker (2010), Krueger, Hawkins, and Walker (2010), Walker and Krueger (2009), and Krueger and Walker (2008). Krueger, Walker, and Bernick (2011) examines how local governments provide services in a political economy framework.\nThompson and Walker (2014) and Pierson, Thompson, and Walker (2016) examine property taxes and unique [and dysfunctional] features of Oregon’s tax system.",
+    "crumbs": [
+      "Research",
+      "Political Economy Research"
+    ]
+  },
+  {
+    "objectID": "research/political-economy.html#overview",
+    "href": "research/political-economy.html#overview",
+    "title": "Political Economy Research",
+    "section": "",
+    "text": "Almost all of my work sits at the intersection of political science and economics – political economy. Walker (2005) contained a series of papers spanning political methodology, international finance, and political institutions. Skip Krueger, I, and co-authors published a series of papers conceptualizing default risk as a multiple rater problem including the papers by Krueger and Walker (2010), Krueger, Hawkins, and Walker (2010), Walker and Krueger (2009), and Krueger and Walker (2008). Krueger, Walker, and Bernick (2011) examines how local governments provide services in a political economy framework.\nThompson and Walker (2014) and Pierson, Thompson, and Walker (2016) examine property taxes and unique [and dysfunctional] features of Oregon’s tax system.",
+    "crumbs": [
+      "Research",
+      "Political Economy Research"
+    ]
+  },
+  {
+    "objectID": "research/political-economy.html#data-code",
+    "href": "research/political-economy.html#data-code",
+    "title": "Political Economy Research",
+    "section": "Data & Code",
+    "text": "Data & Code\nAll research materials, including data and replication code, are available on my GitHub.\nI am committed to computational reproducibility and open science. Most projects include:\n\nDocumented R/Python code\nData (when not restricted)\nQuarto/RMarkdown analysis notebooks\nInstructions for replication",
+    "crumbs": [
+      "Research",
+      "Political Economy Research"
+    ]
+  },
+  {
+    "objectID": "research/causal-inference.html",
+    "href": "research/causal-inference.html",
+    "title": "Causal Inference",
+    "section": "",
+    "text": "Two current projects have causal inference goals.",
+    "crumbs": [
+      "Research",
+      "Causal Inference"
+    ]
+  },
+  {
+    "objectID": "research/causal-inference.html#causal-inference-in-observed-populations",
+    "href": "research/causal-inference.html#causal-inference-in-observed-populations",
+    "title": "Causal Inference",
+    "section": "Causal Inference in Observed Populations",
+    "text": "Causal Inference in Observed Populations\n\n\n\n\n\n\nNoteWith Tim Johnson\n\n\n\nWe have a long-standing project expanding on his work using the Central Personnel Data File from the United State Office of Personnel Management. In this paper, we examine the interaction of veteran's preference and education to demonstrate that the policy has no observable effect in the population. The computation for this problem has proven a significant challenge. The paper received a revise and resubmit at Statistics and Public Policy years ago but we knew of a problem that we only recently fixed.\nStatus: Under revision for resubmission\nCode: GitHub Repository",
+    "crumbs": [
+      "Research",
+      "Causal Inference"
+    ]
+  },
+  {
+    "objectID": "research/causal-inference.html#smoking-project",
+    "href": "research/causal-inference.html#smoking-project",
+    "title": "Causal Inference",
+    "section": "Smoking Project",
+    "text": "Smoking Project\nWith Debra Ringold and Kawika Pierson, we examine the role of deterministic and probabilistic language in individual risk perceptions of smoking related health conditions. We thank the Center for Governance and Public Policy and it’s director Tim Johnson for funding assistance with the project.",
+    "crumbs": [
+      "Research",
+      "Causal Inference"
+    ]
+  },
+  {
+    "objectID": "research/causal-inference.html#general-interest",
+    "href": "research/causal-inference.html#general-interest",
+    "title": "Causal Inference",
+    "section": "General Interest",
+    "text": "General Interest\nJudea Pearl’s Causality and The Book of Why provide a powerful foundation for the investigation of causal relationships. For artificial intelligence, which I am keenly interested in, the ladder of causality in Pearl is of profound interest.",
+    "crumbs": [
+      "Research",
+      "Causal Inference"
+    ]
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
     "title": "Research",
-    "section": "Software",
-    "text": "Software\n\nR Packages\npanelr - Tools for panel data analysis in R\nCRAN | GitHub\ntscsTools - Time series cross-sectional analysis utilities\nGitHub\n\n\nTeaching Materials\nCourse materials and lecture slides are available in the Teaching section.",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nMultiple Rater Research\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPolitical Economy Research\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPanel Data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCausal Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPolitical Methodology Research\n\n\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Research"
     ]
@@ -583,7 +725,7 @@
     "href": "posts/Docker-Shiny/index.html",
     "title": "Docker and Shiny",
     "section": "",
-    "text": "Last updated: 2026-03-09 19:08:54.184863\nTimezone: America/Los_Angeles\nWhen it comes to shiny applications, hosting is a perennial concern. The free alternative shinyapps.io works great but limits the number of user applications that can be deployed. One can operate a server and serve the shiny applications for one’s self. To be honest, this solution is probably superior but is also costly insofar as system administration consumes time. There is an in between that is worth exploring.\nWe could link to the apps and deploy them in the cloud. The most common methods for accomplishing this particular task involve Docker containers and using Docker to run the shiny applications. I want to explore this alternative in what follows."
+    "text": "Last updated: 2026-03-09 20:24:45.3279\nTimezone: America/Los_Angeles\nWhen it comes to shiny applications, hosting is a perennial concern. The free alternative shinyapps.io works great but limits the number of user applications that can be deployed. One can operate a server and serve the shiny applications for one’s self. To be honest, this solution is probably superior but is also costly insofar as system administration consumes time. There is an in between that is worth exploring.\nWe could link to the apps and deploy them in the cloud. The most common methods for accomplishing this particular task involve Docker containers and using Docker to run the shiny applications. I want to explore this alternative in what follows."
   },
   {
     "objectID": "posts/Docker-Shiny/index.html#shiny-server.conf",
@@ -681,7 +823,7 @@
     "href": "posts/parameterized-markdown/index.html",
     "title": "Parameterizing Markdown",
     "section": "",
-    "text": "Last updated: 2026-03-09 19:09:00.661517\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-09 20:24:51.850499\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/parameterized-markdown/index.html#iframe-and-pages",
@@ -940,7 +1082,7 @@
     "href": "about.html#affiliation",
     "title": "About",
     "section": "Affiliation",
-    "text": "Affiliation\n\nAtkinson Graduate School of Management\nWillamette University\nSalem, Oregon"
+    "text": "Affiliation\n\n\n\n\n\n\nBrand\n\n\n\nAtkinson Graduate School of Management Willamette University Salem, Oregon"
   },
   {
     "objectID": "teaching/BUS1301/index.html",
@@ -949,6 +1091,7 @@
     "section": "",
     "text": "This course will introduce students to how managers and organizations collect, process, and interpret observations about the world around them to facilitate informed decisions with the aid of models including those of artificial intelligence. The first portion of the course introduces students to models, the concept of data, and the use of data in workplace settings. Students will learn different practical methods of data gathering – from surveys and archives to experiments and crowd sourcing and explore basic methods of organizing data for robust and sustainable deployment. With data in hand, we explore how managers can use data, highlighting the incredible value resulting from cross tabulation, frequency distributions, and simple plots. This value is enhanced with basic statistical inference and populating models with data. One of the greatest barriers to linking data and decisions was the necessary computing; artificial intelligence tools have fundamentally changed that. The final portion of the course will focus on the use of artificial intelligence (AI), highlighting general features of how commonly deployed AI systems function and how they can solve challenges across various areas of business and explore the likely future.\nInformation is a resource; it should be used judiciously and efficiently. While a wealth of information is available at our fingertips, high quality information can remain a surprisingly scarce resource. We are inundated with data, facts, and figures that only become actionable through identifying meaningful patterns and trends, developing fundamental managerial insights, and extracting information essential to inform effective managerial decisions. The tools of this course are among the most important tools of effective managers.\nWhile effective, there is a sense in which limitations imposed by linking decisions to measures and data are reductionist, potentially misleading, and pose potentially deep ethical challenges. Mindful of the central role that ethics must play in shaping organizational pursuits, we will tackle these challenges head on though only you can ground these in your deepest moral sentiments.\n\nThere is a course website.",
     "crumbs": [
+      "Teaching",
       "BUS 1301: AI Data/Management"
     ]
   },
@@ -959,6 +1102,7 @@
     "section": "",
     "text": "This course will introduce students to how managers and organizations collect, process, and interpret observations about the world around them to facilitate informed decisions with the aid of models including those of artificial intelligence. The first portion of the course introduces students to models, the concept of data, and the use of data in workplace settings. Students will learn different practical methods of data gathering – from surveys and archives to experiments and crowd sourcing and explore basic methods of organizing data for robust and sustainable deployment. With data in hand, we explore how managers can use data, highlighting the incredible value resulting from cross tabulation, frequency distributions, and simple plots. This value is enhanced with basic statistical inference and populating models with data. One of the greatest barriers to linking data and decisions was the necessary computing; artificial intelligence tools have fundamentally changed that. The final portion of the course will focus on the use of artificial intelligence (AI), highlighting general features of how commonly deployed AI systems function and how they can solve challenges across various areas of business and explore the likely future.\nInformation is a resource; it should be used judiciously and efficiently. While a wealth of information is available at our fingertips, high quality information can remain a surprisingly scarce resource. We are inundated with data, facts, and figures that only become actionable through identifying meaningful patterns and trends, developing fundamental managerial insights, and extracting information essential to inform effective managerial decisions. The tools of this course are among the most important tools of effective managers.\nWhile effective, there is a sense in which limitations imposed by linking decisions to measures and data are reductionist, potentially misleading, and pose potentially deep ethical challenges. Mindful of the central role that ethics must play in shaping organizational pursuits, we will tackle these challenges head on though only you can ground these in your deepest moral sentiments.\n\nThere is a course website.",
     "crumbs": [
+      "Teaching",
       "BUS 1301: AI Data/Management"
     ]
   },
@@ -969,6 +1113,7 @@
     "section": "",
     "text": "DADM 622/5103 is the core/required statistics and data course in the Atkinson Graduate School of Management. The course presents an overview of data, statistic, and decision-making as a core part of the Atkinson MBA experience. While most of the materials are available via the learning management system, I am increasingly migrating to something I have more control over because learning management systems change.\n\nThe Fall 2025 Professionals in Salem website\nThe Fall 2025 Professionals in Portland website\n\n\n\nThere is a set of occasionally and frequently asked questions for this course.\n\n\n\n\n\n\nA Slide Collection",
     "crumbs": [
+      "Teaching",
       "DADM"
     ]
   }

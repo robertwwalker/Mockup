@@ -1,0 +1,18 @@
+---
+title: "Panel Data"
+---
+
+Almost all of my projects involve panel data.
+
+## Causal Inference in Observed Populations
+
+Tim Johnson and I have a long-standing project expanding on his work using the Central Personnel Data File from the United State Office of Personnel Management.  In another paper, @johnson2018veterans looked at career trajectories.  In this paper, we examine the interaction of `veteran's preference` and education to demonstrate that the policy has no observable effect in the population.  The computation for this problem has proven a significant challenge.  The paper received a revise and resubmit at *Statistics and Public Policy* years ago but we knew of a problem that we only recently fixed.  
+
+**Status**: Under revision for resubmission  
+**Slides**: [Harold Clarke Memorial Lecture at Essex, 2025](https://robertwwalker.github.io/Essex-slides/ESSSSDA25-HDCTalk/)  
+**Code**: [GitHub Repository](https://github.com)
+
+
+## Between-Within Regressions
+
+Starting with Wooldridge and Bayesian methods, we can rearrange Mundlak regressions to orthogonal decompositions.

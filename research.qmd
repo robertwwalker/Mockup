@@ -1,0 +1,13 @@
+---
+title: "Research"
+listing:
+  contents: research # The folder created by the script
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  page-size: 12
+  fields: [date, title, author]
+page-layout: full
+---

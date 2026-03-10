@@ -154,7 +154,20 @@ m
 ## Affiliation
 
 ::: {.affiliation-box}
-**Atkinson Graduate School of Management**  
-Willamette University  
+
+:::: {.columns}
+
+::: {.column width="30%"}
+![Brand](images/agsm-logo.jpeg){height=120}
+:::
+
+::: {.column width="70%"}
+*Atkinson Graduate School of Management*
+**Willamette University**
 Salem, Oregon
 :::
+
+::::
+
+:::
+
