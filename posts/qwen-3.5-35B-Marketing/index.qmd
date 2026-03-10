@@ -1,5 +1,5 @@
 ---
-title: "Exploring qwen-3.5 35B"
+title: "Exploring qwen-3.5 35B in Marketing"
 author: "Robert W. Walker"
 date: "2026-03-10"
 categories: [qwen-3.5, "local AI"]
@@ -23,7 +23,7 @@ library(reticulate)
 Give me six to eight commonly used models in marketing.  Elaborate each model including relevant citations and a formal description of the model.  Consider, in each case, how we might utilize Monte Carlo simulation methods to study and apply the model.  Provide sample python code if you can for each one but that is far less important than detailed, thorough, and correct descriptions of the models with a few citations for each.
 :::
 
-![qwen-3.5](./img/.xdp-qwen1A.png-25lnhO)
+![qwen-3.5-MKTG](./img/qwen1A.png)
 
 
 

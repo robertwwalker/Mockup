@@ -1,5 +1,5 @@
 ---
-title: "Exploring qwen-3.5 35B"
+title: "Exploring qwen-3.5 35B in Accounting"
 author: "Robert W. Walker"
 date: "2026-03-09"
 categories: [qwen-3.5, "local AI"]
