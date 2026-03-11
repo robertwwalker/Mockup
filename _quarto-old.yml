@@ -1,0 +1,109 @@
+project:
+  type: website
+  output-dir: docs/
+  resources:
+    - ".nojekyll"
+
+website:
+  title: "Robert W. Walker"
+  site-url: "https://robertwwalker.github.io/Mockup/"
+  description: "Associate Professor of Quantitative Methods"
+  favicon: images/favicon.png
+  
+  navbar:
+    logo: images/agsm-logo.jpeg
+    background: "#16181d"
+    foreground: "#e8e9ed"
+    left:
+      - text: "About"
+        href: about.qmd
+        icon: person-circle
+      - text: "Research"
+        href: research.qmd
+        icon: graph-up
+      - text: "AI Tools"
+        href: AI-Tools.qmd
+        icon: robot
+      - text: "Teaching"
+        href: teaching/index.qmd
+        icon: mortarboard
+      - text: "Publications"
+        href: publications.qmd
+        icon: file-earmark-text
+      - text: "Blog"
+        href: posts/index.qmd
+        icon: pencil-square
+    right:
+      - icon: envelope
+        href: mailto:rwalker@willamette.edu
+        aria-label: Email
+      - icon: github
+        href: https://github.com/robertwwalker
+        aria-label: GitHub
+      - icon: twitter
+        href: https://twitter.com/PieRatio
+        aria-label: Twitter
+
+  page-footer:
+    background: "#16181d"
+    foreground: "#7a7f8c"
+    center: |
+      © 2024 Robert W. Walker · Powered by [Quarto](https://quarto.org) · Designed with artistry and precision
+    
+  sidebar:
+    - id: research
+      title: "Research"
+      style: "floating"
+      collapse-level: 1
+      contents:
+        - research.qmd
+        - research/causal-inference.qmd
+        - research/multiple-rater.qmd
+        - research/panel-data.qmd
+        - research/political-methodology.qmd
+        - research/political-economy.qmd
+    
+    - id: teaching
+      title: "Teaching"
+      style: "floating"
+      collapse-level: 1
+      contents:
+        - teaching/index.qmd
+        - text: "DADM"
+          href: teaching/DADM/index.qmd
+        - text: "Essex"
+          href: teaching/Essex/index.qmd
+        - text: "Choice and Forecasting"
+          href: teaching/ChoiceForecasting/index.qmd
+        - text: "Communicating with Data"
+          href: teaching/DataCommunication/index.qmd
+        - text: "BUS 1301: AI Data/Management"
+          href: teaching/BUS1301/index.qmd
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - css/steampunk-INTEGRATED.scss
+    css: 
+      - css/custom-cards.css
+      - css/floating-card-standalone.css
+      - css/navbar-branding.css
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true
+    code-copy: true
+    code-overflow: wrap
+    code-fold: true
+    highlight-style: monokai
+    mainfont: "Baskerville, Georgia, serif"
+    fontsize: 1em
+    linestretch: 1.6
+    bibliography: references.bib
+
+execute:
+  freeze: auto
+  echo: true
+  warning: false
+  message: false
+

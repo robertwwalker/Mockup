@@ -9,10 +9,10 @@ website:
   site-url: "https://robertwwalker.github.io/Mockup/"
   description: "Associate Professor of Quantitative Methods"
   favicon: images/favicon.png
-  
+
   navbar:
     logo: images/agsm-logo.jpeg
-    background: "#16181d"
+    background: "transparent"
     foreground: "#e8e9ed"
     left:
       - text: "About"
@@ -45,11 +45,11 @@ website:
         aria-label: Twitter
 
   page-footer:
-    background: "#16181d"
-    foreground: "#7a7f8c"
+    background: "transparent"
+    foreground: "#c8ccd6"
     center: |
       © 2024 Robert W. Walker · Powered by [Quarto](https://quarto.org) · Designed with artistry and precision
-    
+
   sidebar:
     - id: research
       title: "Research"
@@ -62,7 +62,7 @@ website:
         - research/panel-data.qmd
         - research/political-methodology.qmd
         - research/political-economy.qmd
-    
+
     - id: teaching
       title: "Teaching"
       style: "floating"
@@ -82,11 +82,11 @@ website:
 
 format:
   html:
-    theme: 
+    theme:
       - cosmo
-      - css/steampunk-INTEGRATED.scss
-    css: 
-      - css/custom-cards.css
+      - css/steampunk-cgpt-r3.scss
+    css:
+      - css/cgpt-cards.css
       - css/floating-card-standalone.css
       - css/navbar-branding.css
     toc: false
@@ -106,4 +106,3 @@ execute:
   echo: true
   warning: false
   message: false
-

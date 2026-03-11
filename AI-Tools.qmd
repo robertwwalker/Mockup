@@ -2,27 +2,25 @@
 title: "AI Tools"
 ---
 
-::: {.cards}
+::: {.home-bubble-grid}
 
-::: {.card}
+::: {.home-bubble-card}
 ## Tech Readiness Tool
 
 [A Tech Readiness Tutorial](https://robertwwalker.github.io/TJTechReady/index.html){target="_blank"}
 :::
 
 
-::: {.card}
+::: {.home-bubble-card}
 ## An Operations Simulator
 
 [Queueing Theory Simulations](https://robertwwalker.github.io/AI-Tools/ClaudeQueues/){target="_blank"}
 :::
 
-::: {.card}
+::: {.home-bubble-card}
 ## Probability and Stats Tools
 
 [Some Statistics Tools](https://robertwwalker.github.io/GeminiStatsDist/){target="_blank"}
 :::
-
-
 
 :::

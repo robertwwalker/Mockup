@@ -1,0 +1,404 @@
+/*-- scss:defaults --*/
+
+/* =======================================================
+   Robert W. Walker site theme
+   Integrated Quarto SCSS with cleaner spacing
+   ======================================================= */
+
+$lavender: #AF98E6;
+$pink: #DA99E6;
+$pale-yellow: #E5DD97;
+$rose: #DD92C5;
+$periwinkle: #9CA6E3;
+
+$bg-darkest: #1a0f2e;
+$bg-dark: #22133a;
+$bg-medium: #2a1a45;
+$bg-light: #362756;
+
+$text-primary: #e8e9ed;
+$text-secondary: #c4c7ce;
+$text-muted: #b4b7be;
+
+$font-family-serif: "Baskerville","Georgia",serif;
+$font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+
+$body-bg: $bg-dark;
+$body-color: $text-primary;
+
+$link-color: $periwinkle;
+$link-hover-color: $pale-yellow;
+
+/* spacing scale */
+
+$space-1: .5rem;
+$space-2: .75rem;
+$space-3: 1rem;
+$space-4: 1.25rem;
+$space-5: 1.5rem;
+$space-6: 2rem;
+
+$radius-lg: 1.25rem;
+$radius-md: .9rem;
+
+/*-- scss:rules --*/
+
+/* =======================================================
+   Base document
+   ======================================================= */
+
+html {
+  min-height:100%;
+  scroll-behavior:smooth;
+}
+
+body {
+  min-height:100vh;
+  background-color:$bg-dark;
+  color:$text-primary;
+  font-family:$font-family-serif;
+  line-height:1.65;
+}
+
+/* persistent hero background */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba($bg-darkest,.18) 0%,
+      rgba($bg-dark,.34) 24%,
+      rgba($bg-medium,.56) 52%,
+      rgba($bg-dark,.82) 78%,
+      rgba($bg-darkest,.94) 100%
+    ),
+    url("images/FinalBanner.webp") center top / cover no-repeat;
+}
+
+/* atmospheric color wash */
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at top left,rgba($lavender,.08),transparent 30%),
+    radial-gradient(circle at top right,rgba($rose,.07),transparent 28%);
+}
+
+/* =======================================================
+   Vertical rhythm cleanup
+   ======================================================= */
+
+p,
+ul,
+ol,
+dl,
+table,
+blockquote,
+pre{
+  margin-top:0;
+  margin-bottom:$space-4;
+}
+
+ul,ol{
+  padding-left:1.35rem;
+}
+
+li+li{
+  margin-top:.25rem;
+}
+
+h1,h2,h3,h4,h5,h6{
+  color:#f2f0f8;
+  line-height:1.2;
+  margin-top:$space-6;
+  margin-bottom:$space-3;
+}
+
+h1{
+  margin-top:0;
+  font-size:clamp(2.2rem,4vw,3.7rem);
+}
+
+h2{
+  font-size:clamp(1.6rem,2.5vw,2.2rem);
+  border:none;
+  padding-bottom:0;
+}
+
+h3{
+  font-size:1.3rem;
+}
+
+h1+p,
+h2+p,
+h3+p{
+  margin-top:0;
+}
+
+p,li{
+  color:$text-secondary;
+}
+
+a{
+  color:$periwinkle;
+  text-decoration-thickness:1px;
+  text-underline-offset:.16em;
+}
+
+a:hover{
+  color:$pale-yellow;
+}
+
+strong{
+  color:$pale-yellow;
+}
+
+/* =======================================================
+   Quarto page shell
+   ======================================================= */
+
+#quarto-content,
+.quarto-container,
+.page-layout-article,
+.page-layout-custom,
+main.content,
+.content{
+  background:transparent !important;
+}
+
+#quarto-content{
+  min-height:100vh;
+  padding-top:$space-3;
+}
+
+/* content panel */
+
+main.content,
+.page-layout-article .content,
+.page-layout-custom .content{
+  background:
+    linear-gradient(
+      135deg,
+      rgba($bg-light,.82),
+      rgba($bg-medium,.78)
+    );
+  border:1px solid rgba($lavender,.22);
+  border-radius:$radius-lg;
+  padding:$space-5 $space-5 $space-6;
+  margin-top:$space-3;
+  margin-bottom:$space-5;
+  backdrop-filter:blur(12px);
+}
+
+/* remove huge title gaps */
+
+.quarto-title-block{
+  margin-top:0;
+  margin-bottom:$space-3;
+  padding:0;
+  background:transparent !important;
+  border:0 !important;
+}
+
+.quarto-title-banner{
+  background:transparent !important;
+  padding:0 !important;
+  border:0 !important;
+}
+
+/* =======================================================
+   Navbar
+   ======================================================= */
+
+.navbar{
+  background:
+    linear-gradient(
+      to bottom,
+      rgba($bg-dark,.84),
+      rgba($bg-dark,.60)
+    ) !important;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba($lavender,.18);
+  padding-top:.45rem;
+  padding-bottom:.45rem;
+}
+
+.navbar,
+.navbar *{
+  font-family:$font-family-sans-serif;
+}
+
+.navbar-brand{
+  display:inline-flex;
+  align-items:center;
+  gap:.65rem;
+}
+
+.navbar-brand img{
+  height:34px;
+}
+
+/* =======================================================
+   Sidebar / TOC
+   ======================================================= */
+
+.sidebar,
+.sidebar-navigation,
+#TOC{
+  background:
+    linear-gradient(
+      135deg,
+      rgba($bg-light,.60),
+      rgba($bg-medium,.54)
+    ) !important;
+  border:1px solid rgba($lavender,.18);
+  border-radius:$radius-md;
+  backdrop-filter:blur(12px);
+}
+
+.sidebar,
+.sidebar-navigation,
+#TOC{
+  padding:$space-3;
+}
+
+/* =======================================================
+   Footer
+   ======================================================= */
+
+.nav-footer,
+.page-footer{
+  background:rgba($bg-dark,.68) !important;
+  border-top:1px solid rgba($lavender,.16);
+  backdrop-filter:blur(10px);
+  padding:$space-3;
+}
+
+/* =======================================================
+   Cards
+   ======================================================= */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:$space-5;
+  margin-top:$space-5;
+}
+
+.card{
+  background:
+    linear-gradient(
+      135deg,
+      rgba($bg-light,.66),
+      rgba($bg-medium,.52)
+    );
+  border:1px solid rgba($lavender,.20);
+  border-radius:$radius-md;
+  padding:$space-5;
+  backdrop-filter:blur(12px);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 16px 36px rgba(0,0,0,.28);
+}
+
+.card h2{
+  margin-top:0;
+  margin-bottom:$space-3;
+}
+
+/* =======================================================
+   Floating card
+   ======================================================= */
+
+.floating-card-wrapper{
+  position:relative;
+  max-width:900px;
+  margin:-70px auto $space-6;
+  padding:0 $space-4;
+}
+
+.floating-card{
+  background:
+    linear-gradient(
+      135deg,
+      rgba($bg-light,.95),
+      rgba($bg-medium,.90)
+    );
+  border:1px solid rgba($lavender,.36);
+  border-radius:$radius-lg;
+  padding:$space-6;
+  backdrop-filter:blur(12px);
+  box-shadow:0 20px 56px rgba(0,0,0,.40);
+}
+
+/* =======================================================
+   Tables / code
+   ======================================================= */
+
+table{
+  background:rgba($bg-medium,.24);
+  border-radius:.75rem;
+}
+
+pre{
+  background:rgba(15,12,25,.78);
+  border:1px solid rgba($lavender,.14);
+  border-radius:.85rem;
+  padding:$space-4;
+}
+
+code:not(pre code){
+  background:rgba($bg-medium,.35);
+  padding:.12rem .35rem;
+  border-radius:.35rem;
+}
+
+/* =======================================================
+   Responsive
+   ======================================================= */
+
+@media(max-width:768px){
+
+  #quarto-content{
+    padding-top:$space-2;
+  }
+
+  main.content{
+    padding:$space-4;
+    margin-top:$space-2;
+    margin-bottom:$space-4;
+  }
+
+  h1{
+    font-size:2.2rem;
+  }
+
+  .cards{
+    gap:$space-4;
+  }
+
+  .card{
+    padding:$space-4;
+  }
+
+  .floating-card-wrapper{
+    margin:-40px auto $space-5;
+    padding:0 $space-3;
+  }
+
+  .floating-card{
+    padding:$space-4;
+  }
+
+}

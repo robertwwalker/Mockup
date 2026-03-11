@@ -1,53 +1,59 @@
 ---
-title: "Robert W. Walker, Ph. D."
-page-layout: full
-toc: false
+title: "Robert W. Walker"
 ---
 
+::: {.home-hero-overlay}
+::: {.home-bubble}
+
+
+::: {.lead}
 I am an [Associate Professor of Quantitative Methods](https://my.willamette.edu/people/rwalker) at the [Atkinson Graduate School of Management](https://willamette.edu/academics/mba/), [Willamette University](https://willamette.edu). My research explores [causal inference](research/causal-inference.qmd), [political economy](research/political-economy.qmd), and statistical computing.  I work to transform complex data into actionable understanding.
+:::
 
-::: {.cards}
+::: {.home-bubble-grid}
 
-::: {.card}
+::: {.home-bubble-card}
 ## About
 Learn about my background, education, and academic journey through appointments at Harvard, Dartmouth, and Texas A&M.
 
 [Learn more →](about.qmd)
 :::
 
-::: {.card}
+::: {.home-bubble-card}
 ## Research
 Causal inference, panel data methods, political economy, and statistical computing with R and Python.
 
 [Explore research →](research.qmd)
 :::
 
-::: {.card}
+::: {.home-bubble-card}
 ## Publications
 Peer-reviewed articles, working papers, and citation metrics from my work in quantitative methods.
 
 [View publications →](publications.qmd)
 :::
 
-::: {.card}
+::: {.home-bubble-card}
 ## Teaching
 Courses in data analytics, statistical methods, and computational social science at Willamette and Essex Summer School.
 
 [See courses →](teaching/index.qmd)
 :::
 
-::: {.card}
+::: {.home-bubble-card}
 ## Blog
 Thoughts on statistics, R programming, data visualization, and reproducible research.
 
 [Read posts →](posts/index.qmd)
 :::
 
-::: {.card}
+::: {.home-bubble-card}
 ## Contact
 Get in touch via email, GitHub, or Twitter. Office hours Wednesdays 1-3pm or by appointment.
 
 [Connect →](contact.qmd)
 :::
 
+:::
+:::
 :::

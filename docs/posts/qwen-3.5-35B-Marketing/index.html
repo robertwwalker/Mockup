@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-45e8e462cd760eca75dbd85b13f1b7a2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ad65f16eac3e46b7a7317244f610487a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-0fdb5d029f019d5c91fa7fd1c2926b34.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -139,7 +139,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../../css/custom-cards.css">
+<link rel="stylesheet" href="../../css/cgpt-cards.css">
 <link rel="stylesheet" href="../../css/floating-card-standalone.css">
 <link rel="stylesheet" href="../../css/navbar-branding.css">
 </head>
@@ -339,7 +339,7 @@ window.Quarto = {
 <p><strong>Relevant Citations:</strong> * Bass, F. M. (1969). “A New Product Growth Model for Consumer Durables.” <em>Management Science</em>, 15(5), 215–227. * Mahajan, V., Muller, E., &amp; Bass, F. M. (1990). “New Product Diffusion Models in Marketing: A Review and Directions for Research.” <em>Journal of Marketing</em>.</p>
 <p><strong>Monte Carlo Application:</strong> The primary utility of Monte Carlo simulation in the Bass Model lies in <strong>parameter uncertainty</strong>. The coefficients <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are estimated from historical data or analogs, but estimates come with confidence intervals. By sampling thousands of <span class="math inline">\((p, q)\)</span> pairs from a multivariate normal distribution defined by their means and covariance matrix (derived from Maximum Likelihood Estimation), marketers can generate a probability distribution for future sales rather than a single point estimate. This allows the calculation of risk metrics, such as the 95% confidence interval for peak sales volume or time-to-peak.</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div id="391eb0e5" class="cell" data-execution_count="1">
+<div id="620a7c6c" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -384,7 +384,7 @@ window.Quarto = {
 <p><strong>Relevant Citations:</strong> * Fader, P. S., Hardie, B. G. S., &amp; Lee, J. K. (2005). “Counting Your Customers’ Customers.” <em>Marketing Science</em>, 24(1), 89–96. * Fader, P. S., &amp; Hardie, B. G. S. (2013). “Overcoming the ‘LTV Curse’: A Guide to Using CLV in Marketing Strategy.” <em>MIT Sloan</em>.</p>
 <p><strong>Monte Carlo Application:</strong> In BG/NBD, parameter estimates (<span class="math inline">\(\lambda\)</span>, <span class="math inline">\(r\)</span>, <span class="math inline">\(\alpha\)</span>) are derived via Expectation-Maximization (EM) algorithms. However, these point estimates do not capture the full uncertainty of individual customer predictions. Monte Carlo simulation is used to propagate this parameter uncertainty into <strong>Customer Lifetime Value (CLV)</strong> forecasts. By drawing samples from the posterior distribution of the model parameters for each customer and running thousands of simulations for their future purchase probability, marketers can derive a probabilistic CLV range (e.g., “There is an 80% chance this customer will generate between $150 and $250”).</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div id="b45b0f5c" class="cell" data-execution_count="2">
+<div id="589ddb2a" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -429,7 +429,7 @@ window.Quarto = {
 <p><strong>Monte Carlo Application:</strong></p>
 <p>MMM suffers from multicollinearity (spend variables often move together), making standard regression point estimates unstable. Bayesian MMM utilizes Markov Chain Monte Carlo (MCMC) methods to sample from the posterior distribution of the model coefficients (<span class="math inline">\(\beta\)</span>). This allows for <strong>Budget Allocation Optimization</strong>. By simulating thousands of potential budget allocations and running them through the sampled <span class="math inline">\(\beta\)</span> distributions, one can calculate the probability that a specific allocation will yield a higher ROI than another. It transforms MMM from a deterministic forecast into a risk-adjusted decision engine.</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div id="6563f261" class="cell" data-execution_count="3">
+<div id="d150e89d" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -467,7 +467,7 @@ window.Quarto = {
 <p><strong>Relevant Citations:</strong> * Green, P. E., &amp; Srinivasan, V. (1978). “Conjoint Analysis in Consumer Research: Issues and Outlook.” <em>Journal of Consumer Research</em>. * Huber, J., &amp; Zwick, R. (1993). “Sensitivity to Attribute Importance in Conjoint Analysis.” <em>Marketing Letters</em>.</p>
 <p><strong>Monte Carlo Application:</strong> Monte Carlo simulation is used in <strong>Market Share Simulations</strong>. Once part-worth utilities are estimated from survey data, analysts can simulate a virtual population of consumers by sampling their individual utility functions (often modeled as Normal distributions). By running thousands of choice tasks where products vary in price and features against hypothetical competitors, the model predicts market share under different scenarios. This allows for “What-If” analysis on pricing strategies without costly real-world trials.</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div id="f8618a4b" class="cell" data-execution_count="4">
+<div id="9d48dbf8" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -510,7 +510,7 @@ window.Quarto = {
 <p><strong>Relevant Citations:</strong> * Scarf, H. (1960). “Optimal Policy for a Multiechelon Inventory Problem.” <em>Operations Research</em>. * Arrow, K., Harris, T., &amp; Marschak, J. (1958). “Optimal Inventory Policy.” <em>Econometrica</em>, 24(2), 307–322.</p>
 <p><strong>Monte Carlo Application:</strong> The classical Newsvendor solution assumes a known demand distribution <span class="math inline">\(F\)</span>. However, marketing promotions introduce volatility that makes the true demand distribution uncertain. Monte Carlo simulation is used to <strong>simulate the Demand Distribution</strong>. Instead of assuming Normal or Poisson distributions, marketers can simulate demand by randomly sampling from a distribution derived from historical promotion lift data (including variance). This generates an optimal quantity range and quantifies the probability of stockouts for different marketing budget levels.</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div id="047545ed" class="cell" data-execution_count="5">
+<div id="c5aa9893" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -546,7 +546,7 @@ window.Quarto = {
 <p><strong>Relevant Citations:</strong> * Lemmens, A., &amp; Croux, S. (2006). “Marketing Mix Models: An Application of Markov Chains.” <em>Journal of Marketing</em>. * Fader, P. S., et al.&nbsp;(2017). “Customer Journey Analytics: Using Markov Chains to Model the Path to Purchase.”</p>
 <p><strong>Monte Carlo Application:</strong> Markov models are deterministic given a fixed transition matrix, but real-world customer behavior is noisy. Monte Carlo simulation is used for <strong>Path Simulation and Attribution</strong>. By simulating thousands of hypothetical customer paths starting from a “Start” state (e.g., Awareness) using the transition probabilities as weights, analysts can calculate the probability of conversion via specific routes. Furthermore, it allows for <strong>Sensitivity Analysis</strong>: by perturbing the transition probabilities (e.g., increasing Email retention rate), one can simulate how attribution scores shift, helping to prioritize channel spend.</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div id="b08d5223" class="cell" data-execution_count="6">
+<div id="0e12715b" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -592,7 +592,7 @@ window.Quarto = {
 <p><strong>Relevant Citations:</strong> * Cohen, J. (1988). <em>Statistical Power Analysis for the Behavioral Sciences</em>. Lawrence Erlbaum Associates. * Kohavi, R., et al.&nbsp;(2009). “On Online A/B Testing.” <em>Proceedings of the 15th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em>.</p>
 <p><strong>Monte Carlo Application:</strong> Before launching a test, marketers must determine sample size to ensure sufficient power. Analytical formulas exist for this, but they assume normality and known variance which rarely hold in real-world marketing data (e.g., skewed conversion rates). Monte Carlo simulation allows for <strong>Power Simulation</strong>. By generating synthetic datasets that mimic the specific skewness or noise of historical traffic data, marketers can estimate the actual power of a proposed sample size. This prevents “underpowered” tests where a significant improvement is missed simply due to insufficient variance handling in analytical approximations.</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div id="50b699bf" class="cell" data-execution_count="7">
+<div id="05556497" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -759,7 +759,7 @@ f(t) = (p + qF(t))(1 - F(t))
 F(t) = \frac{1 - e^{-(p+q)t}}{1 + \frac{q}{p}e^{-(p+q)t}}
 \]</span></p>
 <p>Monte Carlo simulation is useful because real markets exhibit uncertainty in parameters and market size.</p>
-<div id="00647d51" class="cell" data-execution_count="8">
+<div id="d95fc1ea" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -809,7 +809,7 @@ F(t) = \frac{1 - e^{-(p+q)t}}{1 + \frac{q}{p}e^{-(p+q)t}}
 <li>Customers may become inactive after transactions</li>
 </ul>
 <p>The model uses frequency, recency, and the observation window. Monetary value is often modeled separately using a Gamma-Gamma model.</p>
-<div id="9d757023" class="cell" data-execution_count="9">
+<div id="34b5d899" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -842,7 +842,7 @@ F(t) = \frac{1 - e^{-(p+q)t}}{1 + \frac{q}{p}e^{-(p+q)t}}
 <span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean purchases:"</span>, sim.mean())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Mean purchases: 1.235</code></pre>
+<pre><code>Mean purchases: 1.246</code></pre>
 </div>
 </div>
 <p>Monte Carlo simulation can be used to evaluate uncertainty in predicted customer lifetime value distributions.</p>
@@ -861,7 +861,7 @@ Sales_t = \alpha + \sum_k \beta_k X_{k,t} + \epsilon_t
 f(x) = \frac{x^\gamma}{x^\gamma + \theta^\gamma}
 \]</span></p>
 <p>Monte Carlo simulation is often used within Bayesian estimation via MCMC.</p>
-<div id="79cf2c28" class="cell" data-execution_count="10">
+<div id="61093a28" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -906,7 +906,7 @@ f(x) = \frac{x^\gamma}{x^\gamma + \theta^\gamma}
 U_{ij} = \beta X_{ij} + \epsilon_{ij}
 \]</span></p>
 <p>Choice probabilities often follow a multinomial logit model. Monte Carlo simulation is commonly used to estimate market share under hypothetical product configurations.</p>
-<div id="4857a8e8" class="cell" data-execution_count="11">
+<div id="ca478453" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -931,7 +931,7 @@ U_{ij} = \beta X_{ij} + \epsilon_{ij}
 <span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Estimated shares:"</span>, shares)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Estimated shares: [0.254  0.2316 0.5144]</code></pre>
+<pre><code>Estimated shares: [0.252  0.2248 0.5232]</code></pre>
 </div>
 </div>
 <hr>
@@ -949,7 +949,7 @@ Q^* = F^{-1}\left(\frac{C_u}{C_u + C_o}\right)
 <li><span class="math inline">\(C_o\)</span> is the overstock cost</li>
 </ul>
 <p>Monte Carlo simulation helps evaluate profit distributions under uncertain demand.</p>
-<div id="6d2186c8" class="cell" data-execution_count="12">
+<div id="81bcad6b" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -970,7 +970,7 @@ Q^* = F^{-1}\left(\frac{C_u}{C_u + C_o}\right)
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean profit:"</span>, np.mean(profits))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Mean profit: 628.7041272826708</code></pre>
+<pre><code>Mean profit: 629.0857176204282</code></pre>
 </div>
 </div>
 <hr>
@@ -987,7 +987,7 @@ Q^* = F^{-1}\left(\frac{C_u}{C_u + C_o}\right)
 <li>Exit</li>
 </ul>
 <p>Monte Carlo simulation can estimate conversion probabilities and path distributions.</p>
-<div id="5dc2fe08" class="cell" data-execution_count="13">
+<div id="5d4f5be8" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1016,7 +1016,7 @@ Q^* = F^{-1}\left(\frac{C_u}{C_u + C_o}\right)
 <span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Estimated conversion rate:"</span>, np.mean(sim))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Estimated conversion rate: 0.3182</code></pre>
+<pre><code>Estimated conversion rate: 0.313</code></pre>
 </div>
 </div>
 <hr>
@@ -1024,7 +1024,7 @@ Q^* = F^{-1}\left(\frac{C_u}{C_u + C_o}\right)
 <section id="ab-testing-power-simulation" class="level2">
 <h2 class="anchored" data-anchor-id="ab-testing-power-simulation">7. A/B Testing Power Simulation</h2>
 <p>Monte Carlo simulation can estimate statistical power when analytic formulas are difficult or when metrics are non-normal.</p>
-<div id="cbb5c61f" class="cell" data-execution_count="14">
+<div id="bdb55afc" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1047,7 +1047,7 @@ Q^* = F^{-1}\left(\frac{C_u}{C_u + C_o}\right)
 <span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Estimated power:"</span>, power)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Estimated power: 0.558</code></pre>
+<pre><code>Estimated power: 0.546</code></pre>
 </div>
 </div>
 <p>Monte Carlo methods are especially useful when metrics are heavy-tailed, randomization units are complex, or cluster experiments are used.</p>
