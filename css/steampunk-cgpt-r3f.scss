@@ -1,0 +1,778 @@
+/*-- scss:defaults --*/
+
+/* Import calligraphic script fonts */
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
+/* =======================================================
+   Robert W. Walker site theme
+   Final merged Quarto SCSS
+   - persistent site-canvas hero background
+   - cleaner Quarto spacing
+   - blur only on cards
+   - improved navbar alignment and typography
+   ======================================================= */
+
+/* ---------- Color palette ---------- */
+$lavender: #AF98E6;
+$pink: #DA99E6;
+$pale-yellow: #E5DD97;
+$rose: #DD92C5;
+$periwinkle: #9CA6E3;
+
+$bg-darkest: #1a0f2e;
+$bg-dark: #22133a;
+$bg-medium: #2a1a45;
+$bg-light: #362756;
+$bg-lighter: #453465;
+
+/* ---------- Text palette ---------- */
+$text-primary: #d7c8ee;
+$text-secondary: #cab9e6;
+$text-muted: #bca9dd;
+$text-heading: #edd8f8;
+$text-heading-strong: #f0b8ea;
+$text-faint: #9e8fbb;
+
+/* ---------- Typography ---------- */
+$font-family-base: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+$font-family-headings: 'Tangerine', cursive;
+
+/* ---------- Quarto / Bootstrap hooks ---------- */
+$body-bg: $bg-dark;
+$body-color: $text-primary;
+$link-color: $lavender;
+$link-hover-color: $pale-yellow;
+$headings-color: $text-heading;
+$font-family-base: $font-family-base;
+$headings-font-family: $font-family-headings;
+
+/* ---------- Spacing scale ---------- */
+$space-1: 0.5rem;
+$space-2: 0.75rem;
+$space-3: 1rem;
+$space-4: 1.25rem;
+$space-5: 1.5rem;
+$space-6: 2rem;
+$space-7: 2.5rem;
+$space-8: 3rem;
+
+/* ---------- Radii ---------- */
+$radius-lg: 1.25rem;
+$radius-md: 0.95rem;
+$radius-sm: 0.5rem;
+
+/* ---------- Panel system ---------- */
+$panel-bg: rgba($bg-light, 0.18);
+$panel-bg-2: rgba($bg-medium, 0.16);
+$panel-bg-soft: rgba($bg-light, 0.12);
+
+$panel-border: rgba($lavender, 0.06);
+$panel-border-strong: rgba($pink, 0.07);
+$panel-highlight: rgba(255, 255, 255, 0.06);
+
+$shadow-deep: 0 16px 40px rgba(0, 0, 0, 0.32);
+$shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.20);
+$shadow-float: 0 20px 56px rgba(0, 0, 0, 0.36);
+$shadow-glow: 0 0 24px rgba($lavender, 0.08);
+
+/*-- scss:rules --*/
+
+/* =======================================================
+   Base document
+   ======================================================= */
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background: $bg-dark;
+  color: $text-primary;
+  font-family: $font-family-base;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+}
+
+/* =======================================================
+   Site-canvas hero treatment
+   ======================================================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background: url("images/FinalBannerA.webp") center center / cover no-repeat;
+  filter: saturate(0.95) contrast(1.02);
+  transform: scale(1.02);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba($bg-darkest, 0.34) 0%,
+      rgba($bg-dark, 0.22) 18%,
+      rgba($bg-medium, 0.38) 44%,
+      rgba($bg-dark, 0.66) 76%,
+      rgba($bg-darkest, 0.88) 100%
+    ),
+    radial-gradient(circle at top left, rgba($lavender, 0.08), transparent 30%),
+    radial-gradient(circle at top right, rgba($rose, 0.07), transparent 28%);
+}
+
+/* =======================================================
+   Vertical rhythm cleanup
+   ======================================================= */
+
+p,
+ul,
+ol,
+dl,
+table,
+blockquote,
+pre {
+  margin-top: 0;
+  margin-bottom: $space-4;
+}
+
+ul,
+ol {
+  padding-left: 1.35rem;
+}
+
+li + li {
+  margin-top: 0.25rem;
+}
+
+p,
+li,
+dd,
+dt,
+td,
+th {
+  color: $text-secondary;
+}
+
+strong,
+b {
+  color: $pale-yellow;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $text-heading;
+  line-height: 1.2;
+  margin-top: $space-6;
+  margin-bottom: $space-3;
+  font-family: $font-family-headings;
+  font-weight: 700;
+  text-wrap: balance;
+  letter-spacing: 0.02em;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.8rem; }
+h3 { font-size: 2.2rem; }
+h4 { font-size: 1.8rem; }
+h5 { font-size: 1.5rem; }
+h6 { font-size: 1.3rem; }
+
+h1 {
+  margin-top: 0;
+  font-size: clamp(2.3rem, 4vw, 3.9rem);
+  color: $text-heading-strong;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+  color: $lavender;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: mix($pink, $lavender, 50%);
+}
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p {
+  margin-top: 0;
+}
+
+a {
+  color: $lavender;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: $pale-yellow;
+}
+
+blockquote {
+  border-left: 4px solid rgba($lavender, 0.24);
+  padding: $space-3 $space-4;
+  background: rgba($bg-medium, 0.10);
+  border-radius: 0 $radius-sm $radius-sm 0;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba($lavender, 0.18), transparent);
+  margin: $space-5 0;
+}
+
+/* =======================================================
+   Quarto wrappers become transparent
+   ======================================================= */
+
+#quarto-content,
+.quarto-container,
+.page-layout-article,
+.page-layout-custom,
+.content,
+.column-page,
+.column-body,
+.column-body-outset {
+  background: transparent !important;
+}
+
+#quarto-content {
+  position: relative;
+  min-height: 100vh;
+  padding-top: $space-3;
+  padding-bottom: $space-3;
+}
+
+.page-columns {
+  gap: $space-5;
+}
+
+/* =======================================================
+   Main readable surfaces
+   Blur removed here
+   ======================================================= */
+
+main.content,
+.page-layout-article .content,
+.page-layout-custom .content {
+  position: relative;
+  background:
+    linear-gradient(
+      135deg,
+      $panel-bg,
+      $panel-bg-2
+    );
+  border: 1px solid $panel-border;
+  border-radius: $radius-lg;
+  padding: $space-5 $space-5 $space-6;
+  margin-top: $space-3;
+  margin-bottom: $space-5;
+  box-shadow:
+    $shadow-deep,
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    $shadow-glow;
+}
+
+main.content::before,
+.page-layout-article .content::before,
+.page-layout-custom .content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.04),
+      transparent 22%
+    );
+}
+
+main.content > :first-child,
+.page-layout-article .content > :first-child,
+.page-layout-custom .content > :first-child {
+  margin-top: 0 !important;
+}
+
+main.content > :last-child,
+.page-layout-article .content > :last-child,
+.page-layout-custom .content > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/* =======================================================
+   Quarto title cleanup
+   ======================================================= */
+
+.quarto-title-block {
+  margin-top: 0;
+  margin-bottom: $space-3;
+  padding-top: 0;
+  padding-bottom: 0;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.quarto-title-banner {
+  background: transparent !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border: 0 !important;
+}
+
+.quarto-title-meta,
+.description,
+.abstract {
+  margin-top: $space-2;
+  margin-bottom: $space-3;
+  color: $text-muted;
+}
+
+/* =======================================================
+   Navbar
+   Blur removed here
+   Alignment and font fixed here
+   ======================================================= */
+
+.navbar {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba($bg-dark, 0.54),
+      rgba($bg-dark, 0.22)
+    ) !important;
+  border-bottom: 1px solid rgba($lavender, 0.07) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+.navbar .container-fluid,
+.navbar .container-xxl {
+  display: flex;
+  align-items: center;
+}
+
+.navbar,
+.navbar * {
+  font-family: $font-family-headings;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 1rem;
+  line-height: 1;
+  min-height: 40px;
+}
+
+.navbar-brand img,
+.navbar-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+.navbar-brand .navbar-title,
+.navbar-title {
+  color: $text-heading;
+  font-family: $font-family-headings;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  color: rgba(232, 219, 245, 0.90) !important;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  line-height: 1;
+  font-family: $font-family-base;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link.active {
+  color: $pale-yellow !important;
+}
+
+/* =======================================================
+   Sidebar / TOC
+   Blur removed here
+   ======================================================= */
+
+.sidebar,
+.sidebar-navigation,
+#TOC {
+  background:
+    linear-gradient(
+      135deg,
+      rgba($bg-light, 0.14),
+      rgba($bg-medium, 0.12)
+    ) !important;
+  border: 1px solid rgba($lavender, 0.05);
+  border-radius: $radius-md;
+  box-shadow:
+    $shadow-soft,
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  padding: $space-3;
+}
+
+.sidebar .sidebar-item,
+#TOC li {
+  margin-bottom: 0.2rem;
+}
+
+.sidebar .sidebar-item-container .sidebar-item-text,
+#TOC a {
+  color: $text-secondary;
+}
+
+.sidebar .sidebar-item-container .sidebar-item-text:hover,
+#TOC a:hover {
+  color: $pale-yellow;
+}
+
+/* =======================================================
+   Footer
+   Blur removed here
+   ======================================================= */
+
+.nav-footer,
+.page-footer {
+  background:
+    linear-gradient(
+      to top,
+      rgba($bg-dark, 0.56),
+      rgba($bg-dark, 0.22)
+    ) !important;
+  border-top: 1px solid rgba($lavender, 0.07);
+  padding-top: $space-3;
+  padding-bottom: $space-3;
+  color: $text-faint;
+}
+
+.nav-footer a,
+.page-footer a {
+  color: $lavender;
+}
+
+.nav-footer a:hover,
+.page-footer a:hover {
+  color: $pale-yellow;
+}
+
+/* =======================================================
+   Cards
+   Blur retained here
+   ======================================================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $space-5;
+  margin-top: $space-5;
+  margin-bottom: $space-5;
+}
+
+.card {
+  position: relative;
+  background:
+    linear-gradient(
+      135deg,
+      rgba($bg-light, 0.16),
+      rgba($bg-medium, 0.14)
+    );
+  border: 1px solid rgba($lavender, 0.06);
+  border-radius: $radius-md;
+  padding: $space-5;
+  backdrop-filter: blur(22px) saturate(120%);
+  -webkit-backdrop-filter: blur(22px) saturate(120%);
+  box-shadow:
+    $shadow-soft,
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    $shadow-glow;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.05),
+      transparent 22%
+    );
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    0 0 28px rgba($lavender, 0.10);
+  border-color: rgba($pink, 0.09);
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+  margin-bottom: $space-3;
+}
+
+.card p:last-child,
+.card ul:last-child {
+  margin-bottom: 0;
+}
+
+/* =======================================================
+   Floating card treatment
+   Blur retained here
+   ======================================================= */
+
+.floating-card-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: -70px auto $space-6;
+  padding: 0 $space-4;
+  z-index: 10;
+}
+
+.floating-card {
+  position: relative;
+  background:
+    linear-gradient(
+      135deg,
+      rgba($bg-light, 0.18),
+      rgba($bg-medium, 0.16)
+    );
+  border: 1px solid rgba($lavender, 0.06);
+  border-radius: $radius-lg;
+  padding: $space-6;
+  backdrop-filter: blur(22px) saturate(120%);
+  -webkit-backdrop-filter: blur(22px) saturate(120%);
+  box-shadow:
+    $shadow-float,
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    $shadow-glow;
+}
+
+.floating-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.05),
+      transparent 22%
+    );
+}
+
+.floating-card h1,
+.floating-card h2,
+.floating-card h3 {
+  margin-top: 0;
+}
+
+.floating-card > :last-child {
+  margin-bottom: 0;
+}
+
+/* =======================================================
+   Tables / code
+   ======================================================= */
+
+table {
+  color: $text-secondary;
+  background: rgba($bg-medium, 0.10);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+thead,
+th {
+  color: $text-heading;
+}
+
+pre {
+  background: rgba(15, 12, 25, 0.52);
+  border: 1px solid rgba($lavender, 0.08);
+  border-radius: 0.85rem;
+  padding: $space-4;
+  margin-bottom: $space-4;
+}
+
+code:not(pre code) {
+  background: rgba($bg-medium, 0.18);
+  padding: 0.12rem 0.35rem;
+  border-radius: 0.35rem;
+  color: $text-heading;
+}
+
+/* =======================================================
+   Responsive
+   ======================================================= */
+
+@media (min-width: 992px) {
+  #quarto-content {
+    padding-top: $space-4;
+    padding-bottom: $space-4;
+  }
+
+  main.content,
+  .page-layout-article .content,
+  .page-layout-custom .content {
+    padding: $space-6;
+    margin-top: $space-4;
+    margin-bottom: $space-6;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-brand img,
+  .navbar-logo {
+    height: 30px;
+  }
+
+  .page-columns {
+    gap: $space-4;
+  }
+
+  .floating-card-wrapper {
+    margin-top: -56px;
+  }
+
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    min-height: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  body::before {
+    transform: none;
+    background: url("images/FinalBannerA.webp") center top / cover no-repeat;
+  }
+
+  #quarto-content {
+    padding-top: $space-2;
+    padding-bottom: $space-2;
+  }
+
+  main.content,
+  .page-layout-article .content,
+  .page-layout-custom .content {
+    background:
+      linear-gradient(
+        135deg,
+        rgba($bg-light, 0.22),
+        rgba($bg-medium, 0.18)
+      );
+    padding: $space-4;
+    margin-top: $space-2;
+    margin-bottom: $space-4;
+    border-radius: 1rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .cards {
+    gap: $space-4;
+    margin-top: $space-4;
+  }
+
+  .card {
+    padding: $space-4;
+  }
+
+  .floating-card-wrapper {
+    margin: -40px auto $space-5;
+    padding: 0 $space-3;
+  }
+
+  .floating-card {
+    padding: $space-4;
+  }
+
+  .sidebar,
+  .sidebar-navigation,
+  #TOC {
+    padding: $space-2;
+  }
+
+  .navbar-brand .navbar-title,
+  .navbar-title,
+  .navbar-nav .nav-link {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main.content,
+  .page-layout-article .content,
+  .page-layout-custom .content {
+    padding: $space-3;
+  }
+
+  .card,
+  .floating-card {
+    padding: $space-3;
+  }
+}

@@ -1,0 +1,41 @@
+---
+title: "Robert W. Walker"
+---
+
+::: {.home-hero-overlay}
+::: {.home-bubble-minimal}
+
+::: {.lead-minimal}
+Associate Professor of Quantitative Methods  
+Atkinson Graduate School of Management
+:::
+
+::: {.circle-grid}
+
+::: {.circle-card}
+[About](about.qmd)
+:::
+
+::: {.circle-card}
+[Research](research.qmd)
+:::
+
+::: {.circle-card}
+[Publications](publications.qmd)
+:::
+
+::: {.circle-card}
+[Teaching](teaching/index.qmd)
+:::
+
+::: {.circle-card}
+[Blog](posts/index.qmd)
+:::
+
+::: {.circle-card}
+[AI Tools](AI-Tools.qmd)
+:::
+
+:::
+:::
+:::

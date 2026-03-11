@@ -3,6 +3,10 @@ project:
   output-dir: docs/
   resources:
     - ".nojekyll"
+  render: 
+    - "*.qmd"
+    - "!css"
+
 
 website:
   title: "Robert W. Walker"
@@ -48,7 +52,7 @@ website:
     background: "transparent"
     foreground: "#c8ccd6"
     center: |
-      © 2024 Robert W. Walker · Powered by [Quarto](https://quarto.org) · Designed with artistry and precision
+      © 2024 Robert W. Walker · Powered by [Quarto](https://quarto.org); RWW with Claude
 
   sidebar:
     - id: research
@@ -87,6 +91,7 @@ format:
       - css/steampunk-cgpt-r3.scss
     css:
       - css/cgpt-cards.css
+      - css/cgpt-circles.css
       - css/floating-card-standalone.css
       - css/navbar-branding.css
     toc: false
@@ -96,7 +101,7 @@ format:
     code-overflow: wrap
     code-fold: true
     highlight-style: monokai
-    mainfont: "Baskerville, Georgia, serif"
+#    mainfont: "Baskerville, Georgia, serif"
     fontsize: 1em
     linestretch: 1.6
     bibliography: references.bib

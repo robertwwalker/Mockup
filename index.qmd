@@ -2,56 +2,40 @@
 title: "Robert W. Walker"
 ---
 
-::: {.home-hero-overlay}
-::: {.home-bubble}
+::: {.home-hero-overlay .mid-page-start}
+::: {.home-bubble-minimal}
 
-
-::: {.lead}
-I am an [Associate Professor of Quantitative Methods](https://my.willamette.edu/people/rwalker) at the [Atkinson Graduate School of Management](https://willamette.edu/academics/mba/), [Willamette University](https://willamette.edu). My research explores [causal inference](research/causal-inference.qmd), [political economy](research/political-economy.qmd), and statistical computing.  I work to transform complex data into actionable understanding.
+::: {.lead-minimal}
+Associate Professor of Quantitative Methods  
+Atkinson Graduate School of Management
 :::
 
-::: {.home-bubble-grid}
+::: {.circle-grid .single-row}
 
-::: {.home-bubble-card}
-## About
-Learn about my background, education, and academic journey through appointments at Harvard, Dartmouth, and Texas A&M.
-
-[Learn more →](about.qmd)
+::: {.circle-card}
+[About](about.qmd)
 :::
 
-::: {.home-bubble-card}
-## Research
-Causal inference, panel data methods, political economy, and statistical computing with R and Python.
-
-[Explore research →](research.qmd)
+::: {.circle-card}
+[Teaching](teaching/index.qmd)
 :::
 
-::: {.home-bubble-card}
-## Publications
-Peer-reviewed articles, working papers, and citation metrics from my work in quantitative methods.
 
-[View publications →](publications.qmd)
+::: {.circle-card}
+[Research](research.qmd)
 :::
 
-::: {.home-bubble-card}
-## Teaching
-Courses in data analytics, statistical methods, and computational social science at Willamette and Essex Summer School.
-
-[See courses →](teaching/index.qmd)
+::: {.circle-card}
+[Blog](posts/index.qmd)
 :::
 
-::: {.home-bubble-card}
-## Blog
-Thoughts on statistics, R programming, data visualization, and reproducible research.
-
-[Read posts →](posts/index.qmd)
+::: {.circle-card}
+[Publications](publications.qmd)
 :::
 
-::: {.home-bubble-card}
-## Contact
-Get in touch via email, GitHub, or Twitter. Office hours Wednesdays 1-3pm or by appointment.
 
-[Connect →](contact.qmd)
+::: {.circle-card}
+[AI Tools](AI-Tools.qmd)
 :::
 
 :::

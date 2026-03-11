@@ -1,5 +1,8 @@
 /*-- scss:defaults --*/
 
+/* Import clean elegant fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
 /* =======================================================
    Robert W. Walker site theme
    Final merged Quarto SCSS
@@ -31,8 +34,8 @@ $text-heading-strong: #f0b8ea;
 $text-faint: #9e8fbb;
 
 /* ---------- Typography ---------- */
-$font-family-serif: Baskerville, Georgia, serif;
-$font-family-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$font-family-base: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+$font-family-headings: 'Cinzel', Georgia, serif;
 
 /* ---------- Quarto / Bootstrap hooks ---------- */
 $body-bg: $bg-dark;
@@ -40,8 +43,8 @@ $body-color: $text-primary;
 $link-color: $lavender;
 $link-hover-color: $pale-yellow;
 $headings-color: $text-heading;
-$font-family-base: $font-family-serif;
-$headings-font-family: $font-family-serif;
+$font-family-base: $font-family-base;
+$headings-font-family: $font-family-headings;
 
 /* ---------- Spacing scale ---------- */
 $space-1: 0.5rem;
@@ -89,7 +92,7 @@ body {
   overflow-x: hidden;
   background: $bg-dark;
   color: $text-primary;
-  font-family: $font-family-serif;
+  font-family: $font-family-base;
   line-height: 1.65;
   letter-spacing: 0.01em;
 }
@@ -103,7 +106,7 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -3;
-  background: url("images/FinalBanner2.webp") center center / cover no-repeat;
+  background: url("images/FinalBannerA.webp") center center / cover no-repeat;
   filter: saturate(0.95) contrast(1.02);
   transform: scale(1.02);
 }
@@ -173,13 +176,13 @@ h4,
 h5,
 h6 {
   color: $text-heading;
-  line-height: 1.18;
+  line-height: 1.2;
   margin-top: $space-6;
   margin-bottom: $space-3;
-  font-family: $font-family-serif;
+  font-family: $font-family-headings;
   font-weight: 600;
   text-wrap: balance;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.05em;
 }
 
 h1 {
@@ -368,7 +371,7 @@ main.content > :last-child,
 
 .navbar,
 .navbar * {
-  font-family: $font-family-ui;
+  font-family: $font-family-headings;
 }
 
 .navbar-brand {
@@ -393,10 +396,10 @@ main.content > :last-child,
 .navbar-brand .navbar-title,
 .navbar-title {
   color: $text-heading;
-  font-family: $font-family-ui;
-  font-size: 1rem;
+  font-family: $font-family-headings;
+  font-size: 1.1rem;
   font-weight: 600;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.08em;
   line-height: 1;
   display: inline-flex;
   align-items: center;
@@ -422,10 +425,10 @@ main.content > :last-child,
   padding-left: 0.7rem;
   padding-right: 0.7rem;
   line-height: 1;
-  font-family: $font-family-ui;
-  font-size: 0.97rem;
+  font-family: $font-family-base;
+  font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
 }
 
 .navbar-nav .nav-link:hover,
@@ -696,7 +699,7 @@ code:not(pre code) {
 @media (max-width: 768px) {
   body::before {
     transform: none;
-    background: url("images/FinalBanner2.webp") center top / cover no-repeat;
+    background: url("images/FinalBannerA.webp") center top / cover no-repeat;
   }
 
   #quarto-content {

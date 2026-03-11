@@ -1,5 +1,15 @@
 [
   {
+    "listing": "/teaching/index.html",
+    "items": [
+      "/teaching/BUS1301/index.html",
+      "/teaching/ChoiceForecasting/index.html",
+      "/teaching/DADM/index.html",
+      "/teaching/DataCommunication/index.html",
+      "/teaching/Essex/index.html"
+    ]
+  },
+  {
     "listing": "/publications.html",
     "items": [
       "/quarto_publications/EntConfZone/index.html",
@@ -11,23 +21,13 @@
       "/quarto_publications/PropTax/index.html",
       "/quarto_publications/publius/index.html",
       "/quarto_publications/ratingsMGMT/index.html",
-      "/quarto_publications/boosterism/index.html",
       "/quarto_publications/MidClas/index.html",
+      "/quarto_publications/boosterism/index.html",
       "/quarto_publications/CivicPart/index.html",
       "/quarto_publications/splits/index.html",
-      "/quarto_publications/SBI/index.html",
       "/quarto_publications/DivGovPT/index.html",
+      "/quarto_publications/SBI/index.html",
       "/quarto_publications/LongMem/index.html"
-    ]
-  },
-  {
-    "listing": "/research.html",
-    "items": [
-      "/research/multiple-rater.html",
-      "/research/political-economy.html",
-      "/research/panel-data.html",
-      "/research/causal-inference.html",
-      "/research/political-methodology.html"
     ]
   },
   {
@@ -51,13 +51,13 @@
     ]
   },
   {
-    "listing": "/teaching/index.html",
+    "listing": "/research.html",
     "items": [
-      "/teaching/BUS1301/index.html",
-      "/teaching/ChoiceForecasting/index.html",
-      "/teaching/Essex/index.html",
-      "/teaching/DADM/index.html",
-      "/teaching/DataCommunication/index.html"
+      "/research/causal-inference.html",
+      "/research/multiple-rater.html",
+      "/research/panel-data.html",
+      "/research/political-economy.html",
+      "/research/political-methodology.html"
     ]
   }
 ]
