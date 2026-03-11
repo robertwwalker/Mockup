@@ -1,20 +1,17 @@
 ---
-title: "Exploring qwen-3.5 35B in Marketing"
+title: "Exploring qwen-3.5 35B"
 author: "Robert W. Walker"
 date: "2026-03-10"
 categories: [qwen-3.5, "local AI"]
 image: "image.png"
 description: "Unpacking qwen-3.5 35B on my Linux machine.  It does not run quickly but it is definitely worth exploring further.  Here we explore models of marketing and some Monte Carlo simulation in python."
-eval: false
+jupyter: python3
+toc: true
 ---
 
 ## qwen-3.5-35B
 
 A powerful open source model that runs in a variety of interfaces.  I quite like using it in `LM Studio` as the proper mix of power, thinking capability, and speed given my hardware.  It really makes me think that I should invest in another video card.
-
-```{r setup, include=FALSE}
-library(reticulate)
-```
 
 
 :::{.callout-note}
@@ -23,7 +20,7 @@ library(reticulate)
 Give me six to eight commonly used models in marketing.  Elaborate each model including relevant citations and a formal description of the model.  Consider, in each case, how we might utilize Monte Carlo simulation methods to study and apply the model.  Provide sample python code if you can for each one but that is far less important than detailed, thorough, and correct descriptions of the models with a few citations for each.
 :::
 
-![qwen-3.5-MKTG](./img/qwen1A.png)
+![qwen-3.5](./img/qwen1A.png)
 
 
 
@@ -54,7 +51,9 @@ The primary utility of Monte Carlo simulation in the Bass Model lies in **parame
 
 **Python Code Snippet:**
 
-```{python, eval=FALSE}
+```{python}
+#| eval: false
+
 import numpy as np
 from scipy.stats import norm
 import matplotlib.pyplot as plt
@@ -109,6 +108,8 @@ In BG/NBD, parameter estimates ($\lambda$, $r$, $\alpha$) are derived via Expect
 **Python Code Snippet:**
 
 ```{python}
+#| eval: false
+
 import numpy as np
 
 # Simulating BG/NBD parameter uncertainty for one customer
@@ -162,6 +163,8 @@ MMM suffers from multicollinearity (spend variables often move together), making
 **Python Code Snippet:**
 
 ```{python}
+#| eval: false
+
 import numpy as np
 from scipy.stats import norm
 import pandas as pd
@@ -208,6 +211,8 @@ Monte Carlo simulation is used in **Market Share Simulations**. Once part-worth 
 **Python Code Snippet:**
 
 ```{python}
+#| eval: false
+
 import numpy as np
 
 # Estimated part-worths (Utility scores)
@@ -259,6 +264,8 @@ The classical Newsvendor solution assumes a known demand distribution $F$. Howev
 **Python Code Snippet:**
 
 ```{python}
+#| eval: false
+
 import numpy as np
 from scipy import stats
 
@@ -302,6 +309,8 @@ Markov models are deterministic given a fixed transition matrix, but real-world 
 **Python Code Snippet:**
 
 ```{python}
+#| eval: false
+
 import numpy as np
 
 # Transition Matrix: Rows = From (A=Ad, B=Search, C=Purchase)
@@ -354,6 +363,8 @@ Before launching a test, marketers must determine sample size to ensure sufficie
 **Python Code Snippet:**
 
 ```{python}
+#| eval: false
+
 import numpy as np
 from scipy.stats import ttest_ind
 
@@ -376,11 +387,448 @@ power_estimate = detected_effects / n_runs
 print(f"Estimated Statistical Power: {power_estimate:.2%}")
 ```
 
+ChatGPT thinks there is more work to do.  Let's have a look at what happened.
+
+# ChatGPT Comments
+
+:::{.callout-note}
+Prompt: I sent it to the original version of this that ended above.  I asked it to check it, research it, and critique the post.  Then I asked it to deep dive and fix it.
+:::
+
+
+## What This Fixes Compared to the Original
+
+Major corrections made:
+
+- Fixed **Bass model equation and simulation**
+- Repaired **BG/NBD parameter indexing bug**
+- Clarified **BG/NBD vs Gamma-Gamma monetary modeling**
+- Replaced weak MMM citations with **Google Bayesian MMM literature**
+- Fixed **A/B testing simulation bug (`.pvalue`)**
+- Corrected **Arrow et al. citation year**
+- Improved **Markov simulation termination**
+- Standardized **notation and explanations**
+
+
+## Introduction
+
+Many models used in marketing analytics involve **uncertainty, heterogeneous parameters, or stochastic decision processes**.  
+Monte Carlo simulation provides a powerful way to explore these models, evaluate uncertainty, and perform counterfactual analysis.
+
+This post reviews **seven quantitative models commonly used in marketing or marketing-adjacent decision contexts** where Monte Carlo methods are particularly useful:
+
+1. Bass Diffusion Model
+2. BG/NBD Customer Lifetime Model
+3. Bayesian Marketing Mix Models
+4. Conjoint Choice Models
+5. Newsvendor Inventory Model
+6. Markov Customer Journey Models
+7. A/B Testing Power Simulation
+
+Each section briefly introduces the model and demonstrates a small Monte Carlo simulation.
 
 ---
 
-## Session Info
+## 1 Bass Diffusion Model
 
-```{r}
-sessionInfo()
+The **Bass diffusion model** describes how new products are adopted in a population through two mechanisms:
+
+* **Innovation**: adoption independent of others
+* **Imitation**: adoption influenced by prior adopters
+
+The hazard of adoption is:
+
+$$
+f(t) = (p + qF(t))(1 - F(t))
+$$
+
+where
+
+- \(p\) = innovation coefficient  
+- \(q\) = imitation coefficient  
+- \(F(t)\) = cumulative adoption fraction  
+
+The closed-form Bass adoption curve is
+
+$$
+F(t) = \frac{1 - e^{-(p+q)t}}{1 + \frac{q}{p} e^{-(p+q)t}}
+$$
+
+Monte Carlo simulation is useful because real markets exhibit **uncertainty in parameters and market size**.
+
+### Simulation Example
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def bass_curve(t, p, q):
+    return (1 - np.exp(-(p+q)*t)) / (1 + (q/p)*np.exp(-(p+q)*t))
+
+n_sim = 500
+T = 20
+t = np.arange(T)
+
+p_draws = np.random.normal(.03,.005,n_sim)
+q_draws = np.random.normal(.38,.05,n_sim)
+
+sim_paths = []
+
+for p,q in zip(p_draws,q_draws):
+    sim_paths.append(bass_curve(t,p,q))
+
+sim_paths = np.array(sim_paths)
+
+plt.plot(t,sim_paths.T,color="lightgray",alpha=.2)
+plt.plot(t,sim_paths.mean(axis=0),linewidth=3)
+plt.title("Bass Diffusion Monte Carlo Simulation")
+plt.xlabel("Time")
+plt.ylabel("Adoption Fraction")
+plt.show()
 ```
+
+## Introduction
+
+Many models used in marketing analytics involve uncertainty, heterogeneous parameters, or stochastic decision processes. Monte Carlo simulation provides a powerful way to explore these models, evaluate uncertainty, and perform counterfactual analysis.
+
+This post reviews seven quantitative models commonly used in marketing or marketing-adjacent decision contexts where Monte Carlo methods are particularly useful:
+
+1. Bass Diffusion Model
+2. BG/NBD Customer Lifetime Model
+3. Bayesian Marketing Mix Models
+4. Conjoint Choice Models
+5. Newsvendor Inventory Model
+6. Markov Customer Journey Models
+7. A/B Testing Power Simulation
+
+Each section briefly introduces the model and demonstrates a small Monte Carlo simulation.
+
+---
+
+## 1. Bass Diffusion Model
+
+The Bass diffusion model describes how new products are adopted in a population through two mechanisms:
+
+- Innovation: adoption independent of others
+- Imitation: adoption influenced by prior adopters
+
+The hazard of adoption is:
+
+$$
+f(t) = (p + qF(t))(1 - F(t))
+$$
+
+where:
+
+- $p$ is the innovation coefficient
+- $q$ is the imitation coefficient
+- $F(t)$ is the cumulative adoption fraction
+
+The closed-form Bass adoption curve is:
+
+$$
+F(t) = \frac{1 - e^{-(p+q)t}}{1 + \frac{q}{p}e^{-(p+q)t}}
+$$
+
+Monte Carlo simulation is useful because real markets exhibit uncertainty in parameters and market size.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+def bass_curve(t, p, q):
+    return (1 - np.exp(-(p + q) * t)) / (1 + (q / p) * np.exp(-(p + q) * t))
+
+n_sim = 500
+T = 20
+t = np.arange(T)
+
+p_draws = np.random.normal(0.03, 0.005, n_sim)
+q_draws = np.random.normal(0.38, 0.05, n_sim)
+
+sim_paths = []
+for p, q in zip(p_draws, q_draws):
+    sim_paths.append(bass_curve(t, p, q))
+
+sim_paths = np.array(sim_paths)
+
+plt.plot(t, sim_paths.T, color="lightgray", alpha=0.2)
+plt.plot(t, sim_paths.mean(axis=0), linewidth=3)
+plt.title("Bass Diffusion Monte Carlo Simulation")
+plt.xlabel("Time")
+plt.ylabel("Adoption Fraction")
+plt.show()
+```
+
+The gray lines show simulated adoption curves under parameter uncertainty.
+
+---
+
+## 2. BG/NBD Customer Lifetime Model
+
+The BG/NBD model is widely used to model purchasing behavior in non-contractual customer relationships such as retail or e-commerce.
+
+Key assumptions:
+
+- Transactions follow a Poisson process
+- Purchase rates vary across customers
+- Customers may become inactive after transactions
+
+The model uses frequency, recency, and the observation window. Monetary value is often modeled separately using a Gamma-Gamma model.
+
+```{python}
+import numpy as np
+
+def simulate_bgnbd(n_customers, r, alpha, a, b, T):
+    purchase_rates = np.random.gamma(r, 1 / alpha, n_customers)
+    dropout_probs = np.random.beta(a, b, n_customers)
+
+    purchases = []
+
+    for i in range(n_customers):
+        alive = True
+        t = 0
+        count = 0
+
+        while alive and t < T:
+            wait = np.random.exponential(1 / purchase_rates[i])
+            t += wait
+
+            if t < T:
+                count += 1
+                if np.random.rand() < dropout_probs[i]:
+                    alive = False
+
+        purchases.append(count)
+
+    return np.array(purchases)
+
+sim = simulate_bgnbd(1000, 0.8, 4, 1.5, 3, 10)
+print("Mean purchases:", sim.mean())
+```
+
+Monte Carlo simulation can be used to evaluate uncertainty in predicted customer lifetime value distributions.
+
+---
+
+## 3. Bayesian Marketing Mix Models
+
+Marketing mix models estimate how marketing channels influence sales.
+
+A simplified formulation is:
+
+$$
+Sales_t = \alpha + \sum_k \beta_k X_{k,t} + \epsilon_t
+$$
+
+However, realistic models often include carryover effects, diminishing returns, and parameter uncertainty.
+
+A commonly used saturation function is the Hill function:
+
+$$
+f(x) = \frac{x^\gamma}{x^\gamma + \theta^\gamma}
+$$
+
+Monte Carlo simulation is often used within Bayesian estimation via MCMC.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+def hill(x, theta, gamma):
+    return x**gamma / (x**gamma + theta**gamma)
+
+spend = np.linspace(0, 100, 100)
+
+theta_draws = np.random.normal(50, 5, 200)
+gamma_draws = np.random.normal(1.5, 0.2, 200)
+
+responses = []
+for theta, gamma in zip(theta_draws, gamma_draws):
+    responses.append(hill(spend, theta, gamma))
+
+responses = np.array(responses)
+
+plt.plot(spend, responses.T, color="gray", alpha=0.2)
+plt.title("Saturation Curves in Marketing Mix Models")
+plt.xlabel("Spend")
+plt.ylabel("Response")
+plt.show()
+```
+
+Monte Carlo draws show uncertainty in the saturation relationship.
+
+---
+
+## 4. Conjoint Choice Models
+
+Conjoint analysis decomposes product preferences into part-worth utilities.
+
+Consumer utility is typically represented as:
+
+$$
+U_{ij} = \beta X_{ij} + \epsilon_{ij}
+$$
+
+Choice probabilities often follow a multinomial logit model. Monte Carlo simulation is commonly used to estimate market share under hypothetical product configurations.
+
+```{python}
+import numpy as np
+
+beta = np.array([0.8, 0.3, -0.4])
+
+products = np.array([
+    [1, 0, 1],
+    [0, 1, 0],
+    [1, 1, 0]
+])
+
+n_sim = 5000
+shares = np.zeros(len(products))
+
+for _ in range(n_sim):
+    utilities = products @ beta + np.random.gumbel(size=len(products))
+    choice = np.argmax(utilities)
+    shares[choice] += 1
+
+shares /= n_sim
+print("Estimated shares:", shares)
+```
+
+---
+
+## 5. Newsvendor Inventory Model
+
+The newsvendor model determines optimal inventory when demand is uncertain.
+
+The optimal order quantity is:
+
+$$
+Q^* = F^{-1}\left(\frac{C_u}{C_u + C_o}\right)
+$$
+
+where:
+
+- $C_u$ is the understock cost
+- $C_o$ is the overstock cost
+
+Monte Carlo simulation helps evaluate profit distributions under uncertain demand.
+
+```{python}
+import numpy as np
+
+demand = np.random.normal(100, 20, 10000)
+
+Cu = 5
+Co = 2
+critical_ratio = Cu / (Cu + Co)
+Q_star = np.quantile(demand, critical_ratio)
+
+profits = []
+for d in demand:
+    sales = min(Q_star, d)
+    profit = 10 * sales - 3 * Q_star
+    profits.append(profit)
+
+print("Mean profit:", np.mean(profits))
+```
+
+---
+
+## 6. Markov Customer Journey Models
+
+Customer journeys often involve transitions between marketing channels before conversion. A Markov chain can represent the transition process.
+
+Example states:
+
+- Awareness
+- Website
+- Cart
+- Purchase
+- Exit
+
+Monte Carlo simulation can estimate conversion probabilities and path distributions.
+
+```{python}
+import numpy as np
+
+states = ["Aware", "Visit", "Cart", "Purchase", "Exit"]
+
+transition = np.array([
+    [0, 0.6, 0.1, 0.05, 0.25],
+    [0, 0.2, 0.4, 0.1, 0.3],
+    [0, 0.1, 0.3, 0.3, 0.3],
+    [0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 1]
+])
+
+def simulate_path():
+    state = 0
+    steps = 0
+
+    while state not in [3, 4] and steps < 20:
+        state = np.random.choice(len(states), p=transition[state])
+        steps += 1
+
+    return state == 3
+
+sim = [simulate_path() for _ in range(5000)]
+print("Estimated conversion rate:", np.mean(sim))
+```
+
+---
+
+## 7. A/B Testing Power Simulation
+
+Monte Carlo simulation can estimate statistical power when analytic formulas are difficult or when metrics are non-normal.
+
+```{python}
+import numpy as np
+from scipy.stats import ttest_ind
+
+def simulate_power(n, effect, sims=2000, alpha=0.05):
+    detections = 0
+
+    for _ in range(sims):
+        control = np.random.normal(0, 1, n)
+        treatment = np.random.normal(effect, 1, n)
+
+        p = ttest_ind(control, treatment).pvalue
+        if p < alpha:
+            detections += 1
+
+    return detections / sims
+
+power = simulate_power(100, 0.3)
+print("Estimated power:", power)
+```
+
+Monte Carlo methods are especially useful when metrics are heavy-tailed, randomization units are complex, or cluster experiments are used.
+
+---
+
+## Conclusion
+
+Monte Carlo simulation plays an important role across many marketing analytics models. It allows analysts to explore uncertainty, parameter heterogeneity, and decision risk in settings where analytic solutions are difficult or unrealistic.
+
+The models discussed here illustrate how simulation complements statistical modeling in marketing decision-making.
+
+---
+
+## References
+
+Bass, F. (1969). A new product growth model for consumer durables. *Management Science*.
+
+Fader, P., Hardie, B., & Lee, K. (2005). Counting your customers the easy way. *Marketing Science*.
+
+Green, P., & Srinivasan, V. (1978). Conjoint analysis in consumer research. *Journal of Consumer Research*.
+
+Arrow, K., Harris, T., & Marschak, J. (1951). Optimal inventory policy. *Econometrica*.
+
+Jin, Y., et al. (2017). Bayesian methods for media mix modeling with carryover and shape effects.
+
+Kannan, P., Reinartz, W., & Verhoef, P. (2016). The path to purchase and attribution modeling. *Journal of Interactive Marketing*.
+
+Kohavi, R., et al. (2020). *Trustworthy Online Controlled Experiments*.
+

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2026-03-10">
 <meta name="description" content="Unpacking qwen-3.5 35B on my Linux machine. It does not run quickly but it is definitely worth exploring further. Here we explore models of marketing and some Monte Carlo simulation in python.">
 
-<title>Exploring qwen-3.5 35B in Marketing – Robert W. Walker</title>
+<title>Exploring qwen-3.5 35B – Robert W. Walker</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4c7b890cc350be7067044af900615741.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-45e8e462cd760eca75dbd85b13f1b7a2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-ad65f16eac3e46b7a7317244f610487a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
@@ -141,9 +141,10 @@ window.Quarto = {
 
 <link rel="stylesheet" href="../../css/custom-cards.css">
 <link rel="stylesheet" href="../../css/floating-card-standalone.css">
+<link rel="stylesheet" href="../../css/navbar-branding.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -222,13 +223,50 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#qwen-3.5-35b" id="toc-qwen-3.5-35b" class="nav-link active" data-scroll-target="#qwen-3.5-35b">qwen-3.5-35B</a></li>
+  <li><a href="#marketing-and-monte-carlo" id="toc-marketing-and-monte-carlo" class="nav-link" data-scroll-target="#marketing-and-monte-carlo">Marketing and Monte Carlo</a>
+  <ul class="collapse">
+  <li><a href="#the-bass-diffusion-model" id="toc-the-bass-diffusion-model" class="nav-link" data-scroll-target="#the-bass-diffusion-model">1. The Bass Diffusion Model</a></li>
+  <li><a href="#the-bgnbd-model-probabilistic-customer-lifetime-value" id="toc-the-bgnbd-model-probabilistic-customer-lifetime-value" class="nav-link" data-scroll-target="#the-bgnbd-model-probabilistic-customer-lifetime-value">2. The BG/NBD Model (Probabilistic Customer Lifetime Value)</a></li>
+  <li><a href="#marketing-mix-modeling-mmm-with-bayesian-inference" id="toc-marketing-mix-modeling-mmm-with-bayesian-inference" class="nav-link" data-scroll-target="#marketing-mix-modeling-mmm-with-bayesian-inference">3. Marketing Mix Modeling (MMM) with Bayesian Inference</a></li>
+  <li><a href="#conjoint-analysis-choice-based-conjoint" id="toc-conjoint-analysis-choice-based-conjoint" class="nav-link" data-scroll-target="#conjoint-analysis-choice-based-conjoint">4. Conjoint Analysis (Choice-Based Conjoint)</a></li>
+  <li><a href="#the-newsvendor-model-inventory-marketing-alignment" id="toc-the-newsvendor-model-inventory-marketing-alignment" class="nav-link" data-scroll-target="#the-newsvendor-model-inventory-marketing-alignment">5. The Newsvendor Model (Inventory-Marketing Alignment)</a></li>
+  <li><a href="#markov-chain-customer-journey-models" id="toc-markov-chain-customer-journey-models" class="nav-link" data-scroll-target="#markov-chain-customer-journey-models">6. Markov Chain Customer Journey Models</a></li>
+  <li><a href="#ab-testing-power-analysis-statistical-inference" id="toc-ab-testing-power-analysis-statistical-inference" class="nav-link" data-scroll-target="#ab-testing-power-analysis-statistical-inference">7. A/B Testing Power Analysis (Statistical Inference)</a></li>
+  </ul></li>
+  <li><a href="#chatgpt-comments" id="toc-chatgpt-comments" class="nav-link" data-scroll-target="#chatgpt-comments">ChatGPT Comments</a>
+  <ul class="collapse">
+  <li><a href="#what-this-fixes-compared-to-the-original" id="toc-what-this-fixes-compared-to-the-original" class="nav-link" data-scroll-target="#what-this-fixes-compared-to-the-original">What This Fixes Compared to the Original</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#bass-diffusion-model" id="toc-bass-diffusion-model" class="nav-link" data-scroll-target="#bass-diffusion-model">1 Bass Diffusion Model</a>
+  <ul class="collapse">
+  <li><a href="#simulation-example" id="toc-simulation-example" class="nav-link" data-scroll-target="#simulation-example">Simulation Example</a></li>
+  </ul></li>
+  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1">Introduction</a></li>
+  <li><a href="#bass-diffusion-model-1" id="toc-bass-diffusion-model-1" class="nav-link" data-scroll-target="#bass-diffusion-model-1">1. Bass Diffusion Model</a></li>
+  <li><a href="#bgnbd-customer-lifetime-model" id="toc-bgnbd-customer-lifetime-model" class="nav-link" data-scroll-target="#bgnbd-customer-lifetime-model">2. BG/NBD Customer Lifetime Model</a></li>
+  <li><a href="#bayesian-marketing-mix-models" id="toc-bayesian-marketing-mix-models" class="nav-link" data-scroll-target="#bayesian-marketing-mix-models">3. Bayesian Marketing Mix Models</a></li>
+  <li><a href="#conjoint-choice-models" id="toc-conjoint-choice-models" class="nav-link" data-scroll-target="#conjoint-choice-models">4. Conjoint Choice Models</a></li>
+  <li><a href="#newsvendor-inventory-model" id="toc-newsvendor-inventory-model" class="nav-link" data-scroll-target="#newsvendor-inventory-model">5. Newsvendor Inventory Model</a></li>
+  <li><a href="#markov-customer-journey-models" id="toc-markov-customer-journey-models" class="nav-link" data-scroll-target="#markov-customer-journey-models">6. Markov Customer Journey Models</a></li>
+  <li><a href="#ab-testing-power-simulation" id="toc-ab-testing-power-simulation" class="nav-link" data-scroll-target="#ab-testing-power-simulation">7. A/B Testing Power Simulation</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exploring qwen-3.5 35B in Marketing</h1>
+<h1 class="title">Exploring qwen-3.5 35B</h1>
   <div class="quarto-categories">
     <div class="quarto-category">qwen-3.5</div>
     <div class="quarto-category">local AI</div>
@@ -285,7 +323,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/qwen1A.png" class="img-fluid figure-img"></p>
-<figcaption>qwen-3.5-MKTG</figcaption>
+<figcaption>qwen-3.5</figcaption>
 </figure>
 </div>
 </section>
@@ -301,7 +339,7 @@ window.Quarto = {
 <p><strong>Relevant Citations:</strong> * Bass, F. M. (1969). “A New Product Growth Model for Consumer Durables.” <em>Management Science</em>, 15(5), 215–227. * Mahajan, V., Muller, E., &amp; Bass, F. M. (1990). “New Product Diffusion Models in Marketing: A Review and Directions for Research.” <em>Journal of Marketing</em>.</p>
 <p><strong>Monte Carlo Application:</strong> The primary utility of Monte Carlo simulation in the Bass Model lies in <strong>parameter uncertainty</strong>. The coefficients <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are estimated from historical data or analogs, but estimates come with confidence intervals. By sampling thousands of <span class="math inline">\((p, q)\)</span> pairs from a multivariate normal distribution defined by their means and covariance matrix (derived from Maximum Likelihood Estimation), marketers can generate a probability distribution for future sales rather than a single point estimate. This allows the calculation of risk metrics, such as the 95% confidence interval for peak sales volume or time-to-peak.</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div class="cell">
+<div id="391eb0e5" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -346,7 +384,7 @@ window.Quarto = {
 <p><strong>Relevant Citations:</strong> * Fader, P. S., Hardie, B. G. S., &amp; Lee, J. K. (2005). “Counting Your Customers’ Customers.” <em>Marketing Science</em>, 24(1), 89–96. * Fader, P. S., &amp; Hardie, B. G. S. (2013). “Overcoming the ‘LTV Curse’: A Guide to Using CLV in Marketing Strategy.” <em>MIT Sloan</em>.</p>
 <p><strong>Monte Carlo Application:</strong> In BG/NBD, parameter estimates (<span class="math inline">\(\lambda\)</span>, <span class="math inline">\(r\)</span>, <span class="math inline">\(\alpha\)</span>) are derived via Expectation-Maximization (EM) algorithms. However, these point estimates do not capture the full uncertainty of individual customer predictions. Monte Carlo simulation is used to propagate this parameter uncertainty into <strong>Customer Lifetime Value (CLV)</strong> forecasts. By drawing samples from the posterior distribution of the model parameters for each customer and running thousands of simulations for their future purchase probability, marketers can derive a probabilistic CLV range (e.g., “There is an 80% chance this customer will generate between $150 and $250”).</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div class="cell">
+<div id="b45b0f5c" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -391,7 +429,7 @@ window.Quarto = {
 <p><strong>Monte Carlo Application:</strong></p>
 <p>MMM suffers from multicollinearity (spend variables often move together), making standard regression point estimates unstable. Bayesian MMM utilizes Markov Chain Monte Carlo (MCMC) methods to sample from the posterior distribution of the model coefficients (<span class="math inline">\(\beta\)</span>). This allows for <strong>Budget Allocation Optimization</strong>. By simulating thousands of potential budget allocations and running them through the sampled <span class="math inline">\(\beta\)</span> distributions, one can calculate the probability that a specific allocation will yield a higher ROI than another. It transforms MMM from a deterministic forecast into a risk-adjusted decision engine.</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div class="cell">
+<div id="6563f261" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -429,7 +467,7 @@ window.Quarto = {
 <p><strong>Relevant Citations:</strong> * Green, P. E., &amp; Srinivasan, V. (1978). “Conjoint Analysis in Consumer Research: Issues and Outlook.” <em>Journal of Consumer Research</em>. * Huber, J., &amp; Zwick, R. (1993). “Sensitivity to Attribute Importance in Conjoint Analysis.” <em>Marketing Letters</em>.</p>
 <p><strong>Monte Carlo Application:</strong> Monte Carlo simulation is used in <strong>Market Share Simulations</strong>. Once part-worth utilities are estimated from survey data, analysts can simulate a virtual population of consumers by sampling their individual utility functions (often modeled as Normal distributions). By running thousands of choice tasks where products vary in price and features against hypothetical competitors, the model predicts market share under different scenarios. This allows for “What-If” analysis on pricing strategies without costly real-world trials.</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div class="cell">
+<div id="f8618a4b" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -472,7 +510,7 @@ window.Quarto = {
 <p><strong>Relevant Citations:</strong> * Scarf, H. (1960). “Optimal Policy for a Multiechelon Inventory Problem.” <em>Operations Research</em>. * Arrow, K., Harris, T., &amp; Marschak, J. (1958). “Optimal Inventory Policy.” <em>Econometrica</em>, 24(2), 307–322.</p>
 <p><strong>Monte Carlo Application:</strong> The classical Newsvendor solution assumes a known demand distribution <span class="math inline">\(F\)</span>. However, marketing promotions introduce volatility that makes the true demand distribution uncertain. Monte Carlo simulation is used to <strong>simulate the Demand Distribution</strong>. Instead of assuming Normal or Poisson distributions, marketers can simulate demand by randomly sampling from a distribution derived from historical promotion lift data (including variance). This generates an optimal quantity range and quantifies the probability of stockouts for different marketing budget levels.</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div class="cell">
+<div id="047545ed" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -508,7 +546,7 @@ window.Quarto = {
 <p><strong>Relevant Citations:</strong> * Lemmens, A., &amp; Croux, S. (2006). “Marketing Mix Models: An Application of Markov Chains.” <em>Journal of Marketing</em>. * Fader, P. S., et al.&nbsp;(2017). “Customer Journey Analytics: Using Markov Chains to Model the Path to Purchase.”</p>
 <p><strong>Monte Carlo Application:</strong> Markov models are deterministic given a fixed transition matrix, but real-world customer behavior is noisy. Monte Carlo simulation is used for <strong>Path Simulation and Attribution</strong>. By simulating thousands of hypothetical customer paths starting from a “Start” state (e.g., Awareness) using the transition probabilities as weights, analysts can calculate the probability of conversion via specific routes. Furthermore, it allows for <strong>Sensitivity Analysis</strong>: by perturbing the transition probabilities (e.g., increasing Email retention rate), one can simulate how attribution scores shift, helping to prioritize channel spend.</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div class="cell">
+<div id="b08d5223" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -554,7 +592,7 @@ window.Quarto = {
 <p><strong>Relevant Citations:</strong> * Cohen, J. (1988). <em>Statistical Power Analysis for the Behavioral Sciences</em>. Lawrence Erlbaum Associates. * Kohavi, R., et al.&nbsp;(2009). “On Online A/B Testing.” <em>Proceedings of the 15th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em>.</p>
 <p><strong>Monte Carlo Application:</strong> Before launching a test, marketers must determine sample size to ensure sufficient power. Analytical formulas exist for this, but they assume normality and known variance which rarely hold in real-world marketing data (e.g., skewed conversion rates). Monte Carlo simulation allows for <strong>Power Simulation</strong>. By generating synthetic datasets that mimic the specific skewness or noise of historical traffic data, marketers can estimate the actual power of a proposed sample size. This prevents “underpowered” tests where a significant improvement is missed simply due to insufficient variance handling in analytical approximations.</p>
 <p><strong>Python Code Snippet:</strong></p>
-<div class="cell">
+<div id="50b699bf" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -579,19 +617,460 @@ window.Quarto = {
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Estimated Statistical Power: </span><span class="sc">{</span>power_estimate<span class="sc">:.2%}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
+<p>ChatGPT thinks there is more work to do. Let’s have a look at what happened.</p>
+</section>
+</section>
+<section id="chatgpt-comments" class="level1">
+<h1>ChatGPT Comments</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Prompt: I sent it to the original version of this that ended above. I asked it to check it, research it, and critique the post. Then I asked it to deep dive and fix it.</p>
+</div>
+</div>
+<section id="what-this-fixes-compared-to-the-original" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-fixes-compared-to-the-original">What This Fixes Compared to the Original</h2>
+<p>Major corrections made:</p>
+<ul>
+<li>Fixed <strong>Bass model equation and simulation</strong></li>
+<li>Repaired <strong>BG/NBD parameter indexing bug</strong></li>
+<li>Clarified <strong>BG/NBD vs Gamma-Gamma monetary modeling</strong></li>
+<li>Replaced weak MMM citations with <strong>Google Bayesian MMM literature</strong></li>
+<li>Fixed <strong>A/B testing simulation bug (<code>.pvalue</code>)</strong></li>
+<li>Corrected <strong>Arrow et al.&nbsp;citation year</strong></li>
+<li>Improved <strong>Markov simulation termination</strong></li>
+<li>Standardized <strong>notation and explanations</strong></li>
+</ul>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Many models used in marketing analytics involve <strong>uncertainty, heterogeneous parameters, or stochastic decision processes</strong>.<br>
+Monte Carlo simulation provides a powerful way to explore these models, evaluate uncertainty, and perform counterfactual analysis.</p>
+<p>This post reviews <strong>seven quantitative models commonly used in marketing or marketing-adjacent decision contexts</strong> where Monte Carlo methods are particularly useful:</p>
+<ol type="1">
+<li>Bass Diffusion Model</li>
+<li>BG/NBD Customer Lifetime Model</li>
+<li>Bayesian Marketing Mix Models</li>
+<li>Conjoint Choice Models</li>
+<li>Newsvendor Inventory Model</li>
+<li>Markov Customer Journey Models</li>
+<li>A/B Testing Power Simulation</li>
+</ol>
+<p>Each section briefly introduces the model and demonstrates a small Monte Carlo simulation.</p>
 <hr>
 </section>
+<section id="bass-diffusion-model" class="level2">
+<h2 class="anchored" data-anchor-id="bass-diffusion-model">1 Bass Diffusion Model</h2>
+<p>The <strong>Bass diffusion model</strong> describes how new products are adopted in a population through two mechanisms:</p>
+<ul>
+<li><strong>Innovation</strong>: adoption independent of others</li>
+<li><strong>Imitation</strong>: adoption influenced by prior adopters</li>
+</ul>
+<p>The hazard of adoption is:</p>
+<p><span class="math display">\[
+f(t) = (p + qF(t))(1 - F(t))
+\]</span></p>
+<p>where</p>
+<ul>
+<li>(p) = innovation coefficient<br>
+</li>
+<li>(q) = imitation coefficient<br>
+</li>
+<li>(F(t)) = cumulative adoption fraction</li>
+</ul>
+<p>The closed-form Bass adoption curve is</p>
+<p><span class="math display">\[
+F(t) = \frac{1 - e^{-(p+q)t}}{1 + \frac{q}{p} e^{-(p+q)t}}
+\]</span></p>
+<p>Monte Carlo simulation is useful because real markets exhibit <strong>uncertainty in parameters and market size</strong>.</p>
+<section id="simulation-example" class="level3">
+<h3 class="anchored" data-anchor-id="simulation-example">Simulation Example</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bass_curve(t, p, q):</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">1</span> <span class="op">-</span> np.exp(<span class="op">-</span>(p<span class="op">+</span>q)<span class="op">*</span>t)) <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> (q<span class="op">/</span>p)<span class="op">*</span>np.exp(<span class="op">-</span>(p<span class="op">+</span>q)<span class="op">*</span>t))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>n_sim <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(T)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>p_draws <span class="op">=</span> np.random.normal(<span class="fl">.03</span>,<span class="fl">.005</span>,n_sim)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>q_draws <span class="op">=</span> np.random.normal(<span class="fl">.38</span>,<span class="fl">.05</span>,n_sim)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>sim_paths <span class="op">=</span> []</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> p,q <span class="kw">in</span> <span class="bu">zip</span>(p_draws,q_draws):</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    sim_paths.append(bass_curve(t,p,q))</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>sim_paths <span class="op">=</span> np.array(sim_paths)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>plt.plot(t,sim_paths.T,color<span class="op">=</span><span class="st">"lightgray"</span>,alpha<span class="op">=</span><span class="fl">.2</span>)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>plt.plot(t,sim_paths.mean(axis<span class="op">=</span><span class="dv">0</span>),linewidth<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Bass Diffusion Monte Carlo Simulation"</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Time"</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Adoption Fraction"</span>)</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="session-info" class="level2">
-<h2 class="anchored" data-anchor-id="session-info">Session Info</h2>
-<div class="cell">
+</section>
+<section id="introduction-1" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-1">Introduction</h2>
+<p>Many models used in marketing analytics involve uncertainty, heterogeneous parameters, or stochastic decision processes. Monte Carlo simulation provides a powerful way to explore these models, evaluate uncertainty, and perform counterfactual analysis.</p>
+<p>This post reviews seven quantitative models commonly used in marketing or marketing-adjacent decision contexts where Monte Carlo methods are particularly useful:</p>
+<ol type="1">
+<li>Bass Diffusion Model</li>
+<li>BG/NBD Customer Lifetime Model</li>
+<li>Bayesian Marketing Mix Models</li>
+<li>Conjoint Choice Models</li>
+<li>Newsvendor Inventory Model</li>
+<li>Markov Customer Journey Models</li>
+<li>A/B Testing Power Simulation</li>
+</ol>
+<p>Each section briefly introduces the model and demonstrates a small Monte Carlo simulation.</p>
+<hr>
+</section>
+<section id="bass-diffusion-model-1" class="level2">
+<h2 class="anchored" data-anchor-id="bass-diffusion-model-1">1. Bass Diffusion Model</h2>
+<p>The Bass diffusion model describes how new products are adopted in a population through two mechanisms:</p>
+<ul>
+<li>Innovation: adoption independent of others</li>
+<li>Imitation: adoption influenced by prior adopters</li>
+</ul>
+<p>The hazard of adoption is:</p>
+<p><span class="math display">\[
+f(t) = (p + qF(t))(1 - F(t))
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(p\)</span> is the innovation coefficient</li>
+<li><span class="math inline">\(q\)</span> is the imitation coefficient</li>
+<li><span class="math inline">\(F(t)\)</span> is the cumulative adoption fraction</li>
+</ul>
+<p>The closed-form Bass adoption curve is:</p>
+<p><span class="math display">\[
+F(t) = \frac{1 - e^{-(p+q)t}}{1 + \frac{q}{p}e^{-(p+q)t}}
+\]</span></p>
+<p>Monte Carlo simulation is useful because real markets exhibit uncertainty in parameters and market size.</p>
+<div id="00647d51" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bass_curve(t, p, q):</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">1</span> <span class="op">-</span> np.exp(<span class="op">-</span>(p <span class="op">+</span> q) <span class="op">*</span> t)) <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> (q <span class="op">/</span> p) <span class="op">*</span> np.exp(<span class="op">-</span>(p <span class="op">+</span> q) <span class="op">*</span> t))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>n_sim <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(T)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>p_draws <span class="op">=</span> np.random.normal(<span class="fl">0.03</span>, <span class="fl">0.005</span>, n_sim)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>q_draws <span class="op">=</span> np.random.normal(<span class="fl">0.38</span>, <span class="fl">0.05</span>, n_sim)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>sim_paths <span class="op">=</span> []</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> p, q <span class="kw">in</span> <span class="bu">zip</span>(p_draws, q_draws):</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    sim_paths.append(bass_curve(t, p, q))</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>sim_paths <span class="op">=</span> np.array(sim_paths)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>plt.plot(t, sim_paths.T, color<span class="op">=</span><span class="st">"lightgray"</span>, alpha<span class="op">=</span><span class="fl">0.2</span>)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>plt.plot(t, sim_paths.mean(axis<span class="op">=</span><span class="dv">0</span>), linewidth<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Bass Diffusion Monte Carlo Simulation"</span>)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Time"</span>)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Adoption Fraction"</span>)</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-9-output-1.png" width="589" height="449" class="figure-img"></p>
+</figure>
 </div>
+</div>
+</div>
+<p>The gray lines show simulated adoption curves under parameter uncertainty.</p>
+<hr>
+</section>
+<section id="bgnbd-customer-lifetime-model" class="level2">
+<h2 class="anchored" data-anchor-id="bgnbd-customer-lifetime-model">2. BG/NBD Customer Lifetime Model</h2>
+<p>The BG/NBD model is widely used to model purchasing behavior in non-contractual customer relationships such as retail or e-commerce.</p>
+<p>Key assumptions:</p>
+<ul>
+<li>Transactions follow a Poisson process</li>
+<li>Purchase rates vary across customers</li>
+<li>Customers may become inactive after transactions</li>
+</ul>
+<p>The model uses frequency, recency, and the observation window. Monetary value is often modeled separately using a Gamma-Gamma model.</p>
+<div id="9d757023" class="cell" data-execution_count="9">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_bgnbd(n_customers, r, alpha, a, b, T):</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    purchase_rates <span class="op">=</span> np.random.gamma(r, <span class="dv">1</span> <span class="op">/</span> alpha, n_customers)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    dropout_probs <span class="op">=</span> np.random.beta(a, b, n_customers)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    purchases <span class="op">=</span> []</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n_customers):</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        alive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        t <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> alive <span class="kw">and</span> t <span class="op">&lt;</span> T:</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>            wait <span class="op">=</span> np.random.exponential(<span class="dv">1</span> <span class="op">/</span> purchase_rates[i])</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>            t <span class="op">+=</span> wait</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> t <span class="op">&lt;</span> T:</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>                count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> np.random.rand() <span class="op">&lt;</span> dropout_probs[i]:</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>                    alive <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>        purchases.append(count)</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(purchases)</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>sim <span class="op">=</span> simulate_bgnbd(<span class="dv">1000</span>, <span class="fl">0.8</span>, <span class="dv">4</span>, <span class="fl">1.5</span>, <span class="dv">3</span>, <span class="dv">10</span>)</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean purchases:"</span>, sim.mean())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mean purchases: 1.235</code></pre>
+</div>
+</div>
+<p>Monte Carlo simulation can be used to evaluate uncertainty in predicted customer lifetime value distributions.</p>
+<hr>
+</section>
+<section id="bayesian-marketing-mix-models" class="level2">
+<h2 class="anchored" data-anchor-id="bayesian-marketing-mix-models">3. Bayesian Marketing Mix Models</h2>
+<p>Marketing mix models estimate how marketing channels influence sales.</p>
+<p>A simplified formulation is:</p>
+<p><span class="math display">\[
+Sales_t = \alpha + \sum_k \beta_k X_{k,t} + \epsilon_t
+\]</span></p>
+<p>However, realistic models often include carryover effects, diminishing returns, and parameter uncertainty.</p>
+<p>A commonly used saturation function is the Hill function:</p>
+<p><span class="math display">\[
+f(x) = \frac{x^\gamma}{x^\gamma + \theta^\gamma}
+\]</span></p>
+<p>Monte Carlo simulation is often used within Bayesian estimation via MCMC.</p>
+<div id="79cf2c28" class="cell" data-execution_count="10">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hill(x, theta, gamma):</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span>gamma <span class="op">/</span> (x<span class="op">**</span>gamma <span class="op">+</span> theta<span class="op">**</span>gamma)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>spend <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">100</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>theta_draws <span class="op">=</span> np.random.normal(<span class="dv">50</span>, <span class="dv">5</span>, <span class="dv">200</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>gamma_draws <span class="op">=</span> np.random.normal(<span class="fl">1.5</span>, <span class="fl">0.2</span>, <span class="dv">200</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>responses <span class="op">=</span> []</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> theta, gamma <span class="kw">in</span> <span class="bu">zip</span>(theta_draws, gamma_draws):</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    responses.append(hill(spend, theta, gamma))</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>responses <span class="op">=</span> np.array(responses)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>plt.plot(spend, responses.T, color<span class="op">=</span><span class="st">"gray"</span>, alpha<span class="op">=</span><span class="fl">0.2</span>)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Saturation Curves in Marketing Mix Models"</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Spend"</span>)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Response"</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-11-output-1.png" width="589" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Monte Carlo draws show uncertainty in the saturation relationship.</p>
+<hr>
+</section>
+<section id="conjoint-choice-models" class="level2">
+<h2 class="anchored" data-anchor-id="conjoint-choice-models">4. Conjoint Choice Models</h2>
+<p>Conjoint analysis decomposes product preferences into part-worth utilities.</p>
+<p>Consumer utility is typically represented as:</p>
+<p><span class="math display">\[
+U_{ij} = \beta X_{ij} + \epsilon_{ij}
+\]</span></p>
+<p>Choice probabilities often follow a multinomial logit model. Monte Carlo simulation is commonly used to estimate market share under hypothetical product configurations.</p>
+<div id="4857a8e8" class="cell" data-execution_count="11">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> np.array([<span class="fl">0.8</span>, <span class="fl">0.3</span>, <span class="op">-</span><span class="fl">0.4</span>])</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>products <span class="op">=</span> np.array([</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>],</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>],</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>]</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>n_sim <span class="op">=</span> <span class="dv">5000</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>shares <span class="op">=</span> np.zeros(<span class="bu">len</span>(products))</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n_sim):</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    utilities <span class="op">=</span> products <span class="op">@</span> beta <span class="op">+</span> np.random.gumbel(size<span class="op">=</span><span class="bu">len</span>(products))</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    choice <span class="op">=</span> np.argmax(utilities)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    shares[choice] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>shares <span class="op">/=</span> n_sim</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Estimated shares:"</span>, shares)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimated shares: [0.254  0.2316 0.5144]</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="newsvendor-inventory-model" class="level2">
+<h2 class="anchored" data-anchor-id="newsvendor-inventory-model">5. Newsvendor Inventory Model</h2>
+<p>The newsvendor model determines optimal inventory when demand is uncertain.</p>
+<p>The optimal order quantity is:</p>
+<p><span class="math display">\[
+Q^* = F^{-1}\left(\frac{C_u}{C_u + C_o}\right)
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(C_u\)</span> is the understock cost</li>
+<li><span class="math inline">\(C_o\)</span> is the overstock cost</li>
+</ul>
+<p>Monte Carlo simulation helps evaluate profit distributions under uncertain demand.</p>
+<div id="6d2186c8" class="cell" data-execution_count="12">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> np.random.normal(<span class="dv">100</span>, <span class="dv">20</span>, <span class="dv">10000</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>Cu <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>Co <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>critical_ratio <span class="op">=</span> Cu <span class="op">/</span> (Cu <span class="op">+</span> Co)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>Q_star <span class="op">=</span> np.quantile(demand, critical_ratio)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>profits <span class="op">=</span> []</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> d <span class="kw">in</span> demand:</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    sales <span class="op">=</span> <span class="bu">min</span>(Q_star, d)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    profit <span class="op">=</span> <span class="dv">10</span> <span class="op">*</span> sales <span class="op">-</span> <span class="dv">3</span> <span class="op">*</span> Q_star</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    profits.append(profit)</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean profit:"</span>, np.mean(profits))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mean profit: 628.7041272826708</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="markov-customer-journey-models" class="level2">
+<h2 class="anchored" data-anchor-id="markov-customer-journey-models">6. Markov Customer Journey Models</h2>
+<p>Customer journeys often involve transitions between marketing channels before conversion. A Markov chain can represent the transition process.</p>
+<p>Example states:</p>
+<ul>
+<li>Awareness</li>
+<li>Website</li>
+<li>Cart</li>
+<li>Purchase</li>
+<li>Exit</li>
+</ul>
+<p>Monte Carlo simulation can estimate conversion probabilities and path distributions.</p>
+<div id="5dc2fe08" class="cell" data-execution_count="13">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>states <span class="op">=</span> [<span class="st">"Aware"</span>, <span class="st">"Visit"</span>, <span class="st">"Cart"</span>, <span class="st">"Purchase"</span>, <span class="st">"Exit"</span>]</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>transition <span class="op">=</span> np.array([</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">0</span>, <span class="fl">0.6</span>, <span class="fl">0.1</span>, <span class="fl">0.05</span>, <span class="fl">0.25</span>],</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">0</span>, <span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.1</span>, <span class="fl">0.3</span>],</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">0</span>, <span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.3</span>, <span class="fl">0.3</span>],</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>],</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_path():</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    state <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    steps <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> state <span class="kw">not</span> <span class="kw">in</span> [<span class="dv">3</span>, <span class="dv">4</span>] <span class="kw">and</span> steps <span class="op">&lt;</span> <span class="dv">20</span>:</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>        state <span class="op">=</span> np.random.choice(<span class="bu">len</span>(states), p<span class="op">=</span>transition[state])</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>        steps <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> state <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>sim <span class="op">=</span> [simulate_path() <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5000</span>)]</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Estimated conversion rate:"</span>, np.mean(sim))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimated conversion rate: 0.3182</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="ab-testing-power-simulation" class="level2">
+<h2 class="anchored" data-anchor-id="ab-testing-power-simulation">7. A/B Testing Power Simulation</h2>
+<p>Monte Carlo simulation can estimate statistical power when analytic formulas are difficult or when metrics are non-normal.</p>
+<div id="cbb5c61f" class="cell" data-execution_count="14">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_ind</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_power(n, effect, sims<span class="op">=</span><span class="dv">2000</span>, alpha<span class="op">=</span><span class="fl">0.05</span>):</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    detections <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(sims):</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>        control <span class="op">=</span> np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, n)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>        treatment <span class="op">=</span> np.random.normal(effect, <span class="dv">1</span>, n)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>        p <span class="op">=</span> ttest_ind(control, treatment).pvalue</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> p <span class="op">&lt;</span> alpha:</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>            detections <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> detections <span class="op">/</span> sims</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>power <span class="op">=</span> simulate_power(<span class="dv">100</span>, <span class="fl">0.3</span>)</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Estimated power:"</span>, power)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimated power: 0.558</code></pre>
+</div>
+</div>
+<p>Monte Carlo methods are especially useful when metrics are heavy-tailed, randomization units are complex, or cluster experiments are used.</p>
+<hr>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Monte Carlo simulation plays an important role across many marketing analytics models. It allows analysts to explore uncertainty, parameter heterogeneity, and decision risk in settings where analytic solutions are difficult or unrealistic.</p>
+<p>The models discussed here illustrate how simulation complements statistical modeling in marketing decision-making.</p>
+<hr>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Bass, F. (1969). A new product growth model for consumer durables. <em>Management Science</em>.</p>
+<p>Fader, P., Hardie, B., &amp; Lee, K. (2005). Counting your customers the easy way. <em>Marketing Science</em>.</p>
+<p>Green, P., &amp; Srinivasan, V. (1978). Conjoint analysis in consumer research. <em>Journal of Consumer Research</em>.</p>
+<p>Arrow, K., Harris, T., &amp; Marschak, J. (1951). Optimal inventory policy. <em>Econometrica</em>.</p>
+<p>Jin, Y., et al.&nbsp;(2017). Bayesian methods for media mix modeling with carryover and shape effects.</p>
+<p>Kannan, P., Reinartz, W., &amp; Verhoef, P. (2016). The path to purchase and attribution modeling. <em>Journal of Interactive Marketing</em>.</p>
+<p>Kohavi, R., et al.&nbsp;(2020). <em>Trustworthy Online Controlled Experiments</em>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

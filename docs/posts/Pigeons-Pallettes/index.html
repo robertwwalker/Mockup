@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -94,7 +94,7 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4c7b890cc350be7067044af900615741.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-45e8e462cd760eca75dbd85b13f1b7a2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-ad65f16eac3e46b7a7317244f610487a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
@@ -132,6 +132,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="../../css/custom-cards.css">
 <link rel="stylesheet" href="../../css/floating-card-standalone.css">
+<link rel="stylesheet" href="../../css/navbar-branding.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -282,9 +283,9 @@ div.csl-indent {
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Pigeon.colors</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "#C7A0E4" "#F07FCF" "#9DBFE9" "#ED82D0" "#A0B3E5" "#F9A7EB" "#97B3EC"
- [8] "#E872CF" "#9EABE0" "#E487BB" "#9FA7E3" "#DA98E4" "#D49BE7" "#E995DF"
-[15] "#DB9AE7" "#99A5DD" "#FFB3D5" "#ED91E8" "#DBA0E8" "#F0ACF6"</code></pre>
+<pre><code> [1] "#D39BE6" "#EEA0F4" "#9DABE1" "#E79FEA" "#EA97E4" "#EE7CCF" "#94A6DD"
+ [8] "#E77FB8" "#98B2E1" "#E87EC0" "#97B3EC" "#ED71D1" "#D69DE5" "#F27ACD"
+[15] "#DE98EB" "#E37FD4" "#97BCE2" "#FFB3D5" "#D5A0F0" "#E899E7"</code></pre>
 </div>
 </div>
 <p>Now I have a palette in the markdown environment called Pigeon.colors.</p>
@@ -300,11 +301,11 @@ div.csl-indent {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Stuff      vals
-1    Hi 0.8098163
-2 Howdy 0.5276048
-3 Hello 0.6156190
-4  Hola 0.7414126
-5 Hallo 0.9614590</code></pre>
+1    Hi 0.4833830
+2 Howdy 0.7969515
+3 Hello 0.6931483
+4  Hola 0.6851662
+5 Hallo 0.8423878</code></pre>
 </div>
 </div>
 <p>I want to graph it using a barplot equivalent because I have the height of the bars in <code>vals</code>. Let me use the fill aesthetic to fill the bars in by the five discrete things stored as <code>Stuff</code>. The trick to using it is to manually specify the colors and point it to the <code>Pigeon.colors</code> above.</p>

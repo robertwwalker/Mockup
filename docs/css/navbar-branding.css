@@ -1,0 +1,90 @@
+/* =========================
+   AGSM-style navbar branding
+   ========================= */
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* logo sizing */
+.navbar-brand img,
+.navbar-logo {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+/* site title styling */
+.navbar-brand .navbar-title,
+.navbar-title {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+/* remove separate hover/underline behavior from internal pieces */
+.navbar-brand img,
+.navbar-brand .navbar-title,
+.navbar-brand span {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* unified underline effect for the whole brand block */
+.navbar-brand {
+  position: relative;
+}
+
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.15rem;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.22s ease;
+  opacity: 0.9;
+}
+
+.navbar-brand:hover::after,
+.navbar-brand:focus::after {
+  transform: scaleX(1);
+}
+
+/* optional: slightly soften nav links to let branding stand out */
+.navbar-nav .nav-link {
+  transition: color 0.18s ease;
+}
+
+/* mobile polish */
+@media (max-width: 991.98px) {
+  .navbar-brand img,
+  .navbar-logo {
+    height: 30px;
+  }
+
+  .navbar-brand .navbar-title,
+  .navbar-title {
+    font-size: 1rem;
+  }
+}
+
+.navbar {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
