@@ -6,8 +6,8 @@ title: "Robert W. Walker"
 ::: {.home-bubble-minimal}
 
 ::: {.lead-minimal}
-Associate Professor of Quantitative Methods  
-Atkinson Graduate School of Management
+**Associate Professor of Quantitative Methods,    
+Atkinson Graduate School of Management, Willamette University**
 :::
 
 ::: {.circle-grid .single-row}

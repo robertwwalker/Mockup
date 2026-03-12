@@ -95,30 +95,31 @@ body:has(.home-hero-overlay) .title {
 }
 
 /* Circle Grid Layout - Balanced Grid (3 columns = 2 even rows) */
-.circle-grid {
+/* Scoped to landing page only */
+body:has(.home-hero-overlay) .circle-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 750px;
+  gap: 2.5rem;
+  max-width: 900px;
   margin: 0;
   padding: 0;
   justify-items: start;
 }
 
 /* Maintain balanced grid */
-.circle-grid.single-row {
+body:has(.home-hero-overlay) .circle-grid.single-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 750px;
+  gap: 2.5rem;
+  max-width: 900px;
   justify-items: start;
 }
 
-/* Individual Circle Cards */
-.circle-card {
+/* Individual Circle Cards - Landing page only */
+body:has(.home-hero-overlay) .circle-card {
   position: relative;
-  width: 108px;
-  height: 108px;
+  width: 216px;
+  height: 216px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -126,7 +127,7 @@ body:has(.home-hero-overlay) .title {
   cursor: pointer;
 }
 
-.circle-card a {
+body:has(.home-hero-overlay) .circle-card a {
   position: relative;
   width: 100%;
   height: 100%;
@@ -155,11 +156,11 @@ body:has(.home-hero-overlay) .title {
   /* Lavender-pink elegant typography */
   color: #E8BADB;
   font-family: 'EB Garamond', Georgia, serif;
-  font-size: 0.9rem;
+  font-size: 1.6rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-align: center;
-  padding: 0.75rem;
+  padding: 1.5rem;
   text-transform: uppercase;
   
   /* Smooth transitions */
@@ -169,13 +170,13 @@ body:has(.home-hero-overlay) .title {
   animation: floatSpot 6s ease-in-out infinite;
 }
 
-/* Unique animation delays for each circle */
-.circle-card:nth-child(1) a { animation-delay: 0s; }
-.circle-card:nth-child(2) a { animation-delay: 0.5s; }
-.circle-card:nth-child(3) a { animation-delay: 1s; }
-.circle-card:nth-child(4) a { animation-delay: 1.5s; }
-.circle-card:nth-child(5) a { animation-delay: 2s; }
-.circle-card:nth-child(6) a { animation-delay: 2.5s; }
+/* Unique animation delays for each circle - Landing page only */
+body:has(.home-hero-overlay) .circle-card:nth-child(1) a { animation-delay: 0s; }
+body:has(.home-hero-overlay) .circle-card:nth-child(2) a { animation-delay: 0.5s; }
+body:has(.home-hero-overlay) .circle-card:nth-child(3) a { animation-delay: 1s; }
+body:has(.home-hero-overlay) .circle-card:nth-child(4) a { animation-delay: 1.5s; }
+body:has(.home-hero-overlay) .circle-card:nth-child(5) a { animation-delay: 2s; }
+body:has(.home-hero-overlay) .circle-card:nth-child(6) a { animation-delay: 2.5s; }
 
 /* Pulsing glow animation */
 @keyframes floatSpot {
@@ -193,8 +194,8 @@ body:has(.home-hero-overlay) .title {
   }
 }
 
-/* Hover effects */
-.circle-card a:hover {
+/* Hover effects - Landing page only */
+body:has(.home-hero-overlay) .circle-card a:hover {
   transform: translateY(-12px) scale(1.15) !important;
   border-color: rgba(232, 186, 219, 0.5);
   background: rgba(232, 186, 219, 0.08);
@@ -205,8 +206,8 @@ body:has(.home-hero-overlay) .title {
   animation: none; /* Pause floating animation on hover */
 }
 
-/* Rotating glow ring on hover */
-.circle-card a::before {
+/* Rotating glow ring on hover - Landing page only */
+body:has(.home-hero-overlay) .circle-card a::before {
   content: '';
   position: absolute;
   inset: -3px;
@@ -225,7 +226,7 @@ body:has(.home-hero-overlay) .title {
   z-index: -1;
 }
 
-.circle-card a:hover::before {
+body:has(.home-hero-overlay) .circle-card a:hover::before {
   opacity: 1;
 }
 
@@ -238,8 +239,8 @@ body:has(.home-hero-overlay) .title {
   }
 }
 
-/* Inner glow effect */
-.circle-card a::after {
+/* Inner glow effect - Landing page only */
+body:has(.home-hero-overlay) .circle-card a::after {
   content: '';
   position: absolute;
   inset: 25%;
@@ -253,7 +254,7 @@ body:has(.home-hero-overlay) .title {
   transition: opacity 0.4s ease;
 }
 
-.circle-card a:hover::after {
+body:has(.home-hero-overlay) .circle-card a:hover::after {
   opacity: 0.9;
 }
 
@@ -269,21 +270,21 @@ body:has(.home-hero-overlay) .title {
     padding-left: 15% !important;
   }
 
-  .circle-grid,
-  .circle-grid.single-row {
+  body:has(.home-hero-overlay) .circle-grid,
+  body:has(.home-hero-overlay) .circle-grid.single-row {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    max-width: 600px;
+    gap: 2rem;
+    max-width: 750px;
     padding: 0;
   }
 
-  .circle-card {
-    width: 105px;
-    height: 105px;
+  body:has(.home-hero-overlay) .circle-card {
+    width: 210px;
+    height: 210px;
   }
 
-  .circle-card a {
-    font-size: 0.85rem;
+  body:has(.home-hero-overlay) .circle-card a {
+    font-size: 1.5rem;
   }
 
   .lead-minimal {
@@ -302,21 +303,21 @@ body:has(.home-hero-overlay) .title {
     padding-left: 5% !important;
   }
 
-  .circle-grid,
-  .circle-grid.single-row {
+  body:has(.home-hero-overlay) .circle-grid,
+  body:has(.home-hero-overlay) .circle-grid.single-row {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    gap: 1.5rem;
     max-width: 100%;
     padding: 0;
   }
 
-  .circle-card {
-    width: 95px;
-    height: 95px;
+  body:has(.home-hero-overlay) .circle-card {
+    width: 190px;
+    height: 190px;
   }
 
-  .circle-card a {
-    font-size: 0.8rem;
+  body:has(.home-hero-overlay) .circle-card a {
+    font-size: 1.4rem;
   }
 
   .lead-minimal {
@@ -326,20 +327,20 @@ body:has(.home-hero-overlay) .title {
 
 /* Large screens - maintain 3 columns for balance */
 @media (min-width: 1400px) {
-  .circle-grid,
-  .circle-grid.single-row {
+  body:has(.home-hero-overlay) .circle-grid,
+  body:has(.home-hero-overlay) .circle-grid.single-row {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    max-width: 800px;
+    gap: 3rem;
+    max-width: 950px;
   }
 }
 
-/* Alternative: Constellation effect (optional) */
-.circle-grid.constellation {
+/* Alternative: Constellation effect (optional) - Landing page only */
+body:has(.home-hero-overlay) .circle-grid.constellation {
   position: relative;
 }
 
-.circle-grid.constellation::before {
+body:has(.home-hero-overlay) .circle-grid.constellation::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -358,8 +359,8 @@ body:has(.home-hero-overlay) .title {
   50% { opacity: 0.6; }
 }
 
-/* Accessibility - ensure focus states are visible */
-.circle-card a:focus-visible {
+/* Accessibility - ensure focus states are visible - Landing page only */
+body:has(.home-hero-overlay) .circle-card a:focus-visible {
   outline: 2px solid rgba(232, 186, 219, 0.7);
   outline-offset: 4px;
 }

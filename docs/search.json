@@ -344,7 +344,7 @@
     "href": "posts/qwen-3.5-35B-Marketing/index.html#bgnbd-customer-lifetime-model",
     "title": "Exploring qwen-3.5 35B",
     "section": "2. BG/NBD Customer Lifetime Model",
-    "text": "2. BG/NBD Customer Lifetime Model\nThe BG/NBD model is widely used to model purchasing behavior in non-contractual customer relationships such as retail or e-commerce.\nKey assumptions:\n\nTransactions follow a Poisson process\nPurchase rates vary across customers\nCustomers may become inactive after transactions\n\nThe model uses frequency, recency, and the observation window. Monetary value is often modeled separately using a Gamma-Gamma model.\n\n\nCode\nimport numpy as np\n\ndef simulate_bgnbd(n_customers, r, alpha, a, b, T):\n    purchase_rates = np.random.gamma(r, 1 / alpha, n_customers)\n    dropout_probs = np.random.beta(a, b, n_customers)\n\n    purchases = []\n\n    for i in range(n_customers):\n        alive = True\n        t = 0\n        count = 0\n\n        while alive and t &lt; T:\n            wait = np.random.exponential(1 / purchase_rates[i])\n            t += wait\n\n            if t &lt; T:\n                count += 1\n                if np.random.rand() &lt; dropout_probs[i]:\n                    alive = False\n\n        purchases.append(count)\n\n    return np.array(purchases)\n\nsim = simulate_bgnbd(1000, 0.8, 4, 1.5, 3, 10)\nprint(\"Mean purchases:\", sim.mean())\n\n\nMean purchases: 1.225\n\n\nMonte Carlo simulation can be used to evaluate uncertainty in predicted customer lifetime value distributions."
+    "text": "2. BG/NBD Customer Lifetime Model\nThe BG/NBD model is widely used to model purchasing behavior in non-contractual customer relationships such as retail or e-commerce.\nKey assumptions:\n\nTransactions follow a Poisson process\nPurchase rates vary across customers\nCustomers may become inactive after transactions\n\nThe model uses frequency, recency, and the observation window. Monetary value is often modeled separately using a Gamma-Gamma model.\n\n\nCode\nimport numpy as np\n\ndef simulate_bgnbd(n_customers, r, alpha, a, b, T):\n    purchase_rates = np.random.gamma(r, 1 / alpha, n_customers)\n    dropout_probs = np.random.beta(a, b, n_customers)\n\n    purchases = []\n\n    for i in range(n_customers):\n        alive = True\n        t = 0\n        count = 0\n\n        while alive and t &lt; T:\n            wait = np.random.exponential(1 / purchase_rates[i])\n            t += wait\n\n            if t &lt; T:\n                count += 1\n                if np.random.rand() &lt; dropout_probs[i]:\n                    alive = False\n\n        purchases.append(count)\n\n    return np.array(purchases)\n\nsim = simulate_bgnbd(1000, 0.8, 4, 1.5, 3, 10)\nprint(\"Mean purchases:\", sim.mean())\n\n\nMean purchases: 1.286\n\n\nMonte Carlo simulation can be used to evaluate uncertainty in predicted customer lifetime value distributions."
   },
   {
     "objectID": "posts/qwen-3.5-35B-Marketing/index.html#bayesian-marketing-mix-models",
@@ -358,28 +358,28 @@
     "href": "posts/qwen-3.5-35B-Marketing/index.html#conjoint-choice-models",
     "title": "Exploring qwen-3.5 35B",
     "section": "4. Conjoint Choice Models",
-    "text": "4. Conjoint Choice Models\nConjoint analysis decomposes product preferences into part-worth utilities.\nConsumer utility is typically represented as:\n\\[\nU_{ij} = \\beta X_{ij} + \\epsilon_{ij}\n\\]\nChoice probabilities often follow a multinomial logit model. Monte Carlo simulation is commonly used to estimate market share under hypothetical product configurations.\n\n\nCode\nimport numpy as np\n\nbeta = np.array([0.8, 0.3, -0.4])\n\nproducts = np.array([\n    [1, 0, 1],\n    [0, 1, 0],\n    [1, 1, 0]\n])\n\nn_sim = 5000\nshares = np.zeros(len(products))\n\nfor _ in range(n_sim):\n    utilities = products @ beta + np.random.gumbel(size=len(products))\n    choice = np.argmax(utilities)\n    shares[choice] += 1\n\nshares /= n_sim\nprint(\"Estimated shares:\", shares)\n\n\nEstimated shares: [0.2534 0.2316 0.515 ]"
+    "text": "4. Conjoint Choice Models\nConjoint analysis decomposes product preferences into part-worth utilities.\nConsumer utility is typically represented as:\n\\[\nU_{ij} = \\beta X_{ij} + \\epsilon_{ij}\n\\]\nChoice probabilities often follow a multinomial logit model. Monte Carlo simulation is commonly used to estimate market share under hypothetical product configurations.\n\n\nCode\nimport numpy as np\n\nbeta = np.array([0.8, 0.3, -0.4])\n\nproducts = np.array([\n    [1, 0, 1],\n    [0, 1, 0],\n    [1, 1, 0]\n])\n\nn_sim = 5000\nshares = np.zeros(len(products))\n\nfor _ in range(n_sim):\n    utilities = products @ beta + np.random.gumbel(size=len(products))\n    choice = np.argmax(utilities)\n    shares[choice] += 1\n\nshares /= n_sim\nprint(\"Estimated shares:\", shares)\n\n\nEstimated shares: [0.2468 0.2418 0.5114]"
   },
   {
     "objectID": "posts/qwen-3.5-35B-Marketing/index.html#newsvendor-inventory-model",
     "href": "posts/qwen-3.5-35B-Marketing/index.html#newsvendor-inventory-model",
     "title": "Exploring qwen-3.5 35B",
     "section": "5. Newsvendor Inventory Model",
-    "text": "5. Newsvendor Inventory Model\nThe newsvendor model determines optimal inventory when demand is uncertain.\nThe optimal order quantity is:\n\\[\nQ^* = F^{-1}\\left(\\frac{C_u}{C_u + C_o}\\right)\n\\]\nwhere:\n\n\\(C_u\\) is the understock cost\n\\(C_o\\) is the overstock cost\n\nMonte Carlo simulation helps evaluate profit distributions under uncertain demand.\n\n\nCode\nimport numpy as np\n\ndemand = np.random.normal(100, 20, 10000)\n\nCu = 5\nCo = 2\ncritical_ratio = Cu / (Cu + Co)\nQ_star = np.quantile(demand, critical_ratio)\n\nprofits = []\nfor d in demand:\n    sales = min(Q_star, d)\n    profit = 10 * sales - 3 * Q_star\n    profits.append(profit)\n\nprint(\"Mean profit:\", np.mean(profits))\n\n\nMean profit: 630.9493078062848"
+    "text": "5. Newsvendor Inventory Model\nThe newsvendor model determines optimal inventory when demand is uncertain.\nThe optimal order quantity is:\n\\[\nQ^* = F^{-1}\\left(\\frac{C_u}{C_u + C_o}\\right)\n\\]\nwhere:\n\n\\(C_u\\) is the understock cost\n\\(C_o\\) is the overstock cost\n\nMonte Carlo simulation helps evaluate profit distributions under uncertain demand.\n\n\nCode\nimport numpy as np\n\ndemand = np.random.normal(100, 20, 10000)\n\nCu = 5\nCo = 2\ncritical_ratio = Cu / (Cu + Co)\nQ_star = np.quantile(demand, critical_ratio)\n\nprofits = []\nfor d in demand:\n    sales = min(Q_star, d)\n    profit = 10 * sales - 3 * Q_star\n    profits.append(profit)\n\nprint(\"Mean profit:\", np.mean(profits))\n\n\nMean profit: 631.8130805346327"
   },
   {
     "objectID": "posts/qwen-3.5-35B-Marketing/index.html#markov-customer-journey-models",
     "href": "posts/qwen-3.5-35B-Marketing/index.html#markov-customer-journey-models",
     "title": "Exploring qwen-3.5 35B",
     "section": "6. Markov Customer Journey Models",
-    "text": "6. Markov Customer Journey Models\nCustomer journeys often involve transitions between marketing channels before conversion. A Markov chain can represent the transition process.\nExample states:\n\nAwareness\nWebsite\nCart\nPurchase\nExit\n\nMonte Carlo simulation can estimate conversion probabilities and path distributions.\n\n\nCode\nimport numpy as np\n\nstates = [\"Aware\", \"Visit\", \"Cart\", \"Purchase\", \"Exit\"]\n\ntransition = np.array([\n    [0, 0.6, 0.1, 0.05, 0.25],\n    [0, 0.2, 0.4, 0.1, 0.3],\n    [0, 0.1, 0.3, 0.3, 0.3],\n    [0, 0, 0, 1, 0],\n    [0, 0, 0, 0, 1]\n])\n\ndef simulate_path():\n    state = 0\n    steps = 0\n\n    while state not in [3, 4] and steps &lt; 20:\n        state = np.random.choice(len(states), p=transition[state])\n        steps += 1\n\n    return state == 3\n\nsim = [simulate_path() for _ in range(5000)]\nprint(\"Estimated conversion rate:\", np.mean(sim))\n\n\nEstimated conversion rate: 0.3194"
+    "text": "6. Markov Customer Journey Models\nCustomer journeys often involve transitions between marketing channels before conversion. A Markov chain can represent the transition process.\nExample states:\n\nAwareness\nWebsite\nCart\nPurchase\nExit\n\nMonte Carlo simulation can estimate conversion probabilities and path distributions.\n\n\nCode\nimport numpy as np\n\nstates = [\"Aware\", \"Visit\", \"Cart\", \"Purchase\", \"Exit\"]\n\ntransition = np.array([\n    [0, 0.6, 0.1, 0.05, 0.25],\n    [0, 0.2, 0.4, 0.1, 0.3],\n    [0, 0.1, 0.3, 0.3, 0.3],\n    [0, 0, 0, 1, 0],\n    [0, 0, 0, 0, 1]\n])\n\ndef simulate_path():\n    state = 0\n    steps = 0\n\n    while state not in [3, 4] and steps &lt; 20:\n        state = np.random.choice(len(states), p=transition[state])\n        steps += 1\n\n    return state == 3\n\nsim = [simulate_path() for _ in range(5000)]\nprint(\"Estimated conversion rate:\", np.mean(sim))\n\n\nEstimated conversion rate: 0.3162"
   },
   {
     "objectID": "posts/qwen-3.5-35B-Marketing/index.html#ab-testing-power-simulation",
     "href": "posts/qwen-3.5-35B-Marketing/index.html#ab-testing-power-simulation",
     "title": "Exploring qwen-3.5 35B",
     "section": "7. A/B Testing Power Simulation",
-    "text": "7. A/B Testing Power Simulation\nMonte Carlo simulation can estimate statistical power when analytic formulas are difficult or when metrics are non-normal.\n\n\nCode\nimport numpy as np\nfrom scipy.stats import ttest_ind\n\ndef simulate_power(n, effect, sims=2000, alpha=0.05):\n    detections = 0\n\n    for _ in range(sims):\n        control = np.random.normal(0, 1, n)\n        treatment = np.random.normal(effect, 1, n)\n\n        p = ttest_ind(control, treatment).pvalue\n        if p &lt; alpha:\n            detections += 1\n\n    return detections / sims\n\npower = simulate_power(100, 0.3)\nprint(\"Estimated power:\", power)\n\n\nEstimated power: 0.559\n\n\nMonte Carlo methods are especially useful when metrics are heavy-tailed, randomization units are complex, or cluster experiments are used."
+    "text": "7. A/B Testing Power Simulation\nMonte Carlo simulation can estimate statistical power when analytic formulas are difficult or when metrics are non-normal.\n\n\nCode\nimport numpy as np\nfrom scipy.stats import ttest_ind\n\ndef simulate_power(n, effect, sims=2000, alpha=0.05):\n    detections = 0\n\n    for _ in range(sims):\n        control = np.random.normal(0, 1, n)\n        treatment = np.random.normal(effect, 1, n)\n\n        p = ttest_ind(control, treatment).pvalue\n        if p &lt; alpha:\n            detections += 1\n\n    return detections / sims\n\npower = simulate_power(100, 0.3)\nprint(\"Estimated power:\", power)\n\n\nEstimated power: 0.5425\n\n\nMonte Carlo methods are especially useful when metrics are heavy-tailed, randomization units are complex, or cluster experiments are used."
   },
   {
     "objectID": "posts/qwen-3.5-35B-Marketing/index.html#conclusion",
@@ -400,7 +400,7 @@
     "href": "posts/parameterized-markdown/index.html",
     "title": "Parameterizing Markdown",
     "section": "",
-    "text": "Last updated: 2026-03-11 12:19:10.479848\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-11 22:09:19.930314\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/parameterized-markdown/index.html#iframe-and-pages",
@@ -491,7 +491,7 @@
     "href": "posts/Transparency-Shiny/index.html",
     "title": "A Shiny on Corruption Data",
     "section": "",
-    "text": "Last updated: 2026-03-11 12:18:46.823528\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-11 22:08:56.361931\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/Transparency-Shiny/index.html#transparency-data",
@@ -540,21 +540,21 @@
     "href": "posts/Pigeons-Pallettes/index.html",
     "title": "Pigeons and Palettes",
     "section": "",
-    "text": "It really is an amazing pigeon. Apologies that I haven’t a photo credit for it; I found it one day on twitter as it went viral. It is a New York City pigeon.\n\n\n\nPigeon\n\n\nI want to color something with colors from that pigeon. First, I have to get the color palette.\n\n\n has a package called imgpalr that will extract colors from an image. If I need to, it is install.packages(\"imgpalr\").\nIn the following code chunk, I will load the package and then I want to point it to the pigeon image that I downloaded. In my case, it is in the same directory as the R Markdown file and is called Pigeon.png.\nInside the command image_pal(), I point it to an image, I specify how many colors [5], what type of color scheme, I want qualitative, and then some characteristics of the colors. The plot will show me the image alongside the palette though it is upside down.\n\n\nCode\nlibrary(imgpalr)\nPigeon.colors &lt;- image_pal(\"img/Pigeon.png\", # This will need to be adjusted to the actual file location on your computer.  Mine is in my downloads.\n          n = 20, # How many colors?\n          type = \"qual\", # Type of palette?\n          saturation = c(0.75, 1), \n          brightness = c(0.75, 1), \n          plot = TRUE, # Show the image and the palette?\n          bw = c(0.7, 0.95)\n          )\n\n\n\n\n\n\n\n\n\nCode\nPigeon.colors\n\n\n [1] \"#E87EC0\" \"#95B5E8\" \"#EF89D6\" \"#A3A1E6\" \"#DB9AE7\" \"#ED9AE8\" \"#E79BEA\"\n [8] \"#EA7DD9\" \"#9CADE3\" \"#E487BB\" \"#97BCE2\" \"#EB7DC5\" \"#A0ADE8\" \"#F07BD6\"\n[15] \"#F7A7F7\" \"#A0B4E7\" \"#EC96E5\" \"#E99DEF\" \"#9CB2E6\" \"#F794EA\"\n\n\nNow I have a palette in the markdown environment called Pigeon.colors.\n\n\n\nNow I need some data; I want five categories to match my palette. The rest is junk.\n\n\nCode\nJunk.data &lt;- data.frame(Stuff=c(\"Hi\",\"Howdy\",\"Hello\",\"Hola\",\"Hallo\"), vals = runif(5, 0.4, 1))\nJunk.data\n\n\n  Stuff      vals\n1    Hi 0.5850670\n2 Howdy 0.8217875\n3 Hello 0.5876373\n4  Hola 0.8149492\n5 Hallo 0.9900599\n\n\nI want to graph it using a barplot equivalent because I have the height of the bars in vals. Let me use the fill aesthetic to fill the bars in by the five discrete things stored as Stuff. The trick to using it is to manually specify the colors and point it to the Pigeon.colors above.\n\n\nCode\nlibrary(ggplot2)\nggplot(Junk.data) + aes(x=Stuff, y=vals, fill=Stuff) + geom_col() + scale_fill_manual(values = Pigeon.colors) + hrbrthemes::theme_ipsum_rc()"
+    "text": "It really is an amazing pigeon. Apologies that I haven’t a photo credit for it; I found it one day on twitter as it went viral. It is a New York City pigeon.\n\n\n\nPigeon\n\n\nI want to color something with colors from that pigeon. First, I have to get the color palette.\n\n\n has a package called imgpalr that will extract colors from an image. If I need to, it is install.packages(\"imgpalr\").\nIn the following code chunk, I will load the package and then I want to point it to the pigeon image that I downloaded. In my case, it is in the same directory as the R Markdown file and is called Pigeon.png.\nInside the command image_pal(), I point it to an image, I specify how many colors [5], what type of color scheme, I want qualitative, and then some characteristics of the colors. The plot will show me the image alongside the palette though it is upside down.\n\n\nCode\nlibrary(imgpalr)\nPigeon.colors &lt;- image_pal(\"img/Pigeon.png\", # This will need to be adjusted to the actual file location on your computer.  Mine is in my downloads.\n          n = 20, # How many colors?\n          type = \"qual\", # Type of palette?\n          saturation = c(0.75, 1), \n          brightness = c(0.75, 1), \n          plot = TRUE, # Show the image and the palette?\n          bw = c(0.7, 0.95)\n          )\n\n\n\n\n\n\n\n\n\nCode\nPigeon.colors\n\n\n [1] \"#F289E3\" \"#A0A6E6\" \"#EE74CA\" \"#E79FEA\" \"#9FC1EC\" \"#E09AE0\" \"#A0B3E5\"\n [8] \"#EB7DC5\" \"#92B0E2\" \"#EC6BCC\" \"#C7A0E4\" \"#ED9FDD\" \"#9BADE3\" \"#DB9AE7\"\n[15] \"#A491DE\" \"#F191EA\" \"#97BCE2\" \"#DA97E3\" \"#9DACE3\" \"#E79FED\"\n\n\nNow I have a palette in the markdown environment called Pigeon.colors.\n\n\n\nNow I need some data; I want five categories to match my palette. The rest is junk.\n\n\nCode\nJunk.data &lt;- data.frame(Stuff=c(\"Hi\",\"Howdy\",\"Hello\",\"Hola\",\"Hallo\"), vals = runif(5, 0.4, 1))\nJunk.data\n\n\n  Stuff      vals\n1    Hi 0.7172105\n2 Howdy 0.4023293\n3 Hello 0.4333741\n4  Hola 0.9456752\n5 Hallo 0.9660334\n\n\nI want to graph it using a barplot equivalent because I have the height of the bars in vals. Let me use the fill aesthetic to fill the bars in by the five discrete things stored as Stuff. The trick to using it is to manually specify the colors and point it to the Pigeon.colors above.\n\n\nCode\nlibrary(ggplot2)\nggplot(Junk.data) + aes(x=Stuff, y=vals, fill=Stuff) + geom_col() + scale_fill_manual(values = Pigeon.colors) + hrbrthemes::theme_ipsum_rc()"
   },
   {
     "objectID": "posts/Pigeons-Pallettes/index.html#imgpalr",
     "href": "posts/Pigeons-Pallettes/index.html#imgpalr",
     "title": "Pigeons and Palettes",
     "section": "",
-    "text": "has a package called imgpalr that will extract colors from an image. If I need to, it is install.packages(\"imgpalr\").\nIn the following code chunk, I will load the package and then I want to point it to the pigeon image that I downloaded. In my case, it is in the same directory as the R Markdown file and is called Pigeon.png.\nInside the command image_pal(), I point it to an image, I specify how many colors [5], what type of color scheme, I want qualitative, and then some characteristics of the colors. The plot will show me the image alongside the palette though it is upside down.\n\n\nCode\nlibrary(imgpalr)\nPigeon.colors &lt;- image_pal(\"img/Pigeon.png\", # This will need to be adjusted to the actual file location on your computer.  Mine is in my downloads.\n          n = 20, # How many colors?\n          type = \"qual\", # Type of palette?\n          saturation = c(0.75, 1), \n          brightness = c(0.75, 1), \n          plot = TRUE, # Show the image and the palette?\n          bw = c(0.7, 0.95)\n          )\n\n\n\n\n\n\n\n\n\nCode\nPigeon.colors\n\n\n [1] \"#E87EC0\" \"#95B5E8\" \"#EF89D6\" \"#A3A1E6\" \"#DB9AE7\" \"#ED9AE8\" \"#E79BEA\"\n [8] \"#EA7DD9\" \"#9CADE3\" \"#E487BB\" \"#97BCE2\" \"#EB7DC5\" \"#A0ADE8\" \"#F07BD6\"\n[15] \"#F7A7F7\" \"#A0B4E7\" \"#EC96E5\" \"#E99DEF\" \"#9CB2E6\" \"#F794EA\"\n\n\nNow I have a palette in the markdown environment called Pigeon.colors."
+    "text": "has a package called imgpalr that will extract colors from an image. If I need to, it is install.packages(\"imgpalr\").\nIn the following code chunk, I will load the package and then I want to point it to the pigeon image that I downloaded. In my case, it is in the same directory as the R Markdown file and is called Pigeon.png.\nInside the command image_pal(), I point it to an image, I specify how many colors [5], what type of color scheme, I want qualitative, and then some characteristics of the colors. The plot will show me the image alongside the palette though it is upside down.\n\n\nCode\nlibrary(imgpalr)\nPigeon.colors &lt;- image_pal(\"img/Pigeon.png\", # This will need to be adjusted to the actual file location on your computer.  Mine is in my downloads.\n          n = 20, # How many colors?\n          type = \"qual\", # Type of palette?\n          saturation = c(0.75, 1), \n          brightness = c(0.75, 1), \n          plot = TRUE, # Show the image and the palette?\n          bw = c(0.7, 0.95)\n          )\n\n\n\n\n\n\n\n\n\nCode\nPigeon.colors\n\n\n [1] \"#F289E3\" \"#A0A6E6\" \"#EE74CA\" \"#E79FEA\" \"#9FC1EC\" \"#E09AE0\" \"#A0B3E5\"\n [8] \"#EB7DC5\" \"#92B0E2\" \"#EC6BCC\" \"#C7A0E4\" \"#ED9FDD\" \"#9BADE3\" \"#DB9AE7\"\n[15] \"#A491DE\" \"#F191EA\" \"#97BCE2\" \"#DA97E3\" \"#9DACE3\" \"#E79FED\"\n\n\nNow I have a palette in the markdown environment called Pigeon.colors."
   },
   {
     "objectID": "posts/Pigeons-Pallettes/index.html#data-to-plot",
     "href": "posts/Pigeons-Pallettes/index.html#data-to-plot",
     "title": "Pigeons and Palettes",
     "section": "",
-    "text": "Now I need some data; I want five categories to match my palette. The rest is junk.\n\n\nCode\nJunk.data &lt;- data.frame(Stuff=c(\"Hi\",\"Howdy\",\"Hello\",\"Hola\",\"Hallo\"), vals = runif(5, 0.4, 1))\nJunk.data\n\n\n  Stuff      vals\n1    Hi 0.5850670\n2 Howdy 0.8217875\n3 Hello 0.5876373\n4  Hola 0.8149492\n5 Hallo 0.9900599\n\n\nI want to graph it using a barplot equivalent because I have the height of the bars in vals. Let me use the fill aesthetic to fill the bars in by the five discrete things stored as Stuff. The trick to using it is to manually specify the colors and point it to the Pigeon.colors above.\n\n\nCode\nlibrary(ggplot2)\nggplot(Junk.data) + aes(x=Stuff, y=vals, fill=Stuff) + geom_col() + scale_fill_manual(values = Pigeon.colors) + hrbrthemes::theme_ipsum_rc()"
+    "text": "Now I need some data; I want five categories to match my palette. The rest is junk.\n\n\nCode\nJunk.data &lt;- data.frame(Stuff=c(\"Hi\",\"Howdy\",\"Hello\",\"Hola\",\"Hallo\"), vals = runif(5, 0.4, 1))\nJunk.data\n\n\n  Stuff      vals\n1    Hi 0.7172105\n2 Howdy 0.4023293\n3 Hello 0.4333741\n4  Hola 0.9456752\n5 Hallo 0.9660334\n\n\nI want to graph it using a barplot equivalent because I have the height of the bars in vals. Let me use the fill aesthetic to fill the bars in by the five discrete things stored as Stuff. The trick to using it is to manually specify the colors and point it to the Pigeon.colors above.\n\n\nCode\nlibrary(ggplot2)\nggplot(Junk.data) + aes(x=Stuff, y=vals, fill=Stuff) + geom_col() + scale_fill_manual(values = Pigeon.colors) + hrbrthemes::theme_ipsum_rc()"
   },
   {
     "objectID": "posts/Inbox-Cleaning/index.html",
@@ -708,14 +708,14 @@
     "href": "index.html",
     "title": "Robert W. Walker",
     "section": "",
-    "text": "Associate Professor of Quantitative Methods\nAtkinson Graduate School of Management\n\n\n\nAbout\n\n\nTeaching\n\n\nResearch\n\n\nBlog\n\n\nPublications\n\n\nAI Tools"
+    "text": "Associate Professor of Quantitative Methods,\nAtkinson Graduate School of Management, Willamette University\n\n\n\nAbout\n\n\nTeaching\n\n\nResearch\n\n\nBlog\n\n\nPublications\n\n\nAI Tools"
   },
   {
     "objectID": "posts/Docker-Shiny/index.html",
     "href": "posts/Docker-Shiny/index.html",
     "title": "Docker and Shiny",
     "section": "",
-    "text": "Last updated: 2026-03-11 12:17:48.51219\nTimezone: America/Los_Angeles\nWhen it comes to shiny applications, hosting is a perennial concern. The free alternative shinyapps.io works great but limits the number of user applications that can be deployed. One can operate a server and serve the shiny applications for one’s self. To be honest, this solution is probably superior but is also costly insofar as system administration consumes time. There is an in between that is worth exploring.\nWe could link to the apps and deploy them in the cloud. The most common methods for accomplishing this particular task involve Docker containers and using Docker to run the shiny applications. I want to explore this alternative in what follows."
+    "text": "Last updated: 2026-03-11 22:08:00.170512\nTimezone: America/Los_Angeles\nWhen it comes to shiny applications, hosting is a perennial concern. The free alternative shinyapps.io works great but limits the number of user applications that can be deployed. One can operate a server and serve the shiny applications for one’s self. To be honest, this solution is probably superior but is also costly insofar as system administration consumes time. There is an in between that is worth exploring.\nWe could link to the apps and deploy them in the cloud. The most common methods for accomplishing this particular task involve Docker containers and using Docker to run the shiny applications. I want to explore this alternative in what follows."
   },
   {
     "objectID": "posts/Docker-Shiny/index.html#shiny-server.conf",
@@ -827,7 +827,7 @@
     "href": "posts/InteractiveVisualization/index.html",
     "title": "Interactive Visualizations",
     "section": "",
-    "text": "Last updated: 2026-03-11 12:18:27.311046\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-11 22:08:37.640901\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/InteractiveVisualization/index.html#the-plotly-package",
@@ -862,7 +862,7 @@
     "href": "posts/Rstudio-Github/index.html",
     "title": "Connecting RStudio and Github",
     "section": "",
-    "text": "Last updated: 2026-03-11 12:18:43.900476\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-11 22:08:53.9726\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/Rstudio-Github/index.html#connecting-rstudio-and-github",
@@ -876,7 +876,7 @@
     "href": "posts/Trump-Dissent/index.html",
     "title": "A Dissent in the Trump 14th Amendment Case?",
     "section": "",
-    "text": "Last updated: 2026-03-11 12:19:03.27803\nTimezone: America/Los_Angeles"
+    "text": "Last updated: 2026-03-11 22:09:12.714304\nTimezone: America/Los_Angeles"
   },
   {
     "objectID": "posts/Trump-Dissent/index.html#the-trump-case",
