@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Robert W. Walker">
+<meta name="dcterms.date" content="2026-04-06">
+<meta name="description" content="Enabling web search with qwen and letting it deep dive.">
 
-<title>Communicating With Data – Robert W. Walker</title>
+<title>qwen 3.5 – Robert W. Walker</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -70,14 +108,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<meta name="quarto:status" content="draft">
 
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -111,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">AI Tools</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../teaching/index.html" aria-current="page"> <i class="bi bi-mortarboard" role="img">
+    <a class="nav-link" href="../../teaching/index.html"> <i class="bi bi-mortarboard" role="img">
 </i> 
 <span class="menu-text">Teaching</span></a>
   </li>  
@@ -148,67 +187,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../teaching/DataCommunication/index.html">Communicating with Data</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../../index.html" class="sidebar-logo-link">
-      </a>
-      </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Teaching</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/DADM/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">DADM</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/Essex/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Essex</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/ChoiceForecasting/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Choice and Forecasting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/DataCommunication/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Communicating with Data</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/BUS1301/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">BUS 1301: AI Data/Management</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
@@ -216,14 +198,35 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Communicating With Data</h1>
-</div>
+<h1 class="title">qwen 3.5</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">qwen35</div>
+    <div class="quarto-category">LLMs</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Enabling web search with qwen and letting it deep dive.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Robert W. Walker </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 6, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -233,19 +236,249 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Communicating with Data is a cross-listed course in the graduate school of Management and the Data Science program. In the course, we explore communication tools, e.g.&nbsp;tables and interactive tables, figures and interactive figures, shiny apps, websites, parameterized markdown, and, quite generically, the provision of tools for end users of data science tooling for insights. The course was designed to supplement data science education with the core ability to present insights into digestible forms for decision makers.</p>
+<section id="enabling-web-search-and-deep-dives-with-qwen" class="level2">
+<h2 class="anchored" data-anchor-id="enabling-web-search-and-deep-dives-with-qwen">Enabling web search and deep dives with qwen</h2>
+<p>Local LLMs are a very neat tool for a variety of tasks. For a while, I have been playing with ollama and StudioLM. With a bit of time, I came across some tooling for web searches to explore. Here is what it came up with.</p>
+</section>
+<section id="system-prompt" class="level2 {callout-note}">
+<h2 class="anchored" data-anchor-id="system-prompt">System Prompt</h2>
+<p>You are a capable, thoughtful, and precise assistant. Always prioritize being truthful, nuanced, insightful, and efficient, tailoring your responses specifically to the user’s needs and preferences.</p>
+<p>Research before answering the questions: use both reasoning and tool calls to synthesize a proper conclusion. The current month is April and the year is 2026.</p>
+</section>
+<section id="user-prompt" class="level2 {callout-note}">
+<h2 class="anchored" data-anchor-id="user-prompt">User Prompt</h2>
+<p>I want you to conduct deep research using Web Search to find academic papers on the principal-agent problem in game theory applied to large language models.</p>
+</section>
+<p>Based on my deep research, I’ve compiled a comprehensive overview of <strong>academic papers on the principal-agent problem in game theory applied to large language models</strong>. Here’s what I found:</p>
+<hr>
+<section id="key-academic-papers-on-principal-agent-problems-game-theory-with-llms" class="level2">
+<h2 class="anchored" data-anchor-id="key-academic-papers-on-principal-agent-problems-game-theory-with-llms">📚 Key Academic Papers on Principal-Agent Problems &amp; Game Theory with LLMs</h2>
+<section id="of-models-and-tin-men-a-behavioural-economics-study-of-principal-agent-problems-in-ai-alignment-using-large-language-models" class="level3">
+<h3 class="anchored" data-anchor-id="of-models-and-tin-men-a-behavioural-economics-study-of-principal-agent-problems-in-ai-alignment-using-large-language-models">1. <strong>“Of Models and Tin Men: A Behavioural Economics Study of Principal-Agent Problems in AI Alignment using Large-Language Models”</strong></h3>
 <ul>
-<li><a href="https://robertwwalker.github.io/CommunicatingWithData/" target="blank">There is a course website.</a></li>
+<li><strong>Authors:</strong> Steve Phelps, Rebecca Ranson</li>
+<li><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2307.11137">2307.11137</a> (July 2023, v3 revised September 2023)</li>
+<li><strong>Key Contribution:</strong> This paper directly addresses the principal-agent problem in AI alignment using LLMs. The authors argue that traditional AI safety frameworks don’t capture essential aspects of real-world deployment because there’s not a one-to-one correspondence between designer and agent, and heterogeneous values create economic conflicts. They emphasize information asymmetry as a core driver of principal-agent problems in AI systems.</li>
 </ul>
-<iframe src="https://robertwwalker.github.io/CommunicatingWithData/" title="CWD Website" width="800" height="600">
-</iframe>
+</section>
+<section id="principal-agent-reinforcement-learning-orchestrating-ai-agents-with-contracts" class="level3">
+<h3 class="anchored" data-anchor-id="principal-agent-reinforcement-learning-orchestrating-ai-agents-with-contracts">2. <strong>“Principal-Agent Reinforcement Learning: Orchestrating AI Agents with Contracts”</strong></h3>
 <ul>
-<li><a href="https://robertwwalker.github.io/CWD-Slides/" target="blank">The slides for Spring 2023</a></li>
+<li><strong>Authors:</strong> Dima Ivanov, Paul Dütting, Inbal Talgam-Cohen, Tonghan Wang, David C. Parkes (Harvard)</li>
+<li><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2407.18074">2407.18074</a> (July 2024, v2 revised October 2024)</li>
+<li><strong>Key Contribution:</strong> Combines reinforcement learning with principal-agent theory from economics to orchestrate AI agent interactions using contracts. The framework specifies payments by principals based on observable outcomes of agents’ actions in Markov Decision Processes (MDPs). This addresses the tension between individual interests and social welfare in multi-agent systems.</li>
 </ul>
-<iframe src="https://robertwwalker.github.io/CWD-Slides/" title="Slides for CWD" width="800" height="600">
-</iframe>
+</section>
+<section id="llm-active-alignment-a-nash-equilibrium-perspective" class="level3">
+<h3 class="anchored" data-anchor-id="llm-active-alignment-a-nash-equilibrium-perspective">3. <strong>“LLM Active Alignment: A Nash Equilibrium Perspective”</strong></h3>
+<ul>
+<li><strong>Authors:</strong> Tonghan Wang, Yuqi Pan, Xinyi Yang, Yanchen Jiang, Milind Tambe, David C. Parkes (Harvard)</li>
+<li><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2602.06836">2602.06836</a> (February 2026 - <em>very recent!</em>)</li>
+<li><strong>Key Contribution:</strong> Develops a game-theoretic framework using Nash equilibrium analysis to predict and steer LLM populations. Models agent actions as mixtures over human subpopulations, allowing agents to strategically choose alignment targets. Provides closed-form NE characterizations for analytical system-level predictions. Functions as an active alignment layer on top of RLHF pipelines.</li>
+</ul>
+</section>
+<section id="game-theory-meets-large-language-models-a-systematic-survey-with-taxonomy-and-new-frontiers" class="level3">
+<h3 class="anchored" data-anchor-id="game-theory-meets-large-language-models-a-systematic-survey-with-taxonomy-and-new-frontiers">4. <strong>“Game Theory Meets Large Language Models: A Systematic Survey with Taxonomy and New Frontiers”</strong></h3>
+<ul>
+<li><strong>Authors:</strong> Haoran Sun, Yusen Wu, Peng Wang, Wei Chen, Yukun Cheng, Xiaotie Deng, Xu Chu</li>
+<li><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2502.09053">2502.09053</a> (February 2025, v2 revised August 2025)</li>
+<li><strong>Key Contribution:</strong> First comprehensive survey of the bidirectional relationship between game theory and LLMs. Proposes a novel taxonomy categorizing research into four perspectives: (1) evaluating LLMs in game-based scenarios; (2) improving LLMs using game-theoretic concepts for interpretability/alignment; (3) modeling competitive landscape of LLM development; (4) leveraging LLMs to advance game models.</li>
+</ul>
+</section>
+<section id="getting-in-contract-with-large-language-models---an-agency-theory-perspective-on-large-language-model-alignment" class="level3">
+<h3 class="anchored" data-anchor-id="getting-in-contract-with-large-language-models---an-agency-theory-perspective-on-large-language-model-alignment">5. <strong>“Getting In Contract with Large Language Models - An Agency Theory Perspective On Large Language Model Alignment”</strong></h3>
+<ul>
+<li><strong>Authors:</strong> Sascha Kaltenpoth, Oliver Müller (Paderborn University)</li>
+<li><strong>Conference:</strong> WI2024 Proceedings <a href="https://aisel.aisnet.org/wi2024/91/">Paper #91</a></li>
+<li><strong>Key Contribution:</strong> Proposes LLM ATLAS (LLM Agency Theory-Led Alignment Strategy), a conceptual framework grounded in agency/contract theory to mitigate alignment problems during organizational LLM adoption. Addresses information asymmetries between organizational adopters and black-box LLM agents, considering organizational AI adoption processes.</li>
+</ul>
+</section>
+<section id="strategic-behavior-of-large-language-models-and-the-role-of-game-structure-versus-contextual-framing" class="level3">
+<h3 class="anchored" data-anchor-id="strategic-behavior-of-large-language-models-and-the-role-of-game-structure-versus-contextual-framing">6. <strong>“Strategic behavior of large language models and the role of game structure versus contextual framing”</strong></h3>
+<ul>
+<li><strong>Authors:</strong> Nunzio Lorè, Babak Heydari</li>
+<li><strong>Journal:</strong> Scientific Reports (Nature) <a href="https://www.nature.com/articles/s41598-024-69032-z">10.1038/s41598-024-69032-z</a> (August 2024)</li>
+<li><strong>Key Contribution:</strong> Investigates strategic behavior of LLMs across game-theoretic settings, analyzing interplay between game structure and contextual framing. Tests GPT-3.5, GPT-4, and LLaMa-2 models. Finds GPT-4 prioritizes internal game mechanics over context, while GPT-3.5 shows significant context sensitivity but weaker abstract strategic decision-making.</li>
+</ul>
+</section>
+<section id="game-theoretic-llm-agent-workflow-for-negotiation-games" class="level3">
+<h3 class="anchored" data-anchor-id="game-theoretic-llm-agent-workflow-for-negotiation-games">7. <strong>“Game-theoretic LLM: Agent Workflow for Negotiation Games”</strong></h3>
+<ul>
+<li><strong>Authors:</strong> Wenyue Hua et al.&nbsp;(11 authors total)</li>
+<li><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2411.05990">2411.05990</a> (November 2024, v2 revised December 2024)</li>
+<li><strong>Key Contribution:</strong> Evaluates rationality of LLMs in strategic decision-making contexts within game theory framework. Tests across complete and incomplete information games. Designs multiple game-theoretic workflows to guide LLM reasoning and improve Nash equilibrium computation capabilities under uncertainty.</li>
+</ul>
+</section>
+<section id="can-large-language-models-serve-as-rational-players-in-game-theory-a-systematic-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="can-large-language-models-serve-as-rational-players-in-game-theory-a-systematic-analysis">8. <strong>“Can Large Language Models Serve as Rational Players in Game Theory? A Systematic Analysis”</strong></h3>
+<ul>
+<li><strong>Authors:</strong> Caoyun Fan, Jindou Chen, Yaohui Jin, Hao He (Shanghai Jiao Tong University)</li>
+<li><strong>Conference:</strong> AAAI Conference on Artificial Intelligence <a href="https://ojs.aaai.org/index.php/AAAI/article/view/29751">Vol. 38 No.&nbsp;16</a> (2024)</li>
+<li><strong>Key Contribution:</strong> Systematically analyzes LLM rationality in game theory using three classical games (Dictator Game, Rock-Paper-Scissors, Ring-network). Evaluates ability to build desires based on uncommon preferences and refine beliefs about uncertainty. Finds even GPT-4 exhibits substantial disparities compared to humans in achieving full rationality.</li>
+</ul>
+</section>
+<section id="llm-strategic-reasoning-agentic-study-through-behavioral-game-theory" class="level3">
+<h3 class="anchored" data-anchor-id="llm-strategic-reasoning-agentic-study-through-behavioral-game-theory">9. <strong>“LLM Strategic Reasoning: Agentic Study through Behavioral Game Theory”</strong></h3>
+<ul>
+<li><strong>Authors:</strong> (Multiple authors)</li>
+<li><strong>arXiv:</strong> <a href="https://arxiv.org/pdf/2502.20432v3">2502.20432</a> (February 2025, v3 revised)</li>
+<li><strong>Key Contribution:</strong> Examines LLM strategic reasoning capabilities through behavioral game theory lens, focusing on agent-based perspectives and human-likeness in strategic interactions.</li>
+</ul>
+</section>
+<section id="beyond-nash-equilibrium-bounded-rationality-of-llms-and-humans-in-strategic-decision-making" class="level3">
+<h3 class="anchored" data-anchor-id="beyond-nash-equilibrium-bounded-rationality-of-llms-and-humans-in-strategic-decision-making">10. <strong>“Beyond Nash Equilibrium: Bounded Rationality of LLMs and humans in Strategic Decision-making”</strong></h3>
+<ul>
+<li><strong>Authors:</strong> (Multiple authors)</li>
+<li><strong>arXiv:</strong> <a href="https://arxiv.org/pdf/2506.09390">2506.09390</a> (June 2025)</li>
+<li><strong>Key Contribution:</strong> Explores bounded rationality of LLMs compared to humans in strategic decision-making contexts, examining where and why LLMs deviate from Nash equilibrium predictions.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="research-trends-key-insights" class="level2">
+<h2 class="anchored" data-anchor-id="research-trends-key-insights">🔍 Research Trends &amp; Key Insights</h2>
+<section id="common-themes-across-papers" class="level3">
+<h3 class="anchored" data-anchor-id="common-themes-across-papers">Common Themes Across Papers:</h3>
+<ol type="1">
+<li><strong>Information Asymmetry</strong> - Principal-agent problems arise primarily because designers cannot fully observe or verify LLM internal processes</li>
+<li><strong>Rationality Gaps</strong> - Even state-of-the-art LLMs (GPT-4) show systematic deviations from rational game-theoretic behavior compared to humans</li>
+<li><strong>Contract-Based Solutions</strong> - Multiple papers propose contract theory frameworks as mechanisms for aligning agent incentives with principal goals</li>
+<li><strong>Nash Equilibrium Analysis</strong> - Game theorists are applying NE analysis to understand and steer LLM populations</li>
+<li><strong>Multi-Agent Systems</strong> - Focus shifting from single-agent alignment to orchestrating interacting AI agents</li>
+</ol>
+</section>
+<section id="recent-developments-2025-2026" class="level3">
+<h3 class="anchored" data-anchor-id="recent-developments-2025-2026">Recent Developments (2025-2026):</h3>
+<ul>
+<li>Shift toward <strong>active alignment frameworks</strong> that use game-theoretic predictions to guide LLM behavior dynamically</li>
+<li>Integration of <strong>contract theory with reinforcement learning</strong> for scalable principal-agent mechanisms in sequential settings</li>
+<li><strong>Nash equilibrium characterizations</strong> becoming more computationally tractable through mixture modeling over human subpopulations</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="summary-table" class="level2">
+<h2 class="anchored" data-anchor-id="summary-table">📊 Summary Table</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 35%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Paper</th>
+<th>Year</th>
+<th>Venue</th>
+<th>Principal-Agent Focus</th>
+<th>Game Theory Element</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Of Models and Tin Men</td>
+<td>2023</td>
+<td>arXiv</td>
+<td>AI alignment as principal-agent problem</td>
+<td>Behavioral economics</td>
+</tr>
+<tr class="even">
+<td>Principal-Agent RL</td>
+<td>2024</td>
+<td>arXiv</td>
+<td>Contract-based agent orchestration</td>
+<td>MDPs, contracts</td>
+</tr>
+<tr class="odd">
+<td>LLM Active Alignment</td>
+<td>2026</td>
+<td>arXiv</td>
+<td>Strategic alignment targeting</td>
+<td>Nash Equilibrium</td>
+</tr>
+<tr class="even">
+<td>Game Theory Survey</td>
+<td>2025</td>
+<td>arXiv</td>
+<td>Taxonomy of game-LLM intersection</td>
+<td>Comprehensive review</td>
+</tr>
+<tr class="odd">
+<td>Agency Theory Perspective</td>
+<td>2024</td>
+<td>WI2024</td>
+<td>Organizational LLM adoption</td>
+<td>Contract theory</td>
+</tr>
+<tr class="even">
+<td>Strategic Behavior (Nature)</td>
+<td>2024</td>
+<td>Scientific Reports</td>
+<td>Model comparison</td>
+<td>Game structure vs.&nbsp;context</td>
+</tr>
+<tr class="odd">
+<td>Game-theoretic LLM Workflow</td>
+<td>2024</td>
+<td>arXiv</td>
+<td>Improving rationality in games</td>
+<td>Negotiation, Nash EQ</td>
+</tr>
+<tr class="even">
+<td>Rational Players Analysis</td>
+<td>2024</td>
+<td>AAAI</td>
+<td>Systematic rationality evaluation</td>
+<td>Classical games</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>This research landscape shows an <strong>actively growing field</strong> with particular concentration on applying economic principal-agent theory and game-theoretic mechanisms to solve AI alignment challenges in LLMs. The most recent work (2025-2026) emphasizes dynamic, active alignment approaches using Nash equilibrium analysis rather than static contract design.</p>
+<hr>
+</section>
+<section id="session-info" class="level2">
+<h2 class="anchored" data-anchor-id="session-info">Session Info</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.5.3 (2026-03-11)
+Platform: x86_64-pc-linux-gnu
+Running under: Ubuntu 24.04.4 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.12.0 
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.0  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: America/Los_Angeles
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+ [1] htmlwidgets_1.6.4 compiler_4.5.3    fastmap_1.2.0     cli_3.6.5        
+ [5] tools_4.5.3       htmltools_0.5.9   otel_0.2.0        rstudioapi_0.18.0
+ [9] yaml_2.3.12       rmarkdown_2.30    knitr_1.51        jsonlite_2.0.0   
+[13] xfun_0.56         digest_0.6.39     rlang_1.1.7       evaluate_1.0.5   </code></pre>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
