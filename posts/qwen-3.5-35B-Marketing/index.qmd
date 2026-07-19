@@ -5,7 +5,6 @@ date: "2026-03-10"
 categories: [qwen-3.5, "local AI"]
 image: "image.png"
 description: "Unpacking qwen-3.5 35B on my Linux machine.  It does not run quickly but it is definitely worth exploring further.  Here we explore models of marketing and some Monte Carlo simulation in python."
-jupyter: python3
 toc: true
 ---
 

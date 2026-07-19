@@ -1,0 +1,24 @@
+---
+title: 'The Accuracy and Replicability of Data Analysis Performed with Large Language Models'
+date: '2026-06-29'
+author:
+- Justus Eaglesmith
+- Tim Johnson
+- Robert W. Walker
+categories: []
+citation:
+  type: article
+  container-title: American Statistician
+  publisher: Taylor and Francis for the American Statistical Association
+  pdf-url: https://doi.org/10.1080/00031305.2026.2688943
+links:
+- text: PDF
+  icon: file-pdf
+  href: https://doi.org/10.1080/00031305.2026.2688943
+- text: html
+  href: https://doi.org/10.1080/00031305.2026.2688943
+---
+
+## Abstract
+
+This peer reviewed letter documents a series of experiments with OpenAI proprietary large language models assessing automated data analysis.  We simulate data from known distributions and share only summary statistics and stem-leaf plots [this was started before graphics processing was widespread] and ask the model to identify the distribution that generated it.  Initially, the models were of very little value in recovering the ground truth distributions.  That said, through generations of models, the ability to discriminate drastically improves to the point that recent models likely perform at least as well as human experts.

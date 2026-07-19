@@ -10,30 +10,8 @@
     ]
   },
   {
-    "listing": "/publications.html",
-    "items": [
-      "/quarto_publications/EntConfZone/index.html",
-      "/quarto_publications/techno/index.html",
-      "/quarto_publications/PPM/index.html",
-      "/quarto_publications/geon-ord-logit/index.html",
-      "/quarto_publications/cjpp/index.html",
-      "/quarto_publications/MC2/index.html",
-      "/quarto_publications/PropTax/index.html",
-      "/quarto_publications/publius/index.html",
-      "/quarto_publications/ratingsMGMT/index.html",
-      "/quarto_publications/MidClas/index.html",
-      "/quarto_publications/boosterism/index.html",
-      "/quarto_publications/CivicPart/index.html",
-      "/quarto_publications/splits/index.html",
-      "/quarto_publications/DivGovPT/index.html",
-      "/quarto_publications/SBI/index.html",
-      "/quarto_publications/LongMem/index.html"
-    ]
-  },
-  {
     "listing": "/posts/index.html",
     "items": [
-      "/posts/qwen-3.5-Research-PA-LLM/index.html",
       "/posts/Principals-Agents/index.html",
       "/posts/qwen-3.5-35B-Marketing/index.html",
       "/posts/qwen-3.5-35B-Accounting/index.html",
@@ -50,6 +28,28 @@
       "/posts/Pigeons-Pallettes/index.html",
       "/posts/A Data Visualization/index.html",
       "/posts/Griffin-Park/index.html"
+    ]
+  },
+  {
+    "listing": "/publications.html",
+    "items": [
+      "/quarto_publications/EntConfZone/index.html",
+      "/quarto_publications/AmStatLetter/index.html",
+      "/quarto_publications/techno/index.html",
+      "/quarto_publications/PPM/index.html",
+      "/quarto_publications/geon-ord-logit/index.html",
+      "/quarto_publications/cjpp/index.html",
+      "/quarto_publications/MC2/index.html",
+      "/quarto_publications/PropTax/index.html",
+      "/quarto_publications/publius/index.html",
+      "/quarto_publications/ratingsMGMT/index.html",
+      "/quarto_publications/MidClas/index.html",
+      "/quarto_publications/boosterism/index.html",
+      "/quarto_publications/CivicPart/index.html",
+      "/quarto_publications/splits/index.html",
+      "/quarto_publications/DivGovPT/index.html",
+      "/quarto_publications/SBI/index.html",
+      "/quarto_publications/LongMem/index.html"
     ]
   }
 ]
